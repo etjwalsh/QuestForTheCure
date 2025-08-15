@@ -1,0 +1,87 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+
+
+public class GameStateMachine : MonoBehaviour
+{
+    [SerializeField] protected GameObject menuUI; //reference to the menu ui
+    [SerializeField] protected GameObject wheelUI; //reference to the wheel spinner ui
+
+    private static GameStateMachine _instance;
+    public static GameStateMachine instance
+    {
+        get
+        {
+            return _instance;
+        }
+        private set
+        {
+            _instance = value;
+        }
+    }
+
+    public enum GameState { KickStart, MainMenu, CharSelect, GameStart }
+    public GameState currentState = GameState.MainMenu; //for tracking current state
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("warning: too many instances of game state machine");
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        switch (currentState)
+        {
+            case GameState.KickStart:
+                {
+                    KickStart();
+                    break;
+                }
+            case GameState.MainMenu:
+                {
+                    MainMenu();
+                    break;
+                }
+            case GameState.CharSelect:
+                {
+                    CharSelect();
+                    break;
+                }
+            case GameState.GameStart:
+                {
+                    GameStart();
+                    break;
+                }
+        }
+    }
+
+    public void KickStart()
+    {
+
+    }
+    public void MainMenu()
+    {
+
+    }
+    public void CharSelect()
+    {
+
+    }
+    public void GameStart()
+    {
+
+    }
+}
