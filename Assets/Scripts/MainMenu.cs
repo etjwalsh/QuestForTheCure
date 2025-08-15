@@ -17,12 +17,13 @@ public class MainMenu : MonoBehaviour
     //function to exit the game
     public void OnExitClicked()
     {
-
+        UnityEditor.EditorApplication.isPlaying = false;
+        // Application.Quit();
     }
 
     //function to open the settings
     public void OnSettingsClicked()
     {
-        
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Settings;
     }
 }

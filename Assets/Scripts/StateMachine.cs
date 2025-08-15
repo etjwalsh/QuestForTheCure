@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Palmmedia.ReportGenerator.Core;
 
 
 public class GameStateMachine : MonoBehaviour
 {
     [SerializeField] protected GameObject menuUI; //reference to the menu ui
     [SerializeField] protected GameObject wheelUI; //reference to the wheel spinner ui
+    [SerializeField] protected GameObject settingsUI; //reference to the settings ui
 
+    //singleton pattern
     private static GameStateMachine _instance;
     public static GameStateMachine instance
     {
@@ -24,12 +27,14 @@ public class GameStateMachine : MonoBehaviour
         }
     }
 
-    public enum GameState { KickStart, MainMenu, CharSelect, GameStart }
+    //enum for state machine
+    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart }
     public GameState currentState = GameState.MainMenu; //for tracking current state
 
     // Start is called before the first frame update
     private void Start()
     {
+        //set instance of state machine and make sure one doesn't already exist
         if (instance != null)
         {
             Debug.LogWarning("warning: too many instances of game state machine");
@@ -43,6 +48,7 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //state machine switch statement
         switch (currentState)
         {
             case GameState.KickStart:
@@ -53,6 +59,11 @@ public class GameStateMachine : MonoBehaviour
             case GameState.MainMenu:
                 {
                     MainMenu();
+                    break;
+                }
+            case GameState.Settings:
+                {
+                    Settings();
                     break;
                 }
             case GameState.CharSelect:
@@ -74,7 +85,12 @@ public class GameStateMachine : MonoBehaviour
     }
     public void MainMenu()
     {
-
+        menuUI.SetActive(true);
+    }
+    public void Settings()
+    {
+        menuUI.SetActive(false);
+        settingsUI.SetActive(true);
     }
     public void CharSelect()
     {
