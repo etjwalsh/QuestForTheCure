@@ -28,7 +28,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart }
+    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning }
     public GameState currentState = GameState.MainMenu; //for tracking current state
 
     // Start is called before the first frame update
@@ -76,6 +76,11 @@ public class GameStateMachine : MonoBehaviour
                     GameStart();
                     break;
                 }
+            case GameState.Spinning:
+                {
+                    Spinning();
+                    break;
+                }
         }
     }
 
@@ -98,6 +103,11 @@ public class GameStateMachine : MonoBehaviour
     }
     public void GameStart()
     {
+
+    }
+    public void Spinning()
+    {
+        wheelUI.SetActive(true);
 
     }
 }

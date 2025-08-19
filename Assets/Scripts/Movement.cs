@@ -9,12 +9,14 @@ public class Movement : MonoBehaviour
     private int currentSpaceIndex = -1;
     private int moveSpeed = 5;
     private int roll = -1;
+    public bool canMove = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        roll = Random.Range(1, 7); // 1-6 dice roll
+        // roll = Random.Range(1, 7); // 1-6 dice roll
+        roll = 2;
         Debug.Log("roll number == " + roll);
     }
 
@@ -46,15 +48,21 @@ public class Movement : MonoBehaviour
             steps--;
         }
         // Player finished moving — trigger space event
+        if (steps <= 0)
+        {
+            canMove = false;
+        }
         // TriggerSpaceEvent(currentSpaceIndex); // ADD THIS LATER
     }
 
     IEnumerator MoveToPosition(Vector3 target)
     {
         Debug.Log("got to the MoveToPosition coroutine");
+        target.y += 0.05f;
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
-            Debug.Log("moving towards target == " + target);
+            Debug.Log("vector3.Distance(transform.position, target) == " + Vector3.Distance(transform.position, target));
+            // Debug.Log("moving towards target == " + target);
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
             yield return null;
         }
