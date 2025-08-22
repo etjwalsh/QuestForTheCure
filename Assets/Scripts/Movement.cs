@@ -5,35 +5,53 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Transform[] spaces;
+    public WheelSpin wheel;
 
-    private int currentSpaceIndex = -1;
-    private int moveSpeed = 5;
-    private int roll = -1;
-    public bool canMove = true;
+    private int currentSpaceIndex = -1; // initialize to -1 so that the first one checked is index 0
+    private int moveSpeed = 5; 
+    // private int roll = 5; 
+    public bool canMove;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        // roll = Random.Range(1, 7); // 1-6 dice roll
-        roll = 2;
-        Debug.Log("roll number == " + roll);
+        canMove = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    private void Start()
     {
-        while (roll > 0)
+        wheel.OnRolled += HandleDiceRoll;
+    }
+
+    private void OnDestroy()
+    {
+        wheel.OnRolled -= HandleDiceRoll;
+    }
+
+    private void HandleDiceRoll(int roll)
+    {
+        Debug.Log("got here");
+        Debug.Log("canMove is = " + canMove + " and roll is = " + roll);
+        if (canMove && roll > 0)
         {
-            Debug.Log("got to the while loop and roll is == " + roll); 
             StartCoroutine(MovePlayer(roll));
-            roll--;
         }
     }
 
+    // Update is called once per frame
+    // void Update()
+    // {
+    //     if (canMove)
+    //     {
+    //         StartCoroutine(MovePlayer(roll));
+    //         roll--;
+    //     }
+    // }
+
     IEnumerator MovePlayer(int steps)
     {
-        Debug.Log("about to move player " + steps + " steps");
+        canMove = false;
+
         while (steps > 0)
         {
             Debug.Log("currentSpaceIndex == " + currentSpaceIndex);
@@ -47,24 +65,26 @@ public class Movement : MonoBehaviour
 
             steps--;
         }
+
+        canMove = true;
         // Player finished moving — trigger space event
-        if (steps <= 0)
-        {
-            canMove = false;
-        }
+        // if (steps <= 0)
+        // {
+        //     canMove = false;
+        // }
         // TriggerSpaceEvent(currentSpaceIndex); // ADD THIS LATER
     }
 
     IEnumerator MoveToPosition(Vector3 target)
     {
-        Debug.Log("got to the MoveToPosition coroutine");
-        target.y += 0.05f;
+        target.y += 0.05f; //makes the player land slightly above the space itself
+
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
-            Debug.Log("vector3.Distance(transform.position, target) == " + Vector3.Distance(transform.position, target));
-            // Debug.Log("moving towards target == " + target);
             transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
             yield return null;
         }
+
+        transform.position = target; //snap the player right to the space
     }
 }
