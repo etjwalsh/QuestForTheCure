@@ -20,21 +20,17 @@ public class WheelSpin : MonoBehaviour
 
         Debug.Log("number rolled = " + numberRolled);
 
-        if (OnRolled != null)
-        {
-            DebugOnRolled();
-            OnRolled.Invoke(numberRolled);
-            DebugOnRolled();
-        }
+        OnRolled?.Invoke(numberRolled);
     }
 
+    //method for debuging
     private void DebugOnRolled()
     {
         if (OnRolled != null)
         {
             foreach (var d in OnRolled.GetInvocationList())
             {
-                Debug.Log("OnRolled subscriber: " + d.Method.Name + 
+                Debug.Log("OnRolled subscriber: " + d.Method.Name +
                         " on " + d.Target);
             }
         }

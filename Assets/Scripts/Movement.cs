@@ -54,8 +54,17 @@ public class Movement : MonoBehaviour
 
         while (steps > 0)
         {
-            Debug.Log("currentSpaceIndex == " + currentSpaceIndex);
-            currentSpaceIndex++;
+            //to make the game spaces loopable
+            //reset the index to the beginning once reaching the end
+            if (currentSpaceIndex >= spaces.Length - 1)
+            {
+                currentSpaceIndex = 0;
+            }
+            else
+            {
+                currentSpaceIndex++;
+            }
+
             Transform nextSpace = spaces[currentSpaceIndex];
 
             Debug.Log("nextSpace == " + nextSpace);
