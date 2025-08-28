@@ -12,6 +12,11 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] protected GameObject menuUI; //reference to the menu ui
     [SerializeField] protected GameObject wheelUI; //reference to the wheel spinner ui
     [SerializeField] protected GameObject settingsUI; //reference to the settings ui
+    [SerializeField] protected GameObject CharacterSelectUI; //reference to the char select screen ui
+    public string playerOneCharacter = "";
+    public string playerTwoCharacter = "";
+    public string playerThreeCharacter = "";
+    public string playerFourCharacter = "";
 
     //singleton pattern
     private static GameStateMachine _instance;
