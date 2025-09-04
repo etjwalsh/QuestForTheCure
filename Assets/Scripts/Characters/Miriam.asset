@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Miriam
   m_EditorClassIdentifier: 
   charName: Miriam
-  description: "Miriam (F74) has owned Miriam\u2019s, a bread bakery, for fifty-three
-    years and counting. Her and her husband opened up the shop together fresh out
-    of college, but Miriam is the real star of the show. She is widely known for
-    her amazing sunflower seed sourdough and sourdough cinnamon rolls!"
+  description: "Miriam has owned Miriam\u2019s, a bread bakery, for fifty-three years
+    and counting. Her and her husband opened up the shop together fresh out of college,
+    but Miriam is the real star of the show. She is widely known for her amazing
+    sunflower seed sourdough and sourdough cinnamon rolls!"
   model: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 3bab1903e04c1f6409b3171dd7551436, type: 3}
   charColor: {r: 1, g: 0.5686275, b: 0.6862745, a: 0}

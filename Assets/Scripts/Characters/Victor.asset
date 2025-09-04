@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Victor
   m_EditorClassIdentifier: 
   charName: Victor
-  description: 
+  description: "Victor is Judy\u2019s younger brother, and the drummer of Judy &
+    the Yams. He is looking to be the inheritor of his dad\u2019s mechanic shop once
+    he retires, so he has been spending most of his time learning everything he hasn\u2019t
+    already learned about cars!"
   model: {fileID: 0}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d7c9e42bd0b896e4ba0b061fbf14f9f0, type: 3}
   charColor: {r: 0.6156863, g: 0.27058825, b: 0.25882354, a: 0}

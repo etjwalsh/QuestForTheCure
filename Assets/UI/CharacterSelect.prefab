@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4300932588305992940}
   - component: {fileID: 8174106310753242070}
   m_Layer: 5
-  m_Name: MiraimButton (10)
+  m_Name: RaviButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 3865202040873075527}
   - component: {fileID: 4693095630323394099}
   m_Layer: 5
-  m_Name: MiraimButton (5)
+  m_Name: GrahamButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 5883643688659723366}
   - component: {fileID: 3226641845887231491}
   m_Layer: 5
-  m_Name: MiraimButton (1)
+  m_Name: KrisButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 5703227364234578886}
   - component: {fileID: 7228824593678611248}
   m_Layer: 5
-  m_Name: MiraimButton (4)
+  m_Name: JasperButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 2877459639811108880}
   - component: {fileID: 6979191032896281810}
   m_Layer: 5
-  m_Name: MiraimButton (11)
+  m_Name: ClydeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 2842837920933967677}
   - component: {fileID: 5835903036327762857}
   m_Layer: 5
-  m_Name: MiraimButton (7)
+  m_Name: AmandaButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1231,7 @@ GameObject:
   - component: {fileID: 4103228835176304643}
   - component: {fileID: 1370289366169040191}
   m_Layer: 5
-  m_Name: MiraimButton (9)
+  m_Name: RiverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 8537761685050407095}
   - component: {fileID: 8153285726101055469}
   m_Layer: 5
-  m_Name: MiraimButton (2)
+  m_Name: RudyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,6 +1470,7 @@ GameObject:
   - component: {fileID: 8348981866526285231}
   - component: {fileID: 5659133594720356921}
   - component: {fileID: 9141585310970053238}
+  - component: {fileID: 3509890902247117921}
   m_Layer: 5
   m_Name: MiraimButton
   m_TagString: Untagged
@@ -1578,6 +1579,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3509890902247117921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649904679100271498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db609002b2952f041bc66f6bb5812b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7766779910786452736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,8 +1603,9 @@ GameObject:
   - component: {fileID: 7583192509202989122}
   - component: {fileID: 2356475103490807067}
   - component: {fileID: 1722284812143438535}
+  - component: {fileID: 4520199682970766610}
   m_Layer: 5
-  m_Name: MiraimButton (6)
+  m_Name: SydneyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1698,6 +1712,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4520199682970766610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7766779910786452736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db609002b2952f041bc66f6bb5812b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8935480423424860449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,8 +1736,9 @@ GameObject:
   - component: {fileID: 3104917231179097775}
   - component: {fileID: 2445840560234676605}
   - component: {fileID: 8503655028738446144}
+  - component: {fileID: 2020824923682945429}
   m_Layer: 5
-  m_Name: MiraimButton (3)
+  m_Name: VictorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1818,6 +1845,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2020824923682945429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935480423424860449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db609002b2952f041bc66f6bb5812b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9003511437668336081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1870,7 @@ GameObject:
   - component: {fileID: 5829980888057444716}
   - component: {fileID: 1035543481257555366}
   m_Layer: 5
-  m_Name: MiraimButton (8)
+  m_Name: MayaButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

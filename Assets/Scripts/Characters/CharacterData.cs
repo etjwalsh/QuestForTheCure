@@ -4,6 +4,7 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public string charName;
+    [TextArea(10,15)]
     public string description;
     public Sprite model;
     public Sprite portrait;

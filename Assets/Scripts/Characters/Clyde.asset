@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4214fb9a7bf388e46b1a5dc684f54413, type: 3}
+  m_Name: Clyde
+  m_EditorClassIdentifier: 
+  charName: Clyde
+  description: Clyde is a florist. He loves getting to know people, especially what
+    their favorite flowers are. He will send each of his closest friends a stem of
+    their favorite flower at random!
+  model: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 5ae304a6e41e0234f90ca49b4f4051f0, type: 3}
+  charColor: {r: 0.18039216, g: 0.43529412, b: 0.2509804, a: 0}

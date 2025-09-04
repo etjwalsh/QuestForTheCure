@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4214fb9a7bf388e46b1a5dc684f54413, type: 3}
+  m_Name: River
+  m_EditorClassIdentifier: 
+  charName: River
+  description: River is currently the general manager for a professional basketball
+    team. He oversees trading, signing, and drafting players. Last year his team
+    almost made it to the finals, and are looking like really strong contenders this
+    season!
+  model: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 46bf4608b30d9e245991c7fa6593d4a8, type: 3}
+  charColor: {r: 1, g: 0.77254903, b: 0.14901961, a: 0}

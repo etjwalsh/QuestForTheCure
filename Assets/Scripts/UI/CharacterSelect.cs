@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CharacterSelect : MonoBehaviour
+public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnButtonClick(GameObject button)
     {
-        
+        Debug.Log("button clicked = " + button.name);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData _)
     {
-        
+        Debug.Log("mouse is over = " + gameObject.name);
+    }
+    public void OnPointerExit(PointerEventData _)
+    {
+        Debug.Log("mouse just left = " + gameObject.name);
     }
 }

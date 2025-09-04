@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4214fb9a7bf388e46b1a5dc684f54413, type: 3}
+  m_Name: Graham
+  m_EditorClassIdentifier: 
+  charName: Graham
+  description: Graham is the proud owner of a small antique store right in the heart
+    of Eugene, Oregon. He inherited it from his grandmother, who loved collecting
+    little trinkets and old stuff. The oldest piece in his store is a doll that dates
+    all the way back to before the American Civil War!
+  model: {fileID: 0}
+  portrait: {fileID: 21300000, guid: c170fb2cd71f21e47a4b3829711b8384, type: 3}
+  charColor: {r: 0.21176471, g: 0.27058825, b: 0.30980393, a: 0}
