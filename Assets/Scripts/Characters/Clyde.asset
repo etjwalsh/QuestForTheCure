@@ -16,6 +16,6 @@ MonoBehaviour:
   description: Clyde is a florist. He loves getting to know people, especially what
     their favorite flowers are. He will send each of his closest friends a stem of
     their favorite flower at random!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: 4eb7a5b3258cf4d4eb013ce1d87d760a, type: 3}
   portrait: {fileID: 21300000, guid: 5ae304a6e41e0234f90ca49b4f4051f0, type: 3}
-  charColor: {r: 0.18039216, g: 0.43529412, b: 0.2509804, a: 0}
+  charColor: {r: 0.18039216, g: 0.43529412, b: 0.2509804, a: 1}

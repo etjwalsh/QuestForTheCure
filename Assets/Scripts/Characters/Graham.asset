@@ -17,6 +17,6 @@ MonoBehaviour:
     of Eugene, Oregon. He inherited it from his grandmother, who loved collecting
     little trinkets and old stuff. The oldest piece in his store is a doll that dates
     all the way back to before the American Civil War!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: bf413335c705cb5418b1dc07ada95b49, type: 3}
   portrait: {fileID: 21300000, guid: c170fb2cd71f21e47a4b3829711b8384, type: 3}
-  charColor: {r: 0.21176471, g: 0.27058825, b: 0.30980393, a: 0}
+  charColor: {r: 0.21176471, g: 0.27058825, b: 0.30980393, a: 1}

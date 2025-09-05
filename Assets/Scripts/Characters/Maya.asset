@@ -16,6 +16,6 @@ MonoBehaviour:
   description: Maya is a collegiate cross country runner and is studying to be a
     nutritionist. She was the conference runner-up as a sophomore, and is looking
     to take the individual title next season!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: 62b3c60a9a1d69c499fc5f812f615726, type: 3}
   portrait: {fileID: 21300000, guid: cd974d0f865e74441b6790295b2cf5e7, type: 3}
-  charColor: {r: 1, g: 0.6901961, b: 0.4862745, a: 0}
+  charColor: {r: 1, g: 0.6901961, b: 0.4862745, a: 1}

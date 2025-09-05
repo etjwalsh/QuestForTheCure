@@ -16,6 +16,6 @@ MonoBehaviour:
   description: Ravi is a nursing student with a love for caring for the elderly.
     Ever since high school, he has worked at a local nursing home. He is very charismatic,
     and a great bingo night announcer!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: b8145b97806c3eb49994e924bf776cda, type: 3}
   portrait: {fileID: 21300000, guid: 8d7c1b88a4eba55468a89dc8ca44f5cb, type: 3}
-  charColor: {r: 0.27058825, g: 0.6509804, b: 0.50980395, a: 0}
+  charColor: {r: 0.27058825, g: 0.6509804, b: 0.50980395, a: 1}

@@ -17,6 +17,6 @@ MonoBehaviour:
     Park. She loves animals, wildlife, and preservation of nature. This upcoming
     year she will finally complete her goal of visiting every national park in the
     United States!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: 5f64fd227efd6654d84c8986ca4368ab, type: 3}
   portrait: {fileID: 21300000, guid: 5c199785475185942a16e773e5d2622d, type: 3}
-  charColor: {r: 0.8352941, g: 0.77254903, b: 0.5411765, a: 0}
+  charColor: {r: 0.8352941, g: 0.77254903, b: 0.5411765, a: 1}

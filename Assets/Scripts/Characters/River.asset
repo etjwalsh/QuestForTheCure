@@ -17,6 +17,6 @@ MonoBehaviour:
     team. He oversees trading, signing, and drafting players. Last year his team
     almost made it to the finals, and are looking like really strong contenders this
     season!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: bda1cc1f02838f24ca131938b1eb7311, type: 3}
   portrait: {fileID: 21300000, guid: 46bf4608b30d9e245991c7fa6593d4a8, type: 3}
-  charColor: {r: 1, g: 0.77254903, b: 0.14901961, a: 0}
+  charColor: {r: 1, g: 0.77254903, b: 0.14901961, a: 1}

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charName: Jasper
   description: Jasper just wants to sleep!
-  model: {fileID: 0}
+  model: {fileID: 21300000, guid: 644a4385def9cdc4896cbbcb50af3121, type: 3}
   portrait: {fileID: 21300000, guid: a1cd63043e32a2f4cbdfc97e0b23595b, type: 3}
-  charColor: {r: 0.5647059, g: 0.8352941, b: 1, a: 0}
+  charColor: {r: 0.5647059, g: 0.8352941, b: 1, a: 1}

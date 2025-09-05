@@ -53,6 +53,7 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(currentState);
         //state machine switch statement
         switch (currentState)
         {
