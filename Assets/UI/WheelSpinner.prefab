@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4403a9612e6e9408dbeb7dd55c6734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 1
-  max: 11
+  wheel: {fileID: 7155012921813727091}
+  numberOfSlices: 10
   number: {fileID: 8391220232118043841}
   numberRolled: 0
 --- !u!1 &837807401107172943
@@ -282,15 +282,15 @@ RectTransform:
   m_GameObject: {fileID: 7224063687009645634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6404867, y: 5.6404867, z: 5.6404867}
+  m_LocalScale: {x: 1, y: 1, z: 5.6240487}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4025478816823576602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 559, y: 48}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 343, y: 48}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2024687868091544838
 CanvasRenderer:
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd86459e821b5d0439d3ec6f6a0ece66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46de85c89d2a0a54784196a301982521, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
