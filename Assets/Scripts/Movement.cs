@@ -30,7 +30,6 @@ public class Movement : MonoBehaviour
 
     private void HandleDiceRoll(int roll)
     {
-        Debug.Log("got here");
         Debug.Log("canMove is = " + canMove + " and roll is = " + roll);
         if (canMove && roll > 0)
         {

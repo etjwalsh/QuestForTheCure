@@ -19,15 +19,23 @@ public class WheelSpin : MonoBehaviour
     private float spinTime;
     private float elapsedTime;
     private float startSpeed;
-    private float angle;
+    // private float angle;
 
     public void OnButtonClick()
     {
 
         if (!spinning)
         {
-            spinTime = Random.Range(3f, 5f); //how long the spinning will last, random between 0 and 5
-            startSpeed = 1080f; //how fast it will spin to start, degrees per second
+            spinTime = Random.Range(3f, 6f); //how long the spinning will last, random between 0 and 5
+            if (Random.value < 0.5f)
+            {
+                startSpeed = Random.Range(-1440f, -720f); //how fast it will spin to start, degrees per second
+            }
+            else
+            {
+                startSpeed = Random.Range(720f, 1440f);
+            }
+
             elapsedTime = 0f;
             spinning = true;
         }
@@ -41,17 +49,15 @@ public class WheelSpin : MonoBehaviour
         float t = elapsedTime / spinTime;
         float currentSpeed = Mathf.Lerp(startSpeed, 0, t * t);
 
-        angle += currentSpeed * Time.deltaTime;
-        wheel.localEulerAngles = new Vector3(0, 0, -angle);
-        elapsedTime += Time.deltaTime;
+        wheel.Rotate(0, 0, -currentSpeed * Time.deltaTime);
 
-        Debug.Log("elapsed time = " + elapsedTime);
-        Debug.Log("spin time = " + spinTime);
+        // angle += currentSpeed * Time.deltaTime;
+        // wheel.localEulerAngles = new Vector3(0, 0, -angle);
+        elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= spinTime)
         {
             spinning = false;
-            Debug.Log("STOPPING SPIN");
 
             //calculate where the wheel stopped
             float finalAngle = wheel.localEulerAngles.z;
@@ -64,12 +70,22 @@ public class WheelSpin : MonoBehaviour
             OnRolled?.Invoke(numberRolled);
 
         }
-
     }
 
     private int GetResult(float zRotation)
     {
-        float normalized = (360 - zRotation % 360) % 360;
+        Debug.Log("zRotation = " + zRotation);
+        float normalized = zRotation % 360;
+        if (normalized < 0)
+        {
+            normalized += 360f;
+        }
+
+        Debug.Log("normalized = " + normalized);
+
+        float offset = 0f;
+        normalized = (normalized + offset) % 360;
+
         float sliceSize = 360f / numberOfSlices;
         int result = Mathf.FloorToInt(normalized / sliceSize) + 1;
         return Mathf.Clamp(result, 1, numberOfSlices);
