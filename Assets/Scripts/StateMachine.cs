@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Palmmedia.ReportGenerator.Core;
+using UnityEngine.TextCore.Text;
 
 
 public class GameStateMachine : MonoBehaviour
@@ -12,11 +13,12 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] protected GameObject menuUI; //reference to the menu ui
     [SerializeField] protected GameObject wheelUI; //reference to the wheel spinner ui
     [SerializeField] protected GameObject settingsUI; //reference to the settings ui
-    [SerializeField] protected GameObject CharacterSelectUI; //reference to the char select screen ui
-    public string playerOneCharacter = "";
-    public string playerTwoCharacter = "";
-    public string playerThreeCharacter = "";
-    public string playerFourCharacter = "";
+    [SerializeField] protected GameObject characterSelectUI; //reference to the char select screen ui
+    public static int numPlayers;
+    public static string playerOneCharacter = "";
+    public static string playerTwoCharacter = "";
+    public static string playerThreeCharacter = "";
+    public static string playerFourCharacter = "";
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -33,8 +35,8 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning }
-    public GameState currentState = GameState.MainMenu; //for tracking current state
+    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, MinigameEnter, Minigame, TriviaEnter, Trivia }
+    public GameState currentState = GameState.KickStart; //for tracking current state
 
     // Start is called before the first frame update
     private void Start()
@@ -87,16 +89,38 @@ public class GameStateMachine : MonoBehaviour
                     Spinning();
                     break;
                 }
+            case GameState.MinigameEnter:
+                {
+                    MinigameEnter();
+                    break;
+                }
+            case GameState.Minigame:
+                {
+                    Minigame();
+                    break;
+                }
+            case GameState.TriviaEnter:
+                {
+                    TriviaEnter();
+                    break;
+                }
+            case GameState.Trivia:
+                {
+                    Trivia();
+                    break;
+                }
         }
     }
 
     public void KickStart()
     {
-
+        menuUI.SetActive(true);
+        characterSelectUI.SetActive(false);
+        currentState = GameState.MainMenu;
     }
     public void MainMenu()
     {
-        menuUI.SetActive(true);
+
     }
     public void Settings()
     {
@@ -105,15 +129,31 @@ public class GameStateMachine : MonoBehaviour
     }
     public void CharSelect()
     {
-
+        menuUI.SetActive(false);
+        characterSelectUI.SetActive(true);
     }
     public void GameStart()
     {
-
+        characterSelectUI.SetActive(false);
     }
     public void Spinning()
     {
         wheelUI.SetActive(true);
+    }
+    public void MinigameEnter()
+    {
+
+    }
+    public void Minigame()
+    {
+
+    }
+    public void TriviaEnter()
+    {
+
+    }
+    public void Trivia()
+    {
 
     }
 }

@@ -28,17 +28,17 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         Debug.Log("button clicked = " + button.name);
 
-        //set global character for that player to be the one that was clicked
-
         //change game state to game start state
         GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
         //change scene to game board scene
-        SceneManager.LoadScene("Sandbox"); //CHANGE ME
+        SceneManager.LoadScene("Sandbox"); //CHANGE ME *****   **  ***     **   ** ****  ***** ******* ***    *****  **  ***    **
     }
 
     public void OnPointerEnter(PointerEventData _)
     {
         characterName = GetName();
+        //set global character for that player to be the one that was clicked
+        GameStateMachine.playerOneCharacter = characterName;
 
         if (gameObject.name != "CharacterSelect")
         {

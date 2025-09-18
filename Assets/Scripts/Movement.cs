@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] GameObject spacesParent;
     public Transform[] spaces;
     public WheelSpin wheel;
 
@@ -11,9 +13,24 @@ public class Movement : MonoBehaviour
     private int moveSpeed = 5; 
     // private int roll = 5; 
     public bool canMove;
+    public string spaceTag = "";
 
     private void Awake()
     {
+        //put all spaces into the array
+        if (spacesParent != null)
+        {
+            spaces = new Transform[spacesParent.transform.childCount];
+
+            for (int i = 0; i < spacesParent.transform.childCount; i++)
+            {
+                spaces[i] = spacesParent.transform.GetChild(i).gameObject.transform;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Parent object not assigned");
+        }
         canMove = true;
     }
 
@@ -37,16 +54,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if (canMove)
-    //     {
-    //         StartCoroutine(MovePlayer(roll));
-    //         roll--;
-    //     }
-    // }
-
     IEnumerator MovePlayer(int steps)
     {
         canMove = false;
@@ -66,21 +73,14 @@ public class Movement : MonoBehaviour
 
             Transform nextSpace = spaces[currentSpaceIndex];
 
-            Debug.Log("nextSpace == " + nextSpace);
+            // Debug.Log("nextSpace == " + nextSpace);
 
             // Move smoothly to next space
             yield return StartCoroutine(MoveToPosition(nextSpace.position));
 
             steps--;
         }
-
         canMove = true;
-        // Player finished moving — trigger space event
-        // if (steps <= 0)
-        // {
-        //     canMove = false;
-        // }
-        // TriggerSpaceEvent(currentSpaceIndex); // ADD THIS LATER
     }
 
     IEnumerator MoveToPosition(Vector3 target)

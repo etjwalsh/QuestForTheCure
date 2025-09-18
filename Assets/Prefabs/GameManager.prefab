@@ -60,7 +60,7 @@ MonoBehaviour:
   menuUI: {fileID: 5392241080827715306, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
   wheelUI: {fileID: 584598096081479175, guid: a7244f334114e6a4d84a3f7b7185eb31, type: 3}
   settingsUI: {fileID: 0}
-  CharacterSelectUI: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
+  characterSelectUI: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
   playerOneCharacter: 
   playerTwoCharacter: 
   playerThreeCharacter: 
