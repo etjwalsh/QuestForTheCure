@@ -5,19 +5,19 @@ using UnityEngine.Tilemaps;
 
 public class SpaceType : MonoBehaviour
 {
-    public enum TileType { Trivia, Minigame }
+    public enum TileType { Regular, Trivia, Minigame }
     public TileType tileType;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
         switch (tileType)
         {
+            case TileType.Regular:
+                {
+                    Regular();
+                    break;
+                }
             case TileType.Trivia:
                 {
                     Trivia();
@@ -31,19 +31,33 @@ public class SpaceType : MonoBehaviour
         }
     }
 
+    private void Regular()
+    {
+        // Debug.Log("this is a regular space");
+    }
     private void Trivia()
     {
-        Debug.Log("this is a trivia space");
+        // Debug.Log("this is a trivia space");
     }
     private void Minigame()
     {
-        Debug.Log("this is a minigame space");
+        // Debug.Log("this is a minigame space");
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other) //probably won't need this !!!!!!!!!!!!!!!!
     {
         Debug.Log("COLLIDED WITH SOMETHING");
-        // if (canMove)
-        // {
-        // }
+        if (other.tag == "Regular")
+        {
+            tileType = TileType.Regular;
+        }
+        else if (other.tag == "Trivia")
+        {
+            tileType = TileType.Trivia;
+        }
+        else if (other.tag == "Minigame")
+        {
+            tileType = TileType.Minigame;
+        }
     }
 }

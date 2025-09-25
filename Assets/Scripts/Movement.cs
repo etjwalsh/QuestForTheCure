@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -13,7 +11,6 @@ public class Movement : MonoBehaviour
     private int moveSpeed = 5; 
     // private int roll = 5; 
     public bool canMove;
-    public string spaceTag = "";
 
     private void Awake()
     {
