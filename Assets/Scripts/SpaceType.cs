@@ -43,21 +43,4 @@ public class SpaceType : MonoBehaviour
     {
         // Debug.Log("this is a minigame space");
     }
-
-    private void OnTriggerEnter(Collider other) //probably won't need this !!!!!!!!!!!!!!!!
-    {
-        Debug.Log("COLLIDED WITH SOMETHING");
-        if (other.tag == "Regular")
-        {
-            tileType = TileType.Regular;
-        }
-        else if (other.tag == "Trivia")
-        {
-            tileType = TileType.Trivia;
-        }
-        else if (other.tag == "Minigame")
-        {
-            tileType = TileType.Minigame;
-        }
-    }
 }

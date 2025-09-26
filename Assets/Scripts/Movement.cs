@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] GameObject spacesParent;
-    public Transform[] spaces;
+    [SerializeField] SpacesTree spacesParent;
+    public SpacesTree space;
     public WheelSpin wheel;
 
-    private int currentSpaceIndex = -1; // initialize to -1 so that the first one checked is index 0
+    // private int currentSpaceIndex = -1; // initialize to -1 so that the first one checked is index 0
     private int moveSpeed = 5; 
     // private int roll = 5; 
     public bool canMove;
@@ -17,12 +17,9 @@ public class Movement : MonoBehaviour
         //put all spaces into the array
         if (spacesParent != null)
         {
-            spaces = new Transform[spacesParent.transform.childCount];
-
-            for (int i = 0; i < spacesParent.transform.childCount; i++)
-            {
-                spaces[i] = spacesParent.transform.GetChild(i).gameObject.transform;
-            }
+            space = spacesParent;
+            Debug.Log("space left is now = " + space.left);
+            Debug.Log("space right is now = " + space.right);
         }
         else
         {
@@ -57,24 +54,55 @@ public class Movement : MonoBehaviour
 
         while (steps > 0)
         {
-            //to make the game spaces loopable
-            //reset the index to the beginning once reaching the end
-            if (currentSpaceIndex >= spaces.Length - 1)
+            //check for split
+            if (space.left != null && space.right != null)
             {
-                currentSpaceIndex = 0;
+                Debug.Log("got to a split");
+                space.next = space.right;
+
+                //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
+                //  set L/R UI to true
+                //  get their response
+                //  if they choose left
+                //      space.next = left
+                //  if they choose right
+                //      space.next = right
+                //  deactivate L/R UI
             }
+
+            //check if there is only right available
+            else if (space.left == null && space.right != null)
+            {
+                space.next = space.right;
+            }
+
+            //check if there is only left available
+            else if (space.left != null && space.right == null)
+            {
+                space.next = space.left;
+            }
+
+            //nowhere to go
             else
             {
-                currentSpaceIndex++;
+                Debug.LogError("There are no spcaes assigned");
             }
 
-            Transform nextSpace = spaces[currentSpaceIndex];
+            //set the current space the player is on to the next one's previous space
+            space.next.previous = space;
 
-            // Debug.Log("nextSpace == " + nextSpace);
+            //set the next space transform for movement
+            Transform nextSpace = space.next.transform;
+
+            Debug.Log("nextSpace == " + nextSpace);
 
             // Move smoothly to next space
             yield return StartCoroutine(MoveToPosition(nextSpace.position));
 
+            //set the current space to be the space the player just moved to
+            space = space.next;
+
+            //subtract the amount of spaces the player can move
             steps--;
         }
         canMove = true;
