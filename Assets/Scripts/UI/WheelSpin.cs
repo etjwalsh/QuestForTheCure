@@ -23,7 +23,6 @@ public class WheelSpin : MonoBehaviour
 
     public void OnButtonClick()
     {
-
         if (!spinning)
         {
             spinTime = Random.Range(3f, 6f); //how long the spinning will last, random between 0 and 5
@@ -63,15 +62,13 @@ public class WheelSpin : MonoBehaviour
             float finalAngle = wheel.localEulerAngles.z;
             numberRolled = GetResult(finalAngle);
 
-            number.text = numberRolled.ToString();
-
             Debug.Log("number rolled = " + numberRolled);
 
             OnRolled?.Invoke(numberRolled);
-
         }
     }
 
+    //buncha weird math to return the top of the wheel based on how much it rotates
     private int GetResult(float zRotation)
     {
         Debug.Log("zRotation = " + zRotation);

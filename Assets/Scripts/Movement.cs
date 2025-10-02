@@ -5,16 +5,19 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] SpacesTree spacesParent;
     [SerializeField] GameObject lrUI;
+    [SerializeField] GameObject spinnerUI;
     public SpacesTree space;
     public WheelSpin wheel;
-
-    // private int currentSpaceIndex = -1; // initialize to -1 so that the first one checked is index 0
+    public string choice = null;
+    public string tagLandedOn = "";
+ 
     private int moveSpeed = 5;
-    // private int roll = 5; 
     public bool canMove;
 
     private void Awake()
     {
+        lrUI.SetActive(false);
+
         //put all spaces into the array
         if (spacesParent != null)
         {
@@ -34,6 +37,20 @@ public class Movement : MonoBehaviour
     {
         wheel.OnRolled += HandleDiceRoll;
     }
+    
+    private void Update()
+    {
+        if(canMove)
+        {
+            spinnerUI.SetActive(true);
+        }
+        else
+        {
+            spinnerUI.SetActive(false);
+            // spinnerUI.transform.Find("Spin").gameObject.SetActive(false);
+            // spinnerUI.transform.Find("WheelHolder").gameObject.SetActive(false);
+        }
+    }
 
     private void OnDestroy()
     {
@@ -51,35 +68,39 @@ public class Movement : MonoBehaviour
 
     IEnumerator MovePlayer(int steps)
     {
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
         canMove = false;
+        choice = null;
 
         while (steps > 0)
         {
-            //check for split
-            if (space.left != null && space.right != null)
+            if (space.next == null)
             {
-                Debug.Log("got to a split");
-                space.next = space.right;
+                //check for split
+                if (space.left != null && space.right != null)
+                {
+                    Debug.Log("got to a split");
+                    yield return StartCoroutine(LeftRightChoice());
+                    yield return new WaitUntil(() => choice != null);
+                }
 
-                //yield return StartCoroutine(LeftRightChoice());
-            }
+                //check if there is only right available
+                else if (space.left == null && space.right != null)
+                {
+                    space.next = space.right;
+                }
 
-            //check if there is only right available
-            else if (space.left == null && space.right != null)
-            {
-                space.next = space.right;
-            }
+                //check if there is only left available
+                else if (space.left != null && space.right == null)
+                {
+                    space.next = space.left;
+                }
 
-            //check if there is only left available
-            else if (space.left != null && space.right == null)
-            {
-                space.next = space.left;
-            }
-
-            //nowhere to go
-            else
-            {
-                Debug.LogError("There are no spcaes assigned");
+                //nowhere to go
+                else
+                {
+                    Debug.LogError("There are no spcaes assigned");
+                }
             }
 
             //set the current space the player is on to the next one's previous space
@@ -99,7 +120,25 @@ public class Movement : MonoBehaviour
             //subtract the amount of spaces the player can move
             steps--;
         }
+
+        //get the tag that the player landed on
+        tagLandedOn = space.gameObject.tag;
+        Debug.Log("landed on a " + tagLandedOn + " tag.");
         canMove = true;
+
+        //change game state to whatever the player landed on
+        if(tagLandedOn == "Minigame")
+        {
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.MinigameEnter;
+        }
+        else if(tagLandedOn == "Trivia")
+        {
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
+        }
+        else
+        {
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
+        }
     }
 
     IEnumerator MoveToPosition(Vector3 target)
@@ -115,15 +154,27 @@ public class Movement : MonoBehaviour
         transform.position = target; //snap the player right to the space
     }
 
-    // IEnumerator LeftRightChoice()
-    // {
-    //     //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
-    //     //set L/R UI to true
-    //     //get their response
-    //     //if they choose left
-    //     //space.next = left
-    //     //if they choose right
-    //     //space.next = right
-    //     //deactivate L/R UI
-    // }
+    IEnumerator LeftRightChoice()
+    {
+        Debug.Log("made it to the l/r coroutine!");
+        //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
+        //set L/R UI to true
+        lrUI.SetActive(true);
+        yield return new WaitUntil(() => choice != null);
+
+        //if they choose left
+        if (choice == "left")
+        {
+            //go left
+            space.next = space.left;
+        }
+        //if they choose right
+        if (choice == "right")
+        {
+            //go right
+            space.next = space.right;
+        }
+        //deactivate L/R UI
+        lrUI.SetActive(false);
+    }
 }

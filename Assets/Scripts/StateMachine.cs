@@ -35,7 +35,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, MinigameEnter, Minigame, TriviaEnter, Trivia }
+    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, PlayerMoving, MinigameEnter, Minigame, TriviaEnter, Trivia }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     // Start is called before the first frame update
@@ -89,6 +89,11 @@ public class GameStateMachine : MonoBehaviour
                     Spinning();
                     break;
                 }
+            case GameState.PlayerMoving:
+                {
+                    PlayerMoving();
+                    break;
+                }
             case GameState.MinigameEnter:
                 {
                     MinigameEnter();
@@ -114,44 +119,57 @@ public class GameStateMachine : MonoBehaviour
 
     public void KickStart()
     {
-        menuUI.SetActive(true);
         characterSelectUI.SetActive(false);
         currentState = GameState.MainMenu;
     }
+
     public void MainMenu()
     {
-
+        menuUI.SetActive(true);
     }
+
     public void Settings()
     {
         menuUI.SetActive(false);
         settingsUI.SetActive(true);
     }
+
     public void CharSelect()
     {
         menuUI.SetActive(false);
         characterSelectUI.SetActive(true);
     }
+
     public void GameStart()
     {
         characterSelectUI.SetActive(false);
     }
+
     public void Spinning()
     {
         wheelUI.SetActive(true);
     }
+
+    public void PlayerMoving()
+    {
+        wheelUI.SetActive(false);
+    }
+
     public void MinigameEnter()
     {
 
     }
+
     public void Minigame()
     {
 
     }
+
     public void TriviaEnter()
     {
 
     }
+
     public void Trivia()
     {
 
