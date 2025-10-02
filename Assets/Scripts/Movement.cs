@@ -4,11 +4,12 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] SpacesTree spacesParent;
+    [SerializeField] GameObject lrUI;
     public SpacesTree space;
     public WheelSpin wheel;
 
     // private int currentSpaceIndex = -1; // initialize to -1 so that the first one checked is index 0
-    private int moveSpeed = 5; 
+    private int moveSpeed = 5;
     // private int roll = 5; 
     public bool canMove;
 
@@ -60,14 +61,7 @@ public class Movement : MonoBehaviour
                 Debug.Log("got to a split");
                 space.next = space.right;
 
-                //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
-                //  set L/R UI to true
-                //  get their response
-                //  if they choose left
-                //      space.next = left
-                //  if they choose right
-                //      space.next = right
-                //  deactivate L/R UI
+                //yield return StartCoroutine(LeftRightChoice());
             }
 
             //check if there is only right available
@@ -120,4 +114,16 @@ public class Movement : MonoBehaviour
 
         transform.position = target; //snap the player right to the space
     }
+
+    // IEnumerator LeftRightChoice()
+    // {
+    //     //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
+    //     //set L/R UI to true
+    //     //get their response
+    //     //if they choose left
+    //     //space.next = left
+    //     //if they choose right
+    //     //space.next = right
+    //     //deactivate L/R UI
+    // }
 }
