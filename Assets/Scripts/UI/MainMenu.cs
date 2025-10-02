@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         //change game state to the start
         GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect;
         //change scene to the character select screen
-        SceneManager.LoadScene("CharacterSelect");
+        // SceneManager.LoadScene("CharacterSelect");
     }
 
     //function to exit the game

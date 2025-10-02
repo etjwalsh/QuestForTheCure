@@ -5,8 +5,9 @@ using UnityEngine;
 public class DontDestroyOnLoad : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        Debug.Log(gameObject.name + " marked as DontDestroyOnLoad");
     }
 }

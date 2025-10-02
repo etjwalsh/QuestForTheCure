@@ -4,8 +4,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] SpacesTree spacesParent;
-    [SerializeField] GameObject lrUI;
-    [SerializeField] GameObject spinnerUI;
     public SpacesTree space;
     public WheelSpin wheel;
     public string choice = null;
@@ -16,8 +14,6 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        lrUI.SetActive(false);
-
         //put all spaces into the array
         if (spacesParent != null)
         {
@@ -29,6 +25,11 @@ public class Movement : MonoBehaviour
         {
             Debug.LogWarning("Parent object not assigned");
         }
+
+        //set a reference to the wheel UI from the state machine
+        wheel = GameStateMachine.instance.wheelUI.GetComponent<WheelSpin>();
+
+        //the player can spin now
         canMove = true;
     }
 
@@ -36,20 +37,6 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         wheel.OnRolled += HandleDiceRoll;
-    }
-    
-    private void Update()
-    {
-        if(canMove)
-        {
-            spinnerUI.SetActive(true);
-        }
-        else
-        {
-            spinnerUI.SetActive(false);
-            // spinnerUI.transform.Find("Spin").gameObject.SetActive(false);
-            // spinnerUI.transform.Find("WheelHolder").gameObject.SetActive(false);
-        }
     }
 
     private void OnDestroy()
@@ -135,6 +122,7 @@ public class Movement : MonoBehaviour
         {
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }
+        //has no tag
         else
         {
             GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
@@ -156,10 +144,8 @@ public class Movement : MonoBehaviour
 
     IEnumerator LeftRightChoice()
     {
-        Debug.Log("made it to the l/r coroutine!");
-        //make player chose left or right via UI (PSEUDOCODE) ---------------------------------
-        //set L/R UI to true
-        lrUI.SetActive(true);
+        //change game state to choosing
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.LRChoice;
         yield return new WaitUntil(() => choice != null);
 
         //if they choose left
@@ -174,7 +160,7 @@ public class Movement : MonoBehaviour
             //go right
             space.next = space.right;
         }
-        //deactivate L/R UI
-        lrUI.SetActive(false);
+        //change game state to moving
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
     }
 }

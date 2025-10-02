@@ -61,7 +61,6 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
             //set border to active
             highlight.SetActive(true);
-
         }
     }
 
@@ -104,7 +103,6 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 newColor = characters[i].charColor;
             }
         }
-
         return newColor;
     }
 
@@ -119,7 +117,6 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 newSprite = characters[i].model;
             }
         }
-
         return newSprite;
     }
 }

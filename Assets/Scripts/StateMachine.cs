@@ -10,10 +10,12 @@ using UnityEngine.TextCore.Text;
 
 public class GameStateMachine : MonoBehaviour
 {
-    [SerializeField] protected GameObject menuUI; //reference to the menu ui
-    [SerializeField] protected GameObject wheelUI; //reference to the wheel spinner ui
-    [SerializeField] protected GameObject settingsUI; //reference to the settings ui
-    [SerializeField] protected GameObject characterSelectUI; //reference to the char select screen ui
+    [SerializeField] public GameObject menuUI; //reference to the menu ui
+    [SerializeField] public GameObject wheelUI; //reference to the wheel spinner ui
+    [SerializeField] public GameObject settingsUI; //reference to the settings ui
+    [SerializeField] public GameObject characterSelectUI; //reference to the char select screen ui
+    [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
+
     public static int numPlayers;
     public static string playerOneCharacter = "";
     public static string playerTwoCharacter = "";
@@ -35,7 +37,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, PlayerMoving, MinigameEnter, Minigame, TriviaEnter, Trivia }
+    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     // Start is called before the first frame update
@@ -94,6 +96,11 @@ public class GameStateMachine : MonoBehaviour
                     PlayerMoving();
                     break;
                 }
+            case GameState.LRChoice:
+                {
+                    LRChoice();
+                    break;
+                }
             case GameState.MinigameEnter:
                 {
                     MinigameEnter();
@@ -119,7 +126,16 @@ public class GameStateMachine : MonoBehaviour
 
     public void KickStart()
     {
+        Debug.Log("set menu false");
+        menuUI.SetActive(false);
+        Debug.Log("set char select false");
         characterSelectUI.SetActive(false);
+        Debug.Log("set wheel false");
+        wheelUI.SetActive(false);
+        Debug.Log("set l/r false");
+        lrUI.SetActive(false);
+
+        //change game state to main menu
         currentState = GameState.MainMenu;
     }
 
@@ -143,6 +159,7 @@ public class GameStateMachine : MonoBehaviour
     public void GameStart()
     {
         characterSelectUI.SetActive(false);
+        currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
 
     public void Spinning()
@@ -152,12 +169,19 @@ public class GameStateMachine : MonoBehaviour
 
     public void PlayerMoving()
     {
+        lrUI.SetActive(false);
         wheelUI.SetActive(false);
+    }
+
+    public void LRChoice()
+    {
+        lrUI.SetActive(true);
     }
 
     public void MinigameEnter()
     {
-
+        Debug.Log("yayyy minigame");
+        currentState = GameState.Minigame; 
     }
 
     public void Minigame()
@@ -167,7 +191,8 @@ public class GameStateMachine : MonoBehaviour
 
     public void TriviaEnter()
     {
-
+        Debug.Log("yayyy trivia");
+        currentState = GameState.Trivia;
     }
 
     public void Trivia()

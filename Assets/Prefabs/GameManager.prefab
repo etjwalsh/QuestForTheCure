@@ -61,4 +61,5 @@ MonoBehaviour:
   wheelUI: {fileID: 584598096081479175, guid: a7244f334114e6a4d84a3f7b7185eb31, type: 3}
   settingsUI: {fileID: 0}
   characterSelectUI: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
-  currentState: 1
+  lrUI: {fileID: 0}
+  currentState: 0
