@@ -31,6 +31,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         //change game state to game start state
         GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
         //change scene to game board scene
+
         SceneManager.LoadScene("Sandbox"); //CHANGE ME *****   **  ***     **   ** ****  ***** ******* ***    *****  **  ***    **
     }
 
@@ -119,4 +120,6 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
         return newSprite;
     }
+
+    
 }

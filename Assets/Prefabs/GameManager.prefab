@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2396180890998654933}
   - component: {fileID: 5501723156578017471}
   - component: {fileID: 7365389861144219506}
+  - component: {fileID: 5454573169920843839}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -63,3 +64,16 @@ MonoBehaviour:
   characterSelectUI: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
   lrUI: {fileID: 0}
   currentState: 0
+--- !u!114 &5454573169920843839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023217707697673239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed5ed4e01de1b34fb49d743899b9cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: {fileID: 9004567348416552973, guid: 35cdd736fe2189d4f9ca60ef4cfbd9fc, type: 3}
