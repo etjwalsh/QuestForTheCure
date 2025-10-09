@@ -15,12 +15,11 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject settingsUI; //reference to the settings ui
     [SerializeField] public GameObject characterSelectUI; //reference to the char select screen ui
     [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
+    [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
 
-    public static int numPlayers;
-    public static string playerOneCharacter = "";
-    public static string playerTwoCharacter = "";
-    public static string playerThreeCharacter = "";
-    public static string playerFourCharacter = "";
+    //for loading levels
+    public Animator transition;
+    public float transitionTime = 1f;
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -37,7 +36,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia }
+    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     // Start is called before the first frame update
@@ -74,6 +73,11 @@ public class GameStateMachine : MonoBehaviour
             case GameState.Settings:
                 {
                     Settings();
+                    break;
+                }
+            case GameState.NumCharsSelect:
+                {
+                    NumCharsSelect();
                     break;
                 }
             case GameState.CharSelect:
@@ -126,14 +130,11 @@ public class GameStateMachine : MonoBehaviour
 
     public void KickStart()
     {
-        Debug.Log("set menu false");
         menuUI.SetActive(false);
-        Debug.Log("set char select false");
         characterSelectUI.SetActive(false);
-        Debug.Log("set wheel false");
         wheelUI.SetActive(false);
-        Debug.Log("set l/r false");
         lrUI.SetActive(false);
+        numPlayersUI.SetActive(false);
 
         //change game state to main menu
         currentState = GameState.MainMenu;
@@ -150,15 +151,23 @@ public class GameStateMachine : MonoBehaviour
         settingsUI.SetActive(true);
     }
 
-    public void CharSelect()
+    public void NumCharsSelect()
     {
         menuUI.SetActive(false);
+        numPlayersUI.SetActive(true);
+    }
+
+    public void CharSelect()
+    {
+        numPlayersUI.SetActive(false);
         characterSelectUI.SetActive(true);
     }
 
     public void GameStart()
     {
         characterSelectUI.SetActive(false);
+        SceneManager.LoadScene("Sandbox");
+        // LoadNextLevel(); //load the next level, which will be the game board (must be set correctly in build settings)
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
 
@@ -181,7 +190,7 @@ public class GameStateMachine : MonoBehaviour
     public void MinigameEnter()
     {
         Debug.Log("yayyy minigame");
-        currentState = GameState.Minigame; 
+        currentState = GameState.Minigame;
     }
 
     public void Minigame()
@@ -199,4 +208,24 @@ public class GameStateMachine : MonoBehaviour
     {
 
     }
+
+    // --------------- for loading levels ---------------
+
+    //this will load the next level in the unity build order
+    // public void LoadNextLevel()
+    // {
+    //     StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    // }
+
+    // //for transitioning between scenes
+    // IEnumerator LoadLevel(int levelIndex)
+    // {
+    //     //trigger the crossfade to start
+    //     transition.SetTrigger("start");
+
+    //     //wait a sec
+    //     yield return new WaitForSeconds(transitionTime);
+
+    //     SceneManager.LoadScene(levelIndex);
+    // }
 }

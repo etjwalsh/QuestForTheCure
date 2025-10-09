@@ -17,6 +17,8 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] private TMP_Text description;
     private string characterName;
 
+    public int numPlayersToSelect;
+
     private void Start()
     {
         highlight.SetActive(false);
@@ -26,21 +28,33 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnButtonClick(GameObject button)
     {
-        Debug.Log("button clicked = " + button.name);
+        characterName = button.name.Replace("Button", "");
+        //create new player and assign character name to that player
+        //also add that player to the global list of players
+        Player newPlayer = ScriptableObject.CreateInstance<Player>();
+        newPlayer.playerName = characterName;
+        PlayerManager.instance.players.Add(newPlayer);
 
-        //change game state to game start state
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
-        //change scene to game board scene
+        //deincrement numPlayersToSelect
+        numPlayersToSelect--;
 
-        SceneManager.LoadScene("Sandbox"); //CHANGE ME *****   **  ***     **   ** ****  ***** ******* ***    *****  **  ***    **
+        //if no more players to select
+        if (numPlayersToSelect == 0)
+        {
+            //print the list
+            foreach (Player p in PlayerManager.instance.players)
+            {
+                Debug.Log("Player Name: " + p.playerName);
+            }
+
+            //change game state to game start state
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
+        }
     }
 
     public void OnPointerEnter(PointerEventData _)
     {
         characterName = GetName();
-        //set global character for that player to be the one that was clicked
-        GameStateMachine.playerOneCharacter = characterName;
-
         if (gameObject.name != "CharacterSelect")
         {
             //change name header to character's name
@@ -120,6 +134,4 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
         return newSprite;
     }
-
-    
 }

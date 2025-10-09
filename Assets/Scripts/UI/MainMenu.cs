@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void OnStartClicked()
     {
         //change game state to the start
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect;
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.NumCharsSelect;
         //change scene to the character select screen
         // SceneManager.LoadScene("CharacterSelect");
     }
