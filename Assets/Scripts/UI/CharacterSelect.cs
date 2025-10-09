@@ -29,10 +29,20 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnButtonClick(GameObject button)
     {
         characterName = button.name.Replace("Button", "");
-        //create new player and assign character name to that player
-        //also add that player to the global list of players
+        //create new player 
         Player newPlayer = ScriptableObject.CreateInstance<Player>();
-        newPlayer.playerName = characterName;
+
+        //initialize player
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (characterName == characters[i].charName)
+            {
+                //assign player name
+                newPlayer.playerName = characterName;
+                //assign player model
+                newPlayer.playerPiece = characters[i].model;
+            }
+        }
         PlayerManager.instance.players.Add(newPlayer);
 
         //deincrement numPlayersToSelect
@@ -45,6 +55,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
             foreach (Player p in PlayerManager.instance.players)
             {
                 Debug.Log("Player Name: " + p.playerName);
+                Debug.Log("Player Model = " + p.playerPiece);
             }
 
             //change game state to game start state

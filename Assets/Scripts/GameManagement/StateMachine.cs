@@ -165,9 +165,15 @@ public class GameStateMachine : MonoBehaviour
 
     public void GameStart()
     {
+        //set UI correctly
         characterSelectUI.SetActive(false);
+
+        //change scenes
         SceneManager.LoadScene("Sandbox");
-        // LoadNextLevel(); //load the next level, which will be the game board (must be set correctly in build settings)
+
+        //spawn the correct number of players on the starting space
+
+
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
 
