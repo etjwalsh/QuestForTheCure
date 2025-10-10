@@ -15,6 +15,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [SerializeField] private GameObject highlight;
     [SerializeField] private TMP_Text bigName;
     [SerializeField] private TMP_Text description;
+    [SerializeField] private TMP_Text playerTurn;
     private string characterName;
 
     public int numPlayersToSelect;
@@ -61,6 +62,9 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
             //change game state to game start state
             GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
         }
+
+        //change the text to say the next player's turn
+        playerTurn.text = "Player " + (PlayerManager.instance.players.Count + 1) + "'s turn!";
     }
 
     public void OnPointerEnter(PointerEventData _)

@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static int numPlayers = 0;
-    public static string playerOneCharacter = "";
-    public static string playerTwoCharacter = "";
-    public static string playerThreeCharacter = "";
-    public static string playerFourCharacter = "";
+    public static int numPlayers;
 
     //list of players
     public List<Player> players = new List<Player>();
     public int currentPlayerIndex = 0;
+    public Player current;
 
     //singleton pattern
     private static PlayerManager _instance;
@@ -41,15 +39,15 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartTurn()
     {
-
+        current = players[currentPlayerIndex];
+        Debug.Log("it is now " + current + "'s turn");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EndTurn()
     {
-        // Debug.Log("player one character is = " + playerOneCharacter);
+        currentPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
+        StartTurn();
     }
 }

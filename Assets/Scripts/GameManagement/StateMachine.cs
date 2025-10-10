@@ -173,7 +173,6 @@ public class GameStateMachine : MonoBehaviour
 
         //spawn the correct number of players on the starting space
 
-
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
 

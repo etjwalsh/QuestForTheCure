@@ -285,6 +285,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &1096910217846647141
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +647,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &2037228277802804218
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +847,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &3995416412445686674
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +1000,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &6090759010990107305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1228,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &6778797166096076020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8091141117973389001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1259,6 +1269,7 @@ RectTransform:
   - {fileID: 2674069560863044622}
   - {fileID: 8724529102362422473}
   - {fileID: 2607681733077700566}
+  - {fileID: 3361477837381313410}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1348,17 +1359,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e533df085d93d0f448211527679e7fb6, type: 2}
   - {fileID: 11400000, guid: dc8347368af763745933d15cf162fd39, type: 2}
   - {fileID: 11400000, guid: ff815bd842032c9448f1f9ff04d6a0d8, type: 2}
-  - {fileID: 11400000, guid: 5bf068287e08397438b9b15d1c5ac287, type: 2}
   - {fileID: 11400000, guid: d85c91452bccd8e4f879ca866fad50ab, type: 2}
   - {fileID: 11400000, guid: c87770b255fe6c941a2fb202b56aff30, type: 2}
   - {fileID: 11400000, guid: 4d7343e5522f05240ac2884b20d54228, type: 2}
   - {fileID: 11400000, guid: 260f200704eb5a94fa237644093bde11, type: 2}
   - {fileID: 11400000, guid: 8d41b838deaf80e4d9fe65af4299e762, type: 2}
+  - {fileID: 11400000, guid: 5bf068287e08397438b9b15d1c5ac287, type: 2}
   CharacterSelectUI: {fileID: 6778797166096076020}
   characterImage: {fileID: 7855670930729584752}
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 148141347098072117}
+  numPlayersToSelect: 0
 --- !u!114 &8144010345805329317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,6 +1535,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &7123718218455867767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,6 +1688,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &7208398698615522861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1841,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &7649904679100271498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +1994,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &7766779910786452736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2147,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &7855670930729584752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2375,8 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
 --- !u!1 &9003511437668336081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,3 +2528,139 @@ MonoBehaviour:
   highlight: {fileID: 1295141516326108084}
   bigName: {fileID: 2692304534299207375}
   description: {fileID: 2897934765498370875}
+  playerTurn: {fileID: 0}
+  numPlayersToSelect: 0
+--- !u!1 &9109272308562583512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3361477837381313410}
+  - component: {fileID: 3035668969626666075}
+  - component: {fileID: 148141347098072117}
+  m_Layer: 5
+  m_Name: PlayerChoose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3361477837381313410
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9109272308562583512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8091141117973389001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -495, y: 483}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3035668969626666075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9109272308562583512}
+  m_CullTransparentMesh: 1
+--- !u!114 &148141347098072117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9109272308562583512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Player 1's Turn!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: a4d2f9e901de9a04ab1551d2108915dc, type: 2}
+  m_sharedMaterial: {fileID: -2377018855494194545, guid: a4d2f9e901de9a04ab1551d2108915dc, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 75
+  m_fontSizeBase: 75
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -228.51556, y: 0, z: -225.5166, w: -22.306702}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}

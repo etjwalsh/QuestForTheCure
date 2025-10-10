@@ -1217,6 +1217,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2c91cfe09c2465848850d24a8c9e9644, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2c91cfe09c2465848850d24a8c9e9644, type: 3}
       propertyPath: m_Name
       value: GenericCharacter
       objectReference: {fileID: 0}
