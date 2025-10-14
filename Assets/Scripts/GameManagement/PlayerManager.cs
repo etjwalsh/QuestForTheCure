@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     public void StartTurn()
     {
         current = players[currentPlayerIndex];
-        Debug.Log("it is now " + current + "'s turn");
+        Debug.Log("it is now " + current.playerName + "'s turn");
     }
 
     public void EndTurn()

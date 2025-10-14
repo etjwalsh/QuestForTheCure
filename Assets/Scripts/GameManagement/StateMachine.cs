@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using Palmmedia.ReportGenerator.Core;
 using UnityEngine.TextCore.Text;
+using Unity.VisualScripting;
 
 
 public class GameStateMachine : MonoBehaviour
@@ -20,6 +21,9 @@ public class GameStateMachine : MonoBehaviour
     //for loading levels
     public Animator transition;
     public float transitionTime = 1f;
+
+    //for spawning players
+    private Movement playerScript;
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -36,7 +40,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia }
+    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, EndTurn }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     // Start is called before the first frame update
@@ -125,6 +129,11 @@ public class GameStateMachine : MonoBehaviour
                     Trivia();
                     break;
                 }
+            case GameState.EndTurn:
+                {
+                    EndTurn();
+                    break;
+                }
         }
     }
 
@@ -171,13 +180,38 @@ public class GameStateMachine : MonoBehaviour
         //change scenes
         SceneManager.LoadScene("Sandbox");
 
-        //spawn the correct number of players on the starting space
+        //get how many players need to be spawned in
+        int numPlayersToSpawn = PlayerManager.numPlayers;
+        Debug.Log("number of players to spawn = " + numPlayersToSpawn);
+
+        //spawn in characters based on the characters inside of the player list (access from PlayerManager)
+        //add this later, for now just spawn in 4 of the same generic character
+        for(int i = 0; i < PlayerManager.numPlayers; i++)
+        {
+            playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
+            Debug.Log("ab to print the player script");
+            Debug.Log(playerScript);
+            
+            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.space.transform);
+            spawnedPlayer.transform.position = Vector3.MoveTowards(transform.position, playerScript.spacesParent.transform.position + new Vector3(0, 0.05f, 0), Time.deltaTime * playerScript.moveSpeed);
+        }
+
+        //evenly space them apart on the start square
+
 
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
 
     public void Spinning()
     {
+        //start the player's turn
+        PlayerManager.instance.StartTurn();
+        Debug.Log("current player is = " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
+
+        //set reference to the current player's script
+        lrUI.GetComponent<LeftRightChoice>().playerRef = PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].characterPiece;
+        
+        //activate the wheel spinner UI
         wheelUI.SetActive(true);
     }
 
@@ -212,6 +246,11 @@ public class GameStateMachine : MonoBehaviour
     public void Trivia()
     {
 
+    }
+
+    public void EndTurn()
+    {
+        PlayerManager.instance.EndTurn(); //end the player's turn
     }
 
     // --------------- for loading levels ---------------

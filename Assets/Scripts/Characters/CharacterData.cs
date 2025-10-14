@@ -9,4 +9,5 @@ public class CharacterData : ScriptableObject
     public Sprite model;
     public Sprite portrait;
     public Color charColor;
+    public GameObject charPiece;
 }

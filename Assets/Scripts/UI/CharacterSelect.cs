@@ -29,6 +29,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnButtonClick(GameObject button)
     {
+        Button newButton = button.GetComponent<Button>();
         characterName = button.name.Replace("Button", "");
         //create new player 
         Player newPlayer = ScriptableObject.CreateInstance<Player>();
@@ -41,7 +42,9 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 //assign player name
                 newPlayer.playerName = characterName;
                 //assign player model
-                newPlayer.playerPiece = characters[i].model;
+                newPlayer.playerModel = characters[i].model;
+                //assign the player game piece
+                newPlayer.characterPiece = characters[i].charPiece;
             }
         }
         PlayerManager.instance.players.Add(newPlayer);
@@ -56,21 +59,31 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
             foreach (Player p in PlayerManager.instance.players)
             {
                 Debug.Log("Player Name: " + p.playerName);
-                Debug.Log("Player Model = " + p.playerPiece);
+                Debug.Log("Player Model = " + p.playerModel);
             }
 
             //change game state to game start state
             GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
         }
 
+        //set that button to not be interactable anymore
+        newButton.interactable = false;
+
         //change the text to say the next player's turn
         playerTurn.text = "Player " + (PlayerManager.instance.players.Count + 1) + "'s turn!";
     }
 
-    public void OnPointerEnter(PointerEventData _)
+    public void OnPointerEnter(PointerEventData eventData)
     {
+        //get reference to the button being hovered over
+        GameObject enteredObject = eventData.pointerEnter;
+        Button button = enteredObject.GetComponent<Button>();
+
+        //save the name of the character who's button you're hovering over
         characterName = GetName();
-        if (gameObject.name != "CharacterSelect")
+
+        //check to make sure the pointer isn't just on the background, and that the button isn't already deactivated
+        if (gameObject.name != "CharacterSelect" && button.interactable == true) 
         {
             //change name header to character's name
             bigName.text = characterName;

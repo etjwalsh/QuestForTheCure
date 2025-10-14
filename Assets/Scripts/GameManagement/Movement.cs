@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] SpacesTree spacesParent;
+    [SerializeField] public SpacesTree spacesParent;
     public SpacesTree space;
     public WheelSpin wheel;
     public string choice = null;
     public string tagLandedOn = "";
  
-    private int moveSpeed = 5;
+    public int moveSpeed = 5;
     public bool canMove;
 
     private void Awake()

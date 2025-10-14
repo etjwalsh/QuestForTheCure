@@ -19,3 +19,4 @@ MonoBehaviour:
   model: {fileID: 21300000, guid: 4eb7a5b3258cf4d4eb013ce1d87d760a, type: 3}
   portrait: {fileID: 21300000, guid: 5ae304a6e41e0234f90ca49b4f4051f0, type: 3}
   charColor: {r: 0.18039216, g: 0.43529412, b: 0.2509804, a: 1}
+  charPiece: {fileID: 515599560599370954, guid: 178b7302e34679346a731f2f570009b6, type: 3}

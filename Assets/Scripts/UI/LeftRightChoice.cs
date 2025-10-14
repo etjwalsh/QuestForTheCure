@@ -5,7 +5,7 @@ using UnityEngine;
 public class LeftRightChoice : MonoBehaviour
 {
     //get reference to the player's movement script
-    [SerializeField] GameObject playerRef;
+    [SerializeField] public GameObject playerRef;
     private Movement playerScript;
 
     public void OnLeftArrowClicked()
