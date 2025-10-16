@@ -5,10 +5,11 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] public SpacesTree spacesParent;
     public SpacesTree space;
+    public GameObject startingSpot = null;
     public WheelSpin wheel;
     public string choice = null;
     public string tagLandedOn = "";
- 
+
     public int moveSpeed = 5;
     public bool canMove;
 
@@ -114,11 +115,11 @@ public class Movement : MonoBehaviour
         canMove = true;
 
         //change game state to whatever the player landed on
-        if(tagLandedOn == "Minigame")
+        if (tagLandedOn == "Minigame")
         {
             GameStateMachine.instance.currentState = GameStateMachine.GameState.MinigameEnter;
         }
-        else if(tagLandedOn == "Trivia")
+        else if (tagLandedOn == "Trivia")
         {
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }

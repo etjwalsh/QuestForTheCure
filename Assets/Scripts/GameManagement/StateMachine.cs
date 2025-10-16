@@ -177,8 +177,23 @@ public class GameStateMachine : MonoBehaviour
         //set UI correctly
         characterSelectUI.SetActive(false);
 
+        //set a function call for after the scene is loaded
+        SceneManager.sceneLoaded += OnLoaded;
+
         //change scenes
         SceneManager.LoadScene("Sandbox");
+    }
+
+    public void OnLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //make sure the correct scene loaded
+        if (scene.name != "Sandbox") // <<<----------- change this name later
+        {
+            return;
+        }
+
+        //remove this function call so it doesn't dupe next time
+        SceneManager.sceneLoaded -= OnLoaded;
 
         //get how many players need to be spawned in
         int numPlayersToSpawn = PlayerManager.numPlayers;
@@ -186,14 +201,21 @@ public class GameStateMachine : MonoBehaviour
 
         //spawn in characters based on the characters inside of the player list (access from PlayerManager)
         //add this later, for now just spawn in 4 of the same generic character
-        for(int i = 0; i < PlayerManager.numPlayers; i++)
+        for (int i = 0; i < PlayerManager.numPlayers; i++)
         {
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
             Debug.Log("ab to print the player script");
             Debug.Log(playerScript);
-            
-            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.space.transform);
-            spawnedPlayer.transform.position = Vector3.MoveTowards(transform.position, playerScript.spacesParent.transform.position + new Vector3(0, 0.05f, 0), Time.deltaTime * playerScript.moveSpeed);
+
+            //locate the starting spot 
+            playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
+
+            Debug.Log("about to print the reference for startingSpot");
+            Debug.Log(playerScript.startingSpot);
+
+            //spawn in a new player
+            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
+            // spawnedPlayer.transform.position = Vector3.MoveTowards(transform.position, playerScript.startingSpot.transform.position + new Vector3(0, 0.05f, 0), Time.deltaTime * playerScript.moveSpeed);
         }
 
         //evenly space them apart on the start square
@@ -206,11 +228,11 @@ public class GameStateMachine : MonoBehaviour
     {
         //start the player's turn
         PlayerManager.instance.StartTurn();
-        Debug.Log("current player is = " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
+        // Debug.Log("current player is = " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
 
         //set reference to the current player's script
         lrUI.GetComponent<LeftRightChoice>().playerRef = PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].characterPiece;
-        
+
         //activate the wheel spinner UI
         wheelUI.SetActive(true);
     }
