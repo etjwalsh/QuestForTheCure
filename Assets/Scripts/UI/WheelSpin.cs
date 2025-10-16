@@ -19,7 +19,6 @@ public class WheelSpin : MonoBehaviour
     private float spinTime;
     private float elapsedTime;
     private float startSpeed;
-    // private float angle;
 
     public void OnButtonClick()
     {

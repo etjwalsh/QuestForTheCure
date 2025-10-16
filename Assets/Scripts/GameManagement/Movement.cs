@@ -47,14 +47,16 @@ public class Movement : MonoBehaviour
 
     private void HandleDiceRoll(int roll)
     {
-        Debug.Log("canMove is = " + canMove + " and roll is = " + roll);
         if (canMove && roll > 0)
         {
-            StartCoroutine(MovePlayer(roll));
+            //get reference to the active player
+            Player activePlayer = PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex];
+
+            StartCoroutine(MovePlayer(roll, activePlayer));
         }
     }
 
-    IEnumerator MovePlayer(int steps)
+    IEnumerator MovePlayer(int steps, Player activePlayer)
     {
         GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
         canMove = false;

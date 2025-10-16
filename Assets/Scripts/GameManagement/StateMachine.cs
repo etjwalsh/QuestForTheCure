@@ -184,10 +184,11 @@ public class GameStateMachine : MonoBehaviour
         SceneManager.LoadScene("Sandbox");
     }
 
+    //this method is just for use when going from the main menu to the sandbox scene
     public void OnLoaded(Scene scene, LoadSceneMode mode)
     {
         //make sure the correct scene loaded
-        if (scene.name != "Sandbox") // <<<----------- change this name later
+        if (scene.name != "Sandbox")
         {
             return;
         }
@@ -219,6 +220,15 @@ public class GameStateMachine : MonoBehaviour
 
             //spawn in a new player
             GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
+
+            //set that new player's spaces tree reference 
+            // 
+            // 
+            // ___________________ BOOKMARK _______________
+            // 
+            // 
+            // SpacesTree st = playerScript.GetComponent<SpacesTree>();
+            // playerScript.space = st.first;
         }
 
         //evenly space them apart on the start square
