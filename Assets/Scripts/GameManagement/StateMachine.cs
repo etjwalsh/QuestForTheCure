@@ -201,21 +201,24 @@ public class GameStateMachine : MonoBehaviour
 
         //spawn in characters based on the characters inside of the player list (access from PlayerManager)
         //add this later, for now just spawn in 4 of the same generic character
+
+        //vars for the spawning
+        float spacing = 2.0f;
+        float startOffset = -(spacing * (PlayerManager.numPlayers - 1) / 2f);
+
+        //for loop to spawn all the players
         for (int i = 0; i < PlayerManager.numPlayers; i++)
         {
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
-            Debug.Log("ab to print the player script");
-            Debug.Log(playerScript);
+
+            //offset along Z axis for spawning players
+            Vector3 offset = new Vector3(0, 0, startOffset + (i * spacing));
 
             //locate the starting spot 
             playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
 
-            Debug.Log("about to print the reference for startingSpot");
-            Debug.Log(playerScript.startingSpot);
-
             //spawn in a new player
-            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
-            // spawnedPlayer.transform.position = Vector3.MoveTowards(transform.position, playerScript.startingSpot.transform.position + new Vector3(0, 0.05f, 0), Time.deltaTime * playerScript.moveSpeed);
+            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
         }
 
         //evenly space them apart on the start square
