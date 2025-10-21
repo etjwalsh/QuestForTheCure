@@ -15,16 +15,21 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        //put all spaces into the array
-        if (spacesParent != null)
+        if (space == null && spacesParent == null)
         {
+            spacesParent = GameObject.Find("SpacesTree/StartingSpace").GetComponent<SpacesTree>();
+        }
+        
+        //assign the parent space and the left and right spaces of the parent space
+        if (spacesParent != null)
+        {  
             space = spacesParent;
             Debug.Log("space left is now = " + space.left);
             Debug.Log("space right is now = " + space.right);
         }
         else
         {
-            Debug.LogWarning("Parent object not assigned");
+            Debug.LogWarning("spacesParent not assigned for player " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
         }
 
         //set a reference to the wheel UI from the state machine
@@ -52,12 +57,16 @@ public class Movement : MonoBehaviour
             //get reference to the active player
             Player activePlayer = PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex];
 
+            Debug.Log("about to print out the active player");
+            Debug.Log(activePlayer);
+
             StartCoroutine(MovePlayer(roll, activePlayer));
         }
     }
 
     IEnumerator MovePlayer(int steps, Player activePlayer)
     {
+        Debug.Log("got to the moveplayer coroutine");
         GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
         canMove = false;
         choice = null;

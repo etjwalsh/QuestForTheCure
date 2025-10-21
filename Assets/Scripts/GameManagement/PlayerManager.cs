@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
         //set the current player
         current = players[currentPlayerIndex];
         current.active = true;
-        Debug.Log("it is now " + current.playerName + "'s turn and they are set to active = " + current.active);
+        // Debug.Log("it is now " + current.playerName + "'s turn and they are set to active = " + current.active);
     }
 
     public void EndTurn()

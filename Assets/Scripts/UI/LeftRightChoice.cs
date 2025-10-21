@@ -10,6 +10,8 @@ public class LeftRightChoice : MonoBehaviour
 
     public void OnLeftArrowClicked()
     {
+        // bookmark i guess
+        // playerRef = PlayerManager.instance.current;
         StartCoroutine(WaitForPlayer());
         playerScript = playerRef.GetComponent<Movement>();
         Debug.Log("left clicked");

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trivia
   - Minigame
+  - StartingSpace
   layers:
   - Default
   - TransparentFX
