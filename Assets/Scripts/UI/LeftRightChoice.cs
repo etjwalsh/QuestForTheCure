@@ -10,15 +10,13 @@ public class LeftRightChoice : MonoBehaviour
 
     public void OnLeftArrowClicked()
     {
-        // bookmark i guess
-        // playerRef = PlayerManager.instance.current;
         StartCoroutine(WaitForPlayer());
         playerScript = playerRef.GetComponent<Movement>();
         Debug.Log("left clicked");
         //set the player's choice to next (left)
         playerScript.choice = "left";
     }
-    
+
     public void OnRightArrowClicked()
     {
         StartCoroutine(WaitForPlayer());
@@ -31,11 +29,8 @@ public class LeftRightChoice : MonoBehaviour
     //to populate the player reference
     IEnumerator WaitForPlayer()
     {
-        while (playerRef == null)
-        {
-            playerRef = GameObject.FindWithTag("Player");
-            yield return new WaitUntil(() => playerRef != null);
-        }
-        Debug.Log("Found player for UI");
+        yield return new WaitUntil(() => GameObject.FindWithTag("ActivePlayer") != null);
+        playerRef = GameObject.FindWithTag("ActivePlayer");
+        Debug.Log("Found player for UI = " + playerRef);
     }
 }

@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         wheel = GameStateMachine.instance.wheelUI.GetComponent<WheelSpin>();
 
         //the player can spin now
-        canMove = true;
+        // canMove = true;
     }
 
     // Start is called before the first frame update
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
     {
         Debug.Log("got to the moveplayer coroutine");
         GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
-        canMove = false;
+        // canMove = false;
         choice = null;
 
         while (steps > 0)
@@ -78,7 +78,9 @@ public class Movement : MonoBehaviour
                 //check for split
                 if (space.left != null && space.right != null)
                 {
-                    Debug.Log("got to a split");
+                    //reset choice
+                    choice = null;
+                    //start the l/r choice coroutine and wait for the player to make a choice
                     yield return StartCoroutine(LeftRightChoice());
                     yield return new WaitUntil(() => choice != null);
                 }
@@ -95,12 +97,25 @@ public class Movement : MonoBehaviour
                     space.next = space.left;
                 }
 
-                //nowhere to go
-                else
-                {
-                    Debug.LogError("There are no spcaes assigned");
-                }
+                // //nowhere to go
+                // else
+                // {
+                //     Debug.LogError("There are no spcaes assigned");
+                // }
             }
+            else if (space.next != null && space.left != null && space.right != null) //hit a space after another player did
+            {
+                //reset choice
+                choice = null;
+                //start the l/r choice coroutine and wait for the player to make a choice
+                yield return StartCoroutine(LeftRightChoice());
+                yield return new WaitUntil(() => choice != null);
+            }
+            //nowhere to go
+            // else
+            // {
+            //     Debug.LogError("There are no spcaes assigned");
+            // }
 
             //set the current space the player is on to the next one's previous space
             space.next.previous = space;
@@ -108,7 +123,7 @@ public class Movement : MonoBehaviour
             //set the next space transform for movement
             Transform nextSpace = space.next.transform;
 
-            Debug.Log("nextSpace == " + nextSpace);
+            // Debug.Log("nextSpace == " + nextSpace);
 
             // Move smoothly to next space
             yield return StartCoroutine(MoveToPosition(nextSpace.position));
@@ -123,7 +138,7 @@ public class Movement : MonoBehaviour
         //get the tag that the player landed on
         tagLandedOn = space.gameObject.tag;
         Debug.Log("landed on a " + tagLandedOn + " tag.");
-        canMove = true;
+        // canMove = true;
 
         //change game state to whatever the player landed on
         if (tagLandedOn == "Minigame")
@@ -156,6 +171,9 @@ public class Movement : MonoBehaviour
 
     IEnumerator LeftRightChoice()
     {
+        //reset the choice
+        choice = null;
+
         //change game state to choosing
         GameStateMachine.instance.currentState = GameStateMachine.GameState.LRChoice;
         yield return new WaitUntil(() => choice != null);

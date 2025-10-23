@@ -7,6 +7,7 @@ using TMPro;
 using Palmmedia.ReportGenerator.Core;
 using UnityEngine.TextCore.Text;
 using Unity.VisualScripting;
+using Cinemachine;
 
 
 public class GameStateMachine : MonoBehaviour
@@ -221,18 +222,17 @@ public class GameStateMachine : MonoBehaviour
             //spawn in a new player
             GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
 
-            //set that new player's spaces tree reference 
-            // 
-            // 
-            // ___________________ BOOKMARK _______________
-            // 
-            // 
-            // SpacesTree st = playerScript.GetComponent<SpacesTree>();
-            // playerScript.space = st.first;
+            //add this gameObject to the list of player pieces
+            PlayerManager.instance.playerPieces.Add(spawnedPlayer);
+
+            //set the priority of the spawned player's camera to 0
+            Debug.Log("about to get the camera and set the priority to 0, and then print them both");
+            var camera = spawnedPlayer.GetComponentInChildren<CinemachineVirtualCamera>();
+            camera.Priority = 0;
+
+            Debug.Log("camera = " + camera);
+            Debug.Log("priority = " + camera.Priority);
         }
-
-        //evenly space them apart on the start square
-
 
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
@@ -269,7 +269,8 @@ public class GameStateMachine : MonoBehaviour
 
     public void Minigame()
     {
-
+        //change eventually to enter a minigame
+        currentState = GameState.EndTurn;
     }
 
     public void TriviaEnter()
@@ -280,7 +281,8 @@ public class GameStateMachine : MonoBehaviour
 
     public void Trivia()
     {
-
+        //change eventually to enter trivia
+        currentState = GameState.EndTurn;
     }
 
     public void EndTurn()
