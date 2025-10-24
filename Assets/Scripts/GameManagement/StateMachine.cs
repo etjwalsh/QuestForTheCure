@@ -18,10 +18,12 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject characterSelectUI; //reference to the char select screen ui
     [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
     [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
+    [SerializeField] public Image fadeUI; //reference to the black fade in / fade out UI element
+    public float fadeDuration = 1f;
 
     //for loading levels
-    public Animator transition;
-    public float transitionTime = 1f;
+    // public Animator transition;
+    // public float transitionTime = 1f;
 
     //for spawning players
     private Movement playerScript;
@@ -61,6 +63,7 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log("color of image = " + fadeUI.color);
         // Debug.Log(currentState);
         //state machine switch statement
         switch (currentState)
@@ -146,6 +149,9 @@ public class GameStateMachine : MonoBehaviour
         lrUI.SetActive(false);
         numPlayersUI.SetActive(false);
 
+        //fade the screen in
+        StartCoroutine(FadeFromBlack());
+
         //change game state to main menu
         currentState = GameState.MainMenu;
     }
@@ -163,6 +169,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void NumCharsSelect()
     {
+        //activate correct menus
         menuUI.SetActive(false);
         numPlayersUI.SetActive(true);
     }
@@ -288,6 +295,52 @@ public class GameStateMachine : MonoBehaviour
     public void EndTurn()
     {
         PlayerManager.instance.EndTurn(); //end the player's turn
+    }
+
+    public IEnumerator FadeToBlack() //this one fades FROM NORMAL TO BLACK
+    {
+        Debug.Log("inside of fade to black");
+        Color c = fadeUI.color;
+        float elapsed = 0f;
+        float startAlpha = c.a;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            c.a = Mathf.Lerp(startAlpha, 1f, elapsed / fadeDuration); // gradually increase alpha
+            fadeUI.color = c;
+            yield return null;
+        }
+
+        //make sure it is fully black
+        c.a = 1f;
+        fadeUI.color = c;
+    }
+    public IEnumerator FadeFromBlack() //this one fades FROM BLACK TO NORMAL
+    {
+        Debug.Log("inside of fade from black");
+        Color c = fadeUI.color;
+        float elapsed = 0f;
+        float startAlpha = c.a;
+
+        Debug.Log("Starting FadeFromBlack, alpha=" + fadeUI.color.a);
+        // gradually reduce alpha of the black image
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            c.a = Mathf.Lerp(startAlpha, 0f, elapsed / fadeDuration);
+            fadeUI.color = c;
+
+            Debug.Log("Loop: elapsed=" + elapsed + " alpha=" + fadeUI.color.a);
+
+            yield return null;
+
+        }
+        Debug.Log("FadeFromBlack finished, alpha=" + fadeUI.color.a);
+
+        //make sure it is fully transparent
+        c.a = 0f;
+        fadeUI.color = c;
     }
 
     // --------------- for loading levels ---------------

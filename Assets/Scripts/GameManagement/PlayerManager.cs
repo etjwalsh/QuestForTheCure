@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -44,8 +45,6 @@ public class PlayerManager : MonoBehaviour
 
     public void StartTurn()
     {
-        //set the game state to spinning
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
         //set the current player
         current = playerPieces[currentPlayerIndex].GetComponent<Movement>();
 
@@ -58,6 +57,13 @@ public class PlayerManager : MonoBehaviour
         //set the active camera
         activeCamera = current.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         activeCamera.Priority = 10;
+
+        //fade back in from black
+        StartCoroutine(GameStateMachine.instance.FadeFromBlack());
+
+        // yield return new WaitForSeconds(1.5f);
+        // fadeAnim.Play("fadeToBlack", 0, 0f);
+        // yield return new WaitForSeconds(fadeOutDuration);
     }
 
     public void EndTurn()
@@ -75,7 +81,14 @@ public class PlayerManager : MonoBehaviour
         activeCamera = current.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         activeCamera.Priority = 0;
 
+        //fade to black screen
+        StartCoroutine(GameStateMachine.instance.FadeToBlack());
+
+        // fadeAnim.Play("fadeToBlack", 0, 0f);
+        // yield return new WaitForSeconds(fadeOutDuration);
+
         //start next player's turn
-        StartTurn();
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
+
     }
 }

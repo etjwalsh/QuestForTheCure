@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,8 @@ public class MainMenu : MonoBehaviour
     //function to start the game
     public void OnStartClicked()
     {
-        //change game state to the start
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.NumCharsSelect;
-        //change scene to the character select screen
-        // SceneManager.LoadScene("CharacterSelect");
+        //Start the game
+        StartCoroutine(StartGameRoutine());
     }
 
     //function to exit the game
@@ -25,5 +24,21 @@ public class MainMenu : MonoBehaviour
     public void OnSettingsClicked()
     {
         GameStateMachine.instance.currentState = GameStateMachine.GameState.Settings;
+    }
+
+    private IEnumerator StartGameRoutine()
+    {
+        Debug.Log("start clicked, about to start the fade to black");
+        //fade to black and wait until faded to black
+        yield return StartCoroutine(GameStateMachine.instance.FadeToBlack());
+
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("about to start the fade from black");
+        //fade back from black
+        yield return StartCoroutine(GameStateMachine.instance.FadeFromBlack());
+
+        //change game state to the character number selection
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.NumCharsSelect;
     }
 }
