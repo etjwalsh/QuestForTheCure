@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviour
         activeCamera.Priority = 10;
 
         //fade back in from black
-        StartCoroutine(GameStateMachine.instance.FadeFromBlack());
+        // StartCoroutine(GameStateMachine.instance.FadeFromBlack());
 
         // yield return new WaitForSeconds(1.5f);
         // fadeAnim.Play("fadeToBlack", 0, 0f);
@@ -75,14 +75,22 @@ public class PlayerManager : MonoBehaviour
         current.canMove = false;
 
         //increment player index
-        currentPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
+        // currentPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
+        if (currentPlayerIndex >= numPlayers - 1)
+        {
+            currentPlayerIndex = 0;
+        }
+        else
+        {
+            currentPlayerIndex++;
+        }
 
         //set the active camera
         activeCamera = current.gameObject.GetComponentInChildren<CinemachineVirtualCamera>();
         activeCamera.Priority = 0;
 
         //fade to black screen
-        StartCoroutine(GameStateMachine.instance.FadeToBlack());
+        // StartCoroutine(GameStateMachine.instance.FadeToBlack());
 
         // fadeAnim.Play("fadeToBlack", 0, 0f);
         // yield return new WaitForSeconds(fadeOutDuration);

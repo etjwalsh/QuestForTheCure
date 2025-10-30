@@ -30,13 +30,13 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("start clicked, about to start the fade to black");
         //fade to black and wait until faded to black
-        yield return StartCoroutine(GameStateMachine.instance.FadeToBlack());
+        // yield return StartCoroutine(GameStateMachine.instance.FadeToBlack());
 
         yield return new WaitForSeconds(1.5f);
 
         Debug.Log("about to start the fade from black");
         //fade back from black
-        yield return StartCoroutine(GameStateMachine.instance.FadeFromBlack());
+        // yield return StartCoroutine(GameStateMachine.instance.FadeFromBlack());
 
         //change game state to the character number selection
         GameStateMachine.instance.currentState = GameStateMachine.GameState.NumCharsSelect;

@@ -8,6 +8,7 @@ using Palmmedia.ReportGenerator.Core;
 using UnityEngine.TextCore.Text;
 using Unity.VisualScripting;
 using Cinemachine;
+using System;
 
 
 public class GameStateMachine : MonoBehaviour
@@ -21,12 +22,13 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public Image fadeUI; //reference to the black fade in / fade out UI element
     public float fadeDuration = 1f;
 
-    //for loading levels
-    // public Animator transition;
-    // public float transitionTime = 1f;
 
     //for spawning players
     private Movement playerScript;
+
+    //for the rotating roles
+    public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Nurse" };
+    // private int maxRoles = 4;
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -150,7 +152,7 @@ public class GameStateMachine : MonoBehaviour
         numPlayersUI.SetActive(false);
 
         //fade the screen in
-        StartCoroutine(FadeFromBlack());
+        // StartCoroutine(FadeFromBlack());
 
         //change game state to main menu
         currentState = GameState.MainMenu;
@@ -220,6 +222,7 @@ public class GameStateMachine : MonoBehaviour
         {
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
 
+            Debug.Log("Role selected and is now = " + AssignRoleToPlayer());
             //offset along Z axis for spawning players
             Vector3 offset = new Vector3(0, 0, startOffset + (i * spacing));
 
@@ -240,6 +243,9 @@ public class GameStateMachine : MonoBehaviour
             Debug.Log("camera = " + camera);
             Debug.Log("priority = " + camera.Priority);
         }
+
+        //reset the list of roles
+        roles = ResetRolesList(roles);
 
         currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
     }
@@ -283,12 +289,29 @@ public class GameStateMachine : MonoBehaviour
     public void TriviaEnter()
     {
         Debug.Log("yayyy trivia");
+
+        //check what role the player is
+
+        //set the trivia question to ask to be the same as that role
+
+
+        //transition
+
+        //enter the trivia scene
+        SceneManager.LoadScene("Trivia");
+
+        //set the first trivia UI up
+
+        //select the question based on what role the player is
+
+        //change to trivia state
         currentState = GameState.Trivia;
     }
 
     public void Trivia()
     {
-        //change eventually to enter trivia
+        //
+
         currentState = GameState.EndTurn;
     }
 
@@ -297,51 +320,80 @@ public class GameStateMachine : MonoBehaviour
         PlayerManager.instance.EndTurn(); //end the player's turn
     }
 
-    public IEnumerator FadeToBlack() //this one fades FROM NORMAL TO BLACK
+    public string AssignRoleToPlayer()
     {
-        Debug.Log("inside of fade to black");
-        Color c = fadeUI.color;
-        float elapsed = 0f;
-        float startAlpha = c.a;
-
-        while (elapsed < fadeDuration)
+        if (roles.Count == 0)
         {
-            elapsed += Time.deltaTime;
-            c.a = Mathf.Lerp(startAlpha, 1f, elapsed / fadeDuration); // gradually increase alpha
-            fadeUI.color = c;
-            yield return null;
+            Debug.LogWarning("no more roles to pick from!");
         }
 
-        //make sure it is fully black
-        c.a = 1f;
-        fadeUI.color = c;
+        //get a random role
+        int randIndex = UnityEngine.Random.Range(0, roles.Count);
+        string chosenRole = roles[randIndex];
+
+        //remove that number from the list of possible numbers
+        roles.RemoveAt(randIndex);
+
+        //return the role that was taken from the roles array
+        return chosenRole;
     }
-    public IEnumerator FadeFromBlack() //this one fades FROM BLACK TO NORMAL
+
+    public List<string> ResetRolesList(List<string> list)
     {
-        Debug.Log("inside of fade from black");
-        Color c = fadeUI.color;
-        float elapsed = 0f;
-        float startAlpha = c.a;
+        //reset the roles list
+        list.Clear();
 
-        Debug.Log("Starting FadeFromBlack, alpha=" + fadeUI.color.a);
-        // gradually reduce alpha of the black image
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            c.a = Mathf.Lerp(startAlpha, 0f, elapsed / fadeDuration);
-            fadeUI.color = c;
+        //declare the roles list again to make sure they are there for next time
+        list = new List<string> { "Patient", "Physician", "Community Advocate", "Research Nurse" };
 
-            Debug.Log("Loop: elapsed=" + elapsed + " alpha=" + fadeUI.color.a);
-
-            yield return null;
-
-        }
-        Debug.Log("FadeFromBlack finished, alpha=" + fadeUI.color.a);
-
-        //make sure it is fully transparent
-        c.a = 0f;
-        fadeUI.color = c;
+        //return the list
+        return list;
     }
+    // public IEnumerator FadeToBlack() //this one fades FROM NORMAL TO BLACK
+    // {
+    //     Debug.Log("inside of fade to black");
+    //     Color c = fadeUI.color;
+    //     float elapsed = 0f;
+    //     float startAlpha = c.a;
+
+    //     while (elapsed < fadeDuration)
+    //     {
+    //         elapsed += Time.deltaTime;
+    //         c.a = Mathf.Lerp(startAlpha, 1f, elapsed / fadeDuration); // gradually increase alpha
+    //         fadeUI.color = c;
+    //         yield return null;
+    //     }
+
+    //     //make sure it is fully black
+    //     c.a = 1f;
+    //     fadeUI.color = c;
+    // }
+    // public IEnumerator FadeFromBlack() //this one fades FROM BLACK TO NORMAL
+    // {
+    //     Debug.Log("inside of fade from black");
+    //     Color c = fadeUI.color;
+    //     float elapsed = 0f;
+    //     float startAlpha = c.a;
+
+    //     Debug.Log("Starting FadeFromBlack, alpha=" + fadeUI.color.a);
+    //     // gradually reduce alpha of the black image
+    //     while (elapsed < fadeDuration)
+    //     {
+    //         elapsed += Time.deltaTime;
+    //         c.a = Mathf.Lerp(startAlpha, 0f, elapsed / fadeDuration);
+    //         fadeUI.color = c;
+
+    //         Debug.Log("Loop: elapsed=" + elapsed + " alpha=" + fadeUI.color.a);
+
+    //         yield return null;
+
+    //     }
+    //     Debug.Log("FadeFromBlack finished, alpha=" + fadeUI.color.a);
+
+    //     //make sure it is fully transparent
+    //     c.a = 0f;
+    //     fadeUI.color = c;
+    // }
 
     // --------------- for loading levels ---------------
 

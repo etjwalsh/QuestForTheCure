@@ -13,16 +13,20 @@ public class Movement : MonoBehaviour
     public int moveSpeed = 5;
     public bool canMove;
 
+    //string for the player's current role
+    public string currentRole;
+
+
     private void Awake()
     {
         if (space == null && spacesParent == null)
         {
             spacesParent = GameObject.Find("SpacesTree/StartingSpace").GetComponent<SpacesTree>();
         }
-        
+
         //assign the parent space and the left and right spaces of the parent space
         if (spacesParent != null)
-        {  
+        {
             space = spacesParent;
             Debug.Log("space left is now = " + space.left);
             Debug.Log("space right is now = " + space.right);
@@ -149,10 +153,19 @@ public class Movement : MonoBehaviour
         {
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }
+        else if (tagLandedOn == "EndOfStage")
+        {
+            //move all players to the next stage
+
+            //randomize all of the player's roles
+
+            //go to next player's turn
+        }
         //has no tag
         else
         {
-            GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
+            //end the player's turn
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
         }
     }
 

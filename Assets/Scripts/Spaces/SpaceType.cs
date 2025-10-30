@@ -33,14 +33,15 @@ public class SpaceType : MonoBehaviour
 
     private void Regular()
     {
-        // Debug.Log("this is a regular space");
+        Debug.Log("this is a regular space");
+        // GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
     }
     private void Trivia()
     {
-        // Debug.Log("this is a trivia space");
+        Debug.Log("this is a trivia space");
     }
     private void Minigame()
     {
-        // Debug.Log("this is a minigame space");
+        Debug.Log("this is a minigame space");
     }
 }
