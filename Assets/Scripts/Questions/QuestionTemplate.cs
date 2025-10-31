@@ -13,4 +13,5 @@ public class QuestionTemplate : ScriptableObject
     public string incorrectAnswer1;
     public string incorrectAnswer2;
     public string incorrectAnswer3;
+    public string questionRole;
 }

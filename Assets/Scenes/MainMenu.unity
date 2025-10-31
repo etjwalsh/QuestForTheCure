@@ -826,6 +826,14 @@ PrefabInstance:
       propertyPath: characterSelectUI
       value: 
       objectReference: {fileID: 1106209393}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: questionsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: questionsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c3e739cc75f843458521b0289fd0621, type: 2}
     m_RemovedComponents:
     - {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
     m_RemovedGameObjects: []

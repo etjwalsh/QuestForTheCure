@@ -17,3 +17,4 @@ MonoBehaviour:
   incorrectAnswer1: Orange
   incorrectAnswer2: Red
   incorrectAnswer3: Purple
+  questionRole: Example

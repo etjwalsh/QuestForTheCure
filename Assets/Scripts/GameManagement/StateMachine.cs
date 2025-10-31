@@ -30,6 +30,11 @@ public class GameStateMachine : MonoBehaviour
     public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Nurse" };
     // private int maxRoles = 4;
 
+    //for trivia
+    public string currentPlayerRole;
+    public List<QuestionTemplate> questionsList = new List<QuestionTemplate> {};
+    public QuestionTemplate currentQuestion;
+
     //singleton pattern
     private static GameStateMachine _instance;
     public static GameStateMachine instance
@@ -293,7 +298,7 @@ public class GameStateMachine : MonoBehaviour
         //check what role the player is
 
         //set the trivia question to ask to be the same as that role
-
+        currentQuestion = questionsList[0];
 
         //transition
 
@@ -305,13 +310,11 @@ public class GameStateMachine : MonoBehaviour
         //select the question based on what role the player is
 
         //change to trivia state
-        currentState = GameState.Trivia;
+        // currentState = GameState.Trivia;
     }
 
     public void Trivia()
     {
-        //
-
         currentState = GameState.EndTurn;
     }
 
