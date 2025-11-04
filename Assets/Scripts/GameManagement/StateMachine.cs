@@ -27,13 +27,24 @@ public class GameStateMachine : MonoBehaviour
     private Movement playerScript;
 
     //for the rotating roles
-    public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Nurse" };
+    public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Coordinator", "Safety & Ethics", "Caregiver" };
     // private int maxRoles = 4;
 
     //for trivia
     public string currentPlayerRole;
-    public List<QuestionTemplate> questionsList = new List<QuestionTemplate> {};
     public QuestionTemplate currentQuestion;
+
+    //lists for storing trivia questions
+    //discovery stage
+    public List<QuestionTemplate> discoveryQuestions = new List<QuestionTemplate> { };
+    //preclinical stage
+    public List<QuestionTemplate> preClinicalQuestions = new List<QuestionTemplate> { };
+
+    //clinical trials
+    public List<QuestionTemplate> trialsQuestions = new List<QuestionTemplate> { };
+
+    //approval
+    public List<QuestionTemplate> approvalQuestions = new List<QuestionTemplate> { };
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -227,7 +238,6 @@ public class GameStateMachine : MonoBehaviour
         {
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
 
-            Debug.Log("Role selected and is now = " + AssignRoleToPlayer());
             //offset along Z axis for spawning players
             Vector3 offset = new Vector3(0, 0, startOffset + (i * spacing));
 
@@ -239,6 +249,10 @@ public class GameStateMachine : MonoBehaviour
 
             //add this gameObject to the list of player pieces
             PlayerManager.instance.playerPieces.Add(spawnedPlayer);
+
+            //assign the player a role
+            spawnedPlayer.GetComponent<Movement>().currentRole = AssignRoleToPlayer();
+            Debug.Log("player's role is now: " + spawnedPlayer.GetComponent<Movement>().currentRole);
 
             //set the priority of the spawned player's camera to 0
             Debug.Log("about to get the camera and set the priority to 0, and then print them both");
@@ -293,12 +307,36 @@ public class GameStateMachine : MonoBehaviour
 
     public void TriviaEnter()
     {
-        Debug.Log("yayyy trivia");
-
-        //check what role the player is
+        //check what role the player is and pull a question from the correct list
+        switch (currentPlayerRole)
+        {
+            case "Patient":
+            {
+                break;
+            }
+            case "Physician":
+            {
+                break;
+            }
+            case "Community Advocate":
+            {
+                break;
+            }
+            case "Research Coordinator":
+            {
+                break;
+            }
+            case "Safety & Ethics":
+            {
+                break;
+            }
+            case "Caregiver":
+            {
+                break;
+            }
+        }
 
         //set the trivia question to ask to be the same as that role
-        currentQuestion = questionsList[0];
 
         //transition
 
@@ -306,8 +344,6 @@ public class GameStateMachine : MonoBehaviour
         SceneManager.LoadScene("Trivia");
 
         //set the first trivia UI up
-
-        //select the question based on what role the player is
 
         //change to trivia state
         // currentState = GameState.Trivia;
@@ -347,7 +383,7 @@ public class GameStateMachine : MonoBehaviour
         list.Clear();
 
         //declare the roles list again to make sure they are there for next time
-        list = new List<string> { "Patient", "Physician", "Community Advocate", "Research Nurse" };
+        list = new List<string> { "Patient", "Physician", "Community Advocate", "Research Coordinator", "Safety & Ethics", "Caregiver" };
 
         //return the list
         return list;
