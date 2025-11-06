@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatPre_2
+  m_EditorClassIdentifier: 
+  question: "Since your diagnosis, research has become a source of hope for you.
+    Your cancer center offers monthly educational sessions for patients, and this
+    month you\u2019re learning about the use of patient samples in early research
+    \u2014 before trials. During the session, you overhear someone say, \u201CIn
+    lab-based studies, researchers usually choose the most common or convenient animal
+    or human cells available, because all cell types can give equally useful information
+    about a disease.\u201D"
+  explanation: "Not all cells provide the same kind of information. Some better reflect
+    how a disease behaves in the body, while others may be used for early screening
+    because they\u2019re easier or cheaper to work with. Researchers primarily choose
+    cells that best represent the disease, while also considering availability and
+    cost. Balancing these choices helps focus on treatments with the best chance
+    of being safe and effective for people."
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Patient
+  questionType: TrueFalse
+  questionStage: Preclinical

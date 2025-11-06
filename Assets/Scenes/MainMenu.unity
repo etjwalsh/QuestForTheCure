@@ -831,9 +831,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: questionsList.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 0c3e739cc75f843458521b0289fd0621, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 04c3a4e7f4714f64c90b69b1a9a7c71a, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 927847e224a3394409a77094a8a5e69a, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ebb1234dddbf1bb4b87b17fc7ee46cb6, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b72ec4682e437543add66a39f3e5d65, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e354c4836d239ef489312aca01326c4e, type: 2}
+    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: triviaQuesitons.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c6e06bf1bc6ca641bb983f63aedd427, type: 2}
     m_RemovedComponents:
     - {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
     m_RemovedGameObjects: []

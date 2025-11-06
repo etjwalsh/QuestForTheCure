@@ -33,18 +33,11 @@ public class GameStateMachine : MonoBehaviour
     //for trivia
     public string currentPlayerRole;
     public QuestionTemplate currentQuestion;
+    public string currentStage = "Discovery";
 
-    //lists for storing trivia questions
-    //discovery stage
-    public List<QuestionTemplate> discoveryQuestions = new List<QuestionTemplate> { };
-    //preclinical stage
-    public List<QuestionTemplate> preClinicalQuestions = new List<QuestionTemplate> { };
-
-    //clinical trials
-    public List<QuestionTemplate> trialsQuestions = new List<QuestionTemplate> { };
-
-    //approval
-    public List<QuestionTemplate> approvalQuestions = new List<QuestionTemplate> { };
+    //list and dictionary for storing trivia questions
+    public List<QuestionTemplate> triviaQuesitons = new List<QuestionTemplate> { };
+    private Dictionary<(string role, string stage), List<QuestionTemplate>> questionsDictionary;
 
     //singleton pattern
     private static GameStateMachine _instance;
@@ -307,36 +300,57 @@ public class GameStateMachine : MonoBehaviour
 
     public void TriviaEnter()
     {
-        //check what role the player is and pull a question from the correct list
-        switch (currentPlayerRole)
-        {
-            case "Patient":
-            {
-                break;
-            }
-            case "Physician":
-            {
-                break;
-            }
-            case "Community Advocate":
-            {
-                break;
-            }
-            case "Research Coordinator":
-            {
-                break;
-            }
-            case "Safety & Ethics":
-            {
-                break;
-            }
-            case "Caregiver":
-            {
-                break;
-            }
-        }
+        //get the current player's role
+        currentPlayerRole = PlayerManager.instance.current.currentRole;
 
-        //set the trivia question to ask to be the same as that role
+        //get the trivia question based on the current stage
+        currentQuestion = GetQuestion(currentPlayerRole, currentStage);
+
+        Debug.Log("the selected question is now: " + currentQuestion);
+
+        // //check what role the player is and pull a question from the correct list
+        // switch (currentPlayerRole)
+        // {
+        //     case "Patient":
+        //     {
+        //         switch(currentStage)
+        //         {
+        //             case "Discovery": //discovery patient questions
+        //                     {
+        //                 //get a question from the discovery list that is tagged "patient"
+        //                 for(int i = 0; i < discoveryQuestions.Count; i++)
+        //                 {
+        //                     if(discoveryQuestions[i].questionRole == "Patient")
+        //                     {
+        //                         currentQuestion = discoveryQuestions[i];
+        //                     }
+        //                 }
+        //                 break;
+        //             }
+        //         }    
+        //         break;
+        //     }
+        //     case "Physician":
+        //     {
+        //         break;
+        //     }
+        //     case "Community Advocate":
+        //     {
+        //         break;
+        //     }
+        //     case "Research Coordinator":
+        //     {
+        //         break;
+        //     }
+        //     case "Safety & Ethics":
+        //     {
+        //         break;
+        //     }
+        //     case "Caregiver":
+        //     {
+        //         break;
+        //     }
+        // }
 
         //transition
 
@@ -344,6 +358,14 @@ public class GameStateMachine : MonoBehaviour
         SceneManager.LoadScene("Trivia");
 
         //set the first trivia UI up
+        if (currentQuestion.questionType == "TrueFalse")
+        {
+            Debug.Log("this is a true false question");
+        }
+        else if (currentQuestion.questionType == "MultipleChoice")
+        {
+            Debug.Log("this is a multiple choice question");
+        }
 
         //change to trivia state
         // currentState = GameState.Trivia;
@@ -388,6 +410,20 @@ public class GameStateMachine : MonoBehaviour
         //return the list
         return list;
     }
+
+    public QuestionTemplate GetQuestion(string role, string stage)
+    {
+        List<QuestionTemplate> qs;
+        Debug.Log("current player role = " + role);
+        Debug.Log("current stage = " + stage);
+        //search the dictionary for the right question
+        if (questionsDictionary.TryGetValue((role, stage), out qs))
+        {
+            return qs[UnityEngine.Random.Range(0, qs.Count)];
+        }
+        return null;
+    }
+
     // public IEnumerator FadeToBlack() //this one fades FROM NORMAL TO BLACK
     // {
     //     Debug.Log("inside of fade to black");

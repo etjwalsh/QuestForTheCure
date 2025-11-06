@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatDisc_5
+  m_EditorClassIdentifier: 
+  question: "At your cancer center, you attend a patient engagement event where a
+    lead researcher, the Principal Investigator (PI), is speaking. They explain how
+    patient experiences help guide the research and answer questions from attendees
+    about the study\u2019s goals. You raise your hand to ask a question\u2026\nWhat
+    does a PI do, and how does it affect patients before trials begin?"
+  explanation: "The PI is the lead researcher who ensures the study is conducted
+    properly, following ethical and scientific standards to protect patients. Equally
+    important, the PI listens to patients \u2014 through feedback, advocacy groups,
+    or shared experiences \u2014 to make sure the research focuses on areas that
+    truly matter to people living with the disease."
+  correctAnswer: A and C
+  incorrectAnswer1: Lead the research project and make sure it follows ethical and
+    scientific standards
+  incorrectAnswer2: Approve or reject a new experimental drug or treatment
+  incorrectAnswer3: Use patient insights and samples to guide the research direction
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: Discovery

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatPre_4
+  m_EditorClassIdentifier: 
+  question: "You\u2019ve heard about clinical trials, but up until recently, you
+    just assumed that the most promising treatments identified during the discovery
+    stage would move forward to be tested in people sooner. You wonder, what\u2019s
+    the need for all these lab and animal studies if researchers already believe
+    the new treatment could work?\r\n\r\nWhy does preclinical research matter for
+    patients?\r"
+  explanation: Preclinical research is an essential step before clinical trials can
+    begin. Lab studies (in vitro) and animal models (in vivo) allow researchers to
+    understand whether a new cancer treatment is safe enough for people and to identify
+    potential risks. These studies take time, but they are critical for protecting
+    patients and ensuring that only the safest and most promising treatments move
+    forward into clinical trials.
+  correctAnswer: Because it helps determine if a treatment is safe enough to test
+    in people
+  incorrectAnswer1: Because researchers are actively recruiting participants during
+    this stage
+  incorrectAnswer2: Because it helps determine the appropriate dosage of a new drug
+    before it hits the market
+  incorrectAnswer3: Because it tells us how well a new treatment works in humans
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: Preclinical

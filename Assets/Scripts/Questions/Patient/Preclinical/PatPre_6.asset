@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatPre_6
+  m_EditorClassIdentifier: 
+  question: "You\u2019ve been picking your oncologist\u2019s brain about how new
+    cancer treatments are developed, and the topic of animal studies comes up. You\u2019ve
+    always been curious why researchers test new treatments in animals before people
+    and how this step might affect the safety and effectiveness of the treatments
+    that could eventually be available to you or other patients.\r\n\r\nWhy is it
+    important for researchers to test new treatments in animals (in vivo) during
+    preclinical research?\r\n"
+  explanation: Animal studies are a key step in protecting patients. They help researchers
+    see how a treatment behaves in a living body, including potential side effects,
+    safe dosage, and how organs or systems may respond. Understanding these effects
+    in animals first allows scientists to design safer and more focused clinical
+    trials, increasing the likelihood that new treatments will be both effective
+    and safe for the people who ultimately need them.
+  correctAnswer: They help researchers understand how a treatment might affect organs,
+    systems, and overall health in a living body before human testing
+  incorrectAnswer1: They show researchers if a new treatment will work in patients
+  incorrectAnswer2: They allow researchers to bypass lab testing and move forward
+    into clinical trials faster
+  incorrectAnswer3: They show researchers how diverse patient populations will respond
+    to a new treatment
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: Preclinical

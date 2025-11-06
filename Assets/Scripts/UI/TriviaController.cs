@@ -16,7 +16,7 @@ public class TriviaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadQuestion();
+        LoadMultipleChoiceQuestion();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class TriviaController : MonoBehaviour
 
     }
 
-    void LoadQuestion()
+    void LoadMultipleChoiceQuestion()
     {
         q1.text = GameStateMachine.instance.currentQuestion.incorrectAnswer1;
         q2.text = GameStateMachine.instance.currentQuestion.incorrectAnswer2;
