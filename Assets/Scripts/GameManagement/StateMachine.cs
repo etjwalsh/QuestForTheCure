@@ -57,6 +57,34 @@ public class GameStateMachine : MonoBehaviour
     public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, EndTurn }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
+    private void Awake()
+    {
+        //initialize the dictionary
+        questionsDictionary = new Dictionary<(string role, string stage), List<QuestionTemplate>>();
+
+        //populate the dictionary
+        foreach (QuestionTemplate qt in triviaQuesitons)
+        {
+            //check if that spot in the triviaQuestions list is not populated
+            if (qt == null)
+            {
+                continue;
+            }
+
+            //set the key
+            var key = (qt.questionRole, qt.questionStage);
+
+            //make a list within the dictionary if it doesn't already exist
+            if (!questionsDictionary.ContainsKey(key))
+            {
+                questionsDictionary[key] = new List<QuestionTemplate>();
+            }
+
+            //add this question to that list based on the key
+            questionsDictionary[key].Add(qt);
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -308,50 +336,6 @@ public class GameStateMachine : MonoBehaviour
 
         Debug.Log("the selected question is now: " + currentQuestion);
 
-        // //check what role the player is and pull a question from the correct list
-        // switch (currentPlayerRole)
-        // {
-        //     case "Patient":
-        //     {
-        //         switch(currentStage)
-        //         {
-        //             case "Discovery": //discovery patient questions
-        //                     {
-        //                 //get a question from the discovery list that is tagged "patient"
-        //                 for(int i = 0; i < discoveryQuestions.Count; i++)
-        //                 {
-        //                     if(discoveryQuestions[i].questionRole == "Patient")
-        //                     {
-        //                         currentQuestion = discoveryQuestions[i];
-        //                     }
-        //                 }
-        //                 break;
-        //             }
-        //         }    
-        //         break;
-        //     }
-        //     case "Physician":
-        //     {
-        //         break;
-        //     }
-        //     case "Community Advocate":
-        //     {
-        //         break;
-        //     }
-        //     case "Research Coordinator":
-        //     {
-        //         break;
-        //     }
-        //     case "Safety & Ethics":
-        //     {
-        //         break;
-        //     }
-        //     case "Caregiver":
-        //     {
-        //         break;
-        //     }
-        // }
-
         //transition
 
         //enter the trivia scene
@@ -413,9 +397,15 @@ public class GameStateMachine : MonoBehaviour
 
     public QuestionTemplate GetQuestion(string role, string stage)
     {
+        //make sure dictionary has been set up
+        if (questionsDictionary == null)
+        {
+            Debug.LogError("Questions dictionary does not exist");
+            return null;
+        }
+
         List<QuestionTemplate> qs;
-        Debug.Log("current player role = " + role);
-        Debug.Log("current stage = " + stage);
+        
         //search the dictionary for the right question
         if (questionsDictionary.TryGetValue((role, stage), out qs))
         {

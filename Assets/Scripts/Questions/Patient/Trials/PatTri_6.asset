@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatTri_6
+  m_EditorClassIdentifier: 
+  question: "Before starting the trial, you meet with the research team to review
+    the informed consent and ask questions about the study. You ask: \u201CWhat if
+    the trial treatment doesn\u2019t work for me?\u201D and \u201CWhat if I experience
+    worse side effects?\u201D They explain that your safety and comfort are the top
+    priority, and you always have choices if this treatment isn\u2019t right for
+    you.\r\n\r\nWhat does this mean for you as a patient participant in the clinical
+    trial?\r"
+  explanation: Participation in a clinical trial is always voluntary. Patient participants
+    can choose to leave a clinical trial at any time, for any reason. If a participant
+    experiences difficult side effects or feels the treatment is not right for them,
+    the care team will work to find the best next step, which may include returning
+    to standard treatment or exploring other options. This flexibility is built into
+    the informed consent process to ensure patient safety, comfort, and choice remain
+    the top priority.
+  correctAnswer: You can leave the trial at any time for any reason
+  incorrectAnswer1: Once you sign the informed consent, you are a participant until
+    the study ends
+  incorrectAnswer2: If you want to leave the trial, you cannot return to your standard
+    treatment
+  incorrectAnswer3: "You can leave the trial if the research team decides it\u2019s
+    safe"
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: Trials

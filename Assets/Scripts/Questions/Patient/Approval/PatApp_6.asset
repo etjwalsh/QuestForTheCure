@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatApp_6
+  m_EditorClassIdentifier: 
+  question: "You\u2019re contacted by a patient advocacy group that has partnered
+    with your trial\u2019s research team. Because of your lived experience, they
+    invite you to join a patient advisory council where your input can help shape
+    how complex research findings are communicated to future patients and the broader
+    community.\r\n\r\nHow can patient participants make a difference in how study
+    results are communicated to the public?\r"
+  explanation: "Patients can play a powerful role in how study results are communicated
+    by helping ensure the language is clear and adding personal context through lived
+    experiences. And because patients often hold trusted roles in their families,
+    communities, or advocacy networks, they can help share study results in ways
+    that build trust and understanding. Together, these contributions strengthen
+    how study results are communicated and help ensure they reach \u2014 and resonate
+    with \u2014 the people who need them most."
+  correctAnswer: All the above
+  incorrectAnswer1: By ensuring study results are written in plain language and are
+    easy to understand
+  incorrectAnswer2: By sharing their lived experiences to add context and relevance
+  incorrectAnswer3: By acting as trusted messengers, sharing results in ways that
+    foster community trust and understanding
+  questionRole: 
+  questionType: 
+  questionStage: 

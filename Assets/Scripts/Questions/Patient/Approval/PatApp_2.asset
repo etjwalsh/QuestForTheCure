@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatApp_2
+  m_EditorClassIdentifier: 
+  question: "You\u2019ve just finished your last study visit and your family has
+    planned a small dinner with you to celebrate completing the trial. At the dinner
+    table, your brother asks, \u201CSo, now that the trial is over, the treatment
+    you received is approved and available to all patients?\u201D\r\n\r\nIs this
+    true or false?\r"
+  explanation: "Even though the trial has ended, the treatment isn\u2019t automatically
+    available to everyone. Researchers still review the results and submit them for
+    approval to make sure it\u2019s safe and effective for a wider group of patients.
+    By completing the trial, patient participants play a key role in helping others
+    access promising new treatments, contributing to the future of care for people
+    with the same condition."
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Patient
+  questionType: TrueFalse
+  questionStage: Approval
