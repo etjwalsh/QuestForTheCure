@@ -55,12 +55,12 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         //if no more players to select
         if (numPlayersToSelect == 0)
         {
-            //print the list
-            foreach (Player p in PlayerManager.instance.players)
-            {
-                Debug.Log("Player Name: " + p.playerName);
-                Debug.Log("Player Model = " + p.playerModel);
-            }
+            // //print the list
+            // foreach (Player p in PlayerManager.instance.players)
+            // {
+            //     Debug.Log("Player Name: " + p.playerName);
+            //     Debug.Log("Player Model = " + p.playerModel);
+            // }
 
             //change game state to game start state
             GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;

@@ -8,6 +8,6 @@ public class DontDestroyOnLoad : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        Debug.Log(gameObject.name + " marked as DontDestroyOnLoad");
+        // Debug.Log(gameObject.name + " marked as DontDestroyOnLoad");
     }
 }

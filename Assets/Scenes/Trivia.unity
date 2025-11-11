@@ -1581,11 +1581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d661fce0823f24da6b340afe87343e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  q1: {fileID: 1661914483}
-  q2: {fileID: 1189999393}
-  q3: {fileID: 1560761279}
-  q4: {fileID: 678058683}
   questionText: {fileID: 1005017715}
+  answerButtons:
+  - {fileID: 428991970}
+  - {fileID: 83094763}
+  - {fileID: 1009306035}
+  - {fileID: 1476615154}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

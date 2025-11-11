@@ -245,7 +245,7 @@ public class GameStateMachine : MonoBehaviour
 
         //get how many players need to be spawned in
         int numPlayersToSpawn = PlayerManager.numPlayers;
-        Debug.Log("number of players to spawn = " + numPlayersToSpawn);
+        // Debug.Log("number of players to spawn = " + numPlayersToSpawn);
 
         //spawn in characters based on the characters inside of the player list (access from PlayerManager)
         //add this later, for now just spawn in 4 of the same generic character
@@ -280,8 +280,8 @@ public class GameStateMachine : MonoBehaviour
             var camera = spawnedPlayer.GetComponentInChildren<CinemachineVirtualCamera>();
             camera.Priority = 0;
 
-            Debug.Log("camera = " + camera);
-            Debug.Log("priority = " + camera.Priority);
+            // Debug.Log("camera = " + camera);
+            // Debug.Log("priority = " + camera.Priority);
         }
 
         //reset the list of roles
@@ -316,7 +316,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void MinigameEnter()
     {
-        Debug.Log("yayyy minigame");
+        // Debug.Log("yayyy minigame");
         currentState = GameState.Minigame;
     }
 
@@ -352,12 +352,12 @@ public class GameStateMachine : MonoBehaviour
         }
 
         //change to trivia state
-        // currentState = GameState.Trivia;
+        currentState = GameState.Trivia;
     }
 
     public void Trivia()
     {
-        currentState = GameState.EndTurn;
+        // currentState = GameState.EndTurn;
     }
 
     public void EndTurn()

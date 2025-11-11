@@ -28,13 +28,14 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator StartGameRoutine()
     {
-        Debug.Log("start clicked, about to start the fade to black");
+        // Debug.Log("start clicked, about to start the fade to black");
         //fade to black and wait until faded to black
         // yield return StartCoroutine(GameStateMachine.instance.FadeToBlack());
 
-        yield return new WaitForSeconds(1.5f);
+        // yield return new WaitForSeconds(1.5f);
+        yield return null;
 
-        Debug.Log("about to start the fade from black");
+        // Debug.Log("about to start the fade from black");
         //fade back from black
         // yield return StartCoroutine(GameStateMachine.instance.FadeFromBlack());
 
