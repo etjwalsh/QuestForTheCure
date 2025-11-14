@@ -8,7 +8,6 @@ public class TriviaController : MonoBehaviour
 {
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Button[] answerButtons;
-    private string correctAnswer;
     private QuestionTemplate question;
     private List<string> wrongAnswers = new List<string> { };
 
@@ -56,12 +55,8 @@ public class TriviaController : MonoBehaviour
         allAnswers.Add(question.correctAnswer);
 
         //shuffle the answers
-        for (int i = 0; i < allAnswers.Count; i++)
-        {
-            int rand = Random.Range(i, allAnswers.Count);
-            (allAnswers[i], allAnswers[rand]) = (allAnswers[rand], allAnswers[i]);
-        }
-        
+        Shuffle(allAnswers);
+
         //assign answers to different buttons
         for (int i = 0; i < answerButtons.Length; i++)
         {
@@ -76,6 +71,17 @@ public class TriviaController : MonoBehaviour
         }
     }
 
+    void Shuffle<T>(List<T> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = Random.Range(0, n + 1);
+            (list[k], list[n]) = (list[n], list[k]);
+        }
+    }
+
     private void LoadTrueFalseQuestion()
     {
 
@@ -86,10 +92,27 @@ public class TriviaController : MonoBehaviour
         if (chosenAnswer == correct)
         {
             Debug.Log("✅ Correct!");
+
+            PlayerManager.instance.LoadPlayerLocations();
+
+            //show the player "correct"
+
+            //move to explanation screen
+
         }
         else
         {
             Debug.Log("❌ Wrong!");
+            //show the player "incorrect"
+
+            //move to the explanation screen
+
         }
+    }
+
+    public void OnDoneClicked()
+    {
+        //
+        //change scene back to the main game scene
     }
 }

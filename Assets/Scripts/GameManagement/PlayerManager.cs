@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     //list of players
     public List<Player> players = new List<Player>();
     public List<GameObject> playerPieces = new List<GameObject>();
+    public Vector3[] playerLocations;
     public int currentPlayerIndex = 0;
     public Movement current;
     CinemachineVirtualCamera activeCamera;
@@ -41,6 +43,7 @@ public class PlayerManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
     }
 
     public void StartTurn()
@@ -98,5 +101,42 @@ public class PlayerManager : MonoBehaviour
         //start next player's turn
         GameStateMachine.instance.currentState = GameStateMachine.GameState.Spinning;
 
+    }
+
+    public void SavePlayerLocations()
+    {
+        //initialize the array
+        playerLocations = new Vector3[players.Count];
+
+        //save all the player locations to the list
+        for (int i = 0; i < players.Count; i++)
+        {
+            //save the player pieces to the list
+            playerPieces[i] = players[i].characterPiece;
+
+            //save the locations of the players
+            players[currentPlayerIndex].location = current.space.transform.position;
+            playerLocations[i] = players[i].location;
+        }
+
+        for (int j = 0; j < playerPieces.Count; j++)
+        {
+            Debug.Log("here are the player pieces before trivia: " + playerPieces[j]);
+        }
+    }
+
+    public void LoadPlayerLocations()
+    {
+        SceneManager.LoadScene("Sandbox");
+
+        for (int j = 0; j < playerPieces.Count; j++)
+        {
+            Debug.Log("here are the player pieces after trivia: " + playerPieces[j]); //this is working?
+        }
+
+        for (int i = 0; i < playerLocations.Length; i++)
+        {
+            playerPieces[i].transform.position = playerLocations[i];
+        }
     }
 }

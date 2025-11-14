@@ -1422,8 +1422,31 @@ PrefabInstance:
     - {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1741557020}
   m_SourcePrefab: {fileID: 100100000, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+--- !u!1 &1741557015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+  m_PrefabInstance: {fileID: 1570249805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1741557020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741557015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249e78e15567fbf41aa6925be0b8cbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: e043e1e8b4c41214d99421cbfff221ab, type: 3}
+  clickCursor: {fileID: 2800000, guid: 7d0584acc17aef64c9b8c554d5d902ac, type: 3}
+  hotspot: {x: 0, y: 0}
 --- !u!1 &1867244447
 GameObject:
   m_ObjectHideFlags: 0

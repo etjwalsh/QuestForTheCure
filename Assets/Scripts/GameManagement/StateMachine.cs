@@ -102,8 +102,6 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("color of image = " + fadeUI.color);
-        // Debug.Log(currentState);
         //state machine switch statement
         switch (currentState)
         {
@@ -338,6 +336,9 @@ public class GameStateMachine : MonoBehaviour
 
         //transition
 
+        //save the player locations
+        PlayerManager.instance.SavePlayerLocations();
+
         //enter the trivia scene
         SceneManager.LoadScene("Trivia");
 
@@ -405,7 +406,7 @@ public class GameStateMachine : MonoBehaviour
         }
 
         List<QuestionTemplate> qs;
-        
+
         //search the dictionary for the right question
         if (questionsDictionary.TryGetValue((role, stage), out qs))
         {
