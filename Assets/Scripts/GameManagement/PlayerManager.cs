@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -115,7 +116,7 @@ public class PlayerManager : MonoBehaviour
             playerPieces[i] = players[i].characterPiece;
 
             //save the locations of the players
-            players[currentPlayerIndex].location = current.space.transform.position;
+            players[i].location = players[i].characterPiece.transform.position;
             playerLocations[i] = players[i].location;
         }
 

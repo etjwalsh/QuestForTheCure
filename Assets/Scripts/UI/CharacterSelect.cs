@@ -11,7 +11,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
 {
     public CharacterData[] characters;
     [SerializeField] private GameObject CharacterSelectUI;
-    [SerializeField] private GameObject characterImage;
+    // [SerializeField] private GameObject characterImage;
     [SerializeField] private GameObject highlight;
     [SerializeField] private TMP_Text bigName;
     [SerializeField] private TMP_Text description;
@@ -23,7 +23,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private void Start()
     {
         highlight.SetActive(false);
-        characterImage.SetActive(false);
+        // characterImage.SetActive(false);
         characters = CharacterSelectUI.GetComponent<CharacterSelect>().characters;
     }
 
@@ -96,8 +96,8 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
             highlight.GetComponent<Image>().color = GetColor(characterName);
 
             //change character image to the character's portrait
-            characterImage.GetComponent<Image>().sprite = GetCharacterImage(characterName);
-            characterImage.SetActive(true);
+            // characterImage.GetComponent<Image>().sprite = GetCharacterImage(characterName);
+            // characterImage.SetActive(true);
 
             //set border location to the same as the button selected
             highlight.transform.position = gameObject.transform.position;

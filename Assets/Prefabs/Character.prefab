@@ -50,7 +50,7 @@ MonoBehaviour:
   space: {fileID: 0}
   startingSpot: {fileID: 0}
   wheel: {fileID: 0}
-  choice: right
+  choice: left
   tagLandedOn: 
   moveSpeed: 5
   canMove: 0
