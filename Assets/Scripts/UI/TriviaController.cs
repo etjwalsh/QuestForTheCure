@@ -8,6 +8,8 @@ public class TriviaController : MonoBehaviour
 {
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Button[] answerButtons;
+    [SerializeField] private Button exitButton;
+    [SerializeField] private TMP_Text explanation;
     private QuestionTemplate question;
     private List<string> wrongAnswers = new List<string> { };
 
@@ -17,8 +19,6 @@ public class TriviaController : MonoBehaviour
     {
         //get the question
         question = GameStateMachine.instance.currentQuestion;
-        Debug.Log("question incorrect answer 1 is:");
-        Debug.Log(question.incorrectAnswer1);
 
         //check what type of question it is
         if (question.questionType == "TrueFalse")
@@ -29,12 +29,6 @@ public class TriviaController : MonoBehaviour
         }
         else if (question.questionType == "MultipleChoice")
         {
-            Debug.Log("about to print the wrong answer list");
-            Debug.Log(wrongAnswers);
-
-            Debug.Log("about to print question.incorrect answer1");
-            Debug.Log(question.incorrectAnswer1);
-
             //get the wrong answers
             wrongAnswers.Add(question.incorrectAnswer1);
             wrongAnswers.Add(question.incorrectAnswer2);
