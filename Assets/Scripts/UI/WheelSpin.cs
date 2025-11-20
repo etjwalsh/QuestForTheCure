@@ -9,7 +9,7 @@ public class WheelSpin : MonoBehaviour
     //variables for number rolled 1-10
     [SerializeField] private RectTransform wheel; //reference to the wheel ui object's transform - set in inspector
     [SerializeField] private int numberOfSlices = 10;
-    public TMP_Text number;
+    [SerializeField] public Button spinButton;
     public int numberRolled;
 
     public event System.Action<int> OnRolled;
@@ -22,6 +22,9 @@ public class WheelSpin : MonoBehaviour
 
     public void OnButtonClick()
     {
+        //turn off the button
+        spinButton.interactable = false;
+
         if (!spinning)
         {
             spinTime = Random.Range(3f, 6f); //how long the spinning will last, random between 0 and 5

@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel: {fileID: 7155012921813727091}
   numberOfSlices: 10
+  spinButton: {fileID: 2651491844057927429}
   number: {fileID: 8391220232118043841}
   numberRolled: 0
 --- !u!114 &8855969513697464887

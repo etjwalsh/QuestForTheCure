@@ -10,6 +10,7 @@ public class TriviaController : MonoBehaviour
     [SerializeField] private Button[] answerButtons;
     [SerializeField] private Button exitButton;
     [SerializeField] private TMP_Text explanation;
+    [SerializeField] private TMP_Text rightWrong;
     private QuestionTemplate question;
     private List<string> wrongAnswers = new List<string> { };
 
@@ -41,6 +42,10 @@ public class TriviaController : MonoBehaviour
 
     private void LoadMultipleChoiceQuestion()
     {
+        exitButton.gameObject.SetActive(false);
+        explanation.gameObject.SetActive(false);
+        rightWrong.gameObject.SetActive(false);
+
         //display the question
         questionText.text = question.question;
 
@@ -78,35 +83,75 @@ public class TriviaController : MonoBehaviour
 
     private void LoadTrueFalseQuestion()
     {
+        exitButton.gameObject.SetActive(false);
+        explanation.gameObject.SetActive(false);
+        rightWrong.gameObject.SetActive(false);
+        answerButtons[2].gameObject.SetActive(false);
+        answerButtons[3].gameObject.SetActive(false);
 
+        //display the question
+        questionText.text = question.question;
+
+        //put all the answers into a list
+        List<string> allAnswers = new List<string>(wrongAnswers);
+        allAnswers.Add(question.correctAnswer);
+
+        //shuffle the answers
+        Shuffle(allAnswers);
+
+        //assign answers to different buttons
+        for (int i = 0; i < allAnswers.Count; i++)
+        {
+            string answer = allAnswers[i];
+            answerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = answer;
+
+            // Remove previous listeners
+            answerButtons[i].onClick.RemoveAllListeners();
+
+            // Capture variable for closure
+            answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answer, question.correctAnswer));
+        }
     }
 
     private void OnAnswerSelected(string chosenAnswer, string correct)
     {
+        //activate the "correct" word
+        rightWrong.gameObject.SetActive(true);
+
         if (chosenAnswer == correct)
         {
-            Debug.Log("✅ Correct!");
-
-            PlayerManager.instance.LoadPlayerLocations("Sandbox");
-
             //show the player "correct"
-
-            //move to explanation screen
-
+            rightWrong.text = "Correct!";
         }
         else
         {
-            Debug.Log("❌ Wrong!");
             //show the player "incorrect"
-
-            //move to the explanation screen
-
+            rightWrong.text = "Incorrect!";
         }
+
+        //move to explanation screen
+        // deactivate the question
+        questionText.gameObject.SetActive(false);
+
+        //deactivate the buttons
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            answerButtons[i].gameObject.SetActive(false);
+        }
+
+        //activate the explanation
+        explanation.gameObject.SetActive(true);
+        explanation.text = question.explanation;
+
+
+        //activate the exit button
+        exitButton.gameObject.SetActive(true);
+
     }
 
     public void OnDoneClicked()
     {
-        //
-        //change scene back to the main game scene
+        //change scenes
+        PlayerManager.instance.LoadPlayerLocations("Sandbox");
     }
 }

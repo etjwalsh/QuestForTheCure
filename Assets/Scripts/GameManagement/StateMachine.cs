@@ -302,6 +302,7 @@ public class GameStateMachine : MonoBehaviour
 
         //activate the wheel spinner UI
         wheelUI.SetActive(true);
+        wheelUI.GetComponent<WheelSpin>().spinButton.interactable = true;
     }
 
     public void PlayerMoving()
