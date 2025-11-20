@@ -782,6 +782,10 @@ PrefabInstance:
       propertyPath: fadeAnim
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4664397348738879998, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+      propertyPath: playerPieces.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: transition
       value: 

@@ -13,8 +13,10 @@ public class PlayerManager : MonoBehaviour
 
     //list of players
     public List<Player> players = new List<Player>();
+    //list of player pieces
     public List<GameObject> playerPieces = new List<GameObject>();
-    public Vector3[] playerLocations;
+    //for saving player locations
+    public SpacesTree[] playerLocations;
     public int currentPlayerIndex = 0;
     public Movement current;
     CinemachineVirtualCamera activeCamera;
@@ -104,10 +106,10 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void SavePlayerLocations()
+    public IEnumerator SavePlayerLocations()
     {
         //initialize the array
-        playerLocations = new Vector3[players.Count];
+        playerLocations = new SpacesTree[players.Count];
 
         //save all the player locations to the list
         for (int i = 0; i < players.Count; i++)
@@ -116,28 +118,39 @@ public class PlayerManager : MonoBehaviour
             playerPieces[i] = players[i].characterPiece;
 
             //save the locations of the players
-            players[i].location = players[i].characterPiece.transform.position;
-            playerLocations[i] = players[i].location;
+            Debug.Log("Printing out the space the player is currently on:" + playerPieces[i].GetComponent<Movement>().space);
+            playerLocations[i] = playerPieces[i].GetComponent<Movement>().space;
+
+            Debug.Log("printing out playerlocations[i] after setting it:" + playerLocations[i]);
         }
 
-        for (int j = 0; j < playerPieces.Count; j++)
-        {
-            Debug.Log("here are the player pieces before trivia: " + playerPieces[j]);
-        }
+        // //print out the player pieces before trivia enter
+        // for (int j = 0; j < playerPieces.Count; j++)
+        // {
+        //     Debug.Log("here are the player pieces before trivia: " + playerPieces[j]);
+        // }
+
+        yield return null;
     }
 
-    public void LoadPlayerLocations()
+    public void LoadPlayerLocations(string sceneName)
     {
-        SceneManager.LoadScene("Sandbox");
+        //change the game state to scene change
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.SceneChange;
+        SceneManager.LoadScene(sceneName);
 
-        for (int j = 0; j < playerPieces.Count; j++)
+        for (int i = 0; i < playerPieces.Count; i++)
         {
-            Debug.Log("here are the player pieces after trivia: " + playerPieces[j]); //this is working?
-        }
+            Debug.Log("printing player locations list [i]" + playerLocations[i]);
+            Debug.Log("here are the player pieces after trivia: " + playerPieces[i]); //this is working?
+            playerPieces[i].GetComponent<Movement>().space = playerLocations[i];
 
-        for (int i = 0; i < playerLocations.Length; i++)
-        {
-            playerPieces[i].transform.position = playerLocations[i];
+            Debug.Log("Printing out playerPieces[i]" + playerPieces[i]);
+            Debug.Log("Printing out playerPieces[i] movement component" + playerPieces[i].GetComponent<Movement>());
+            Debug.Log("Printing out playerPieces[i] space" + playerPieces[i].GetComponent<Movement>().space);
+
+            // Instantiate(playerPieces[i], playerPieces[i].GetComponent<Movement>().space.transform.position, playerPieces[i].GetComponent<Movement>().space.transform.rotation);
         }
+        current = playerPieces[currentPlayerIndex].GetComponent<Movement>();
     }
 }

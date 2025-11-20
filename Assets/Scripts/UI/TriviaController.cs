@@ -87,7 +87,7 @@ public class TriviaController : MonoBehaviour
         {
             Debug.Log("✅ Correct!");
 
-            PlayerManager.instance.LoadPlayerLocations();
+            PlayerManager.instance.LoadPlayerLocations("Sandbox");
 
             //show the player "correct"
 

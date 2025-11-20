@@ -47,7 +47,10 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 newPlayer.characterPiece = characters[i].charPiece;
             }
         }
+
+        //add player to the players list
         PlayerManager.instance.players.Add(newPlayer);
+        Debug.Log("Printing the player piece of the player that was just selected:" + newPlayer.playerModel);
 
         //deincrement numPlayersToSelect
         numPlayersToSelect--;
@@ -55,13 +58,6 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         //if no more players to select
         if (numPlayersToSelect == 0)
         {
-            // //print the list
-            // foreach (Player p in PlayerManager.instance.players)
-            // {
-            //     Debug.Log("Player Name: " + p.playerName);
-            //     Debug.Log("Player Model = " + p.playerModel);
-            // }
-
             //change game state to game start state
             GameStateMachine.instance.currentState = GameStateMachine.GameState.GameStart;
         }
@@ -83,7 +79,7 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         characterName = GetName();
 
         //check to make sure the pointer isn't just on the background, and that the button isn't already deactivated
-        if (gameObject.name != "CharacterSelect" && button.interactable == true) 
+        if (gameObject.name != "CharacterSelect" && button.interactable == true)
         {
             //change name header to character's name
             bigName.text = characterName;

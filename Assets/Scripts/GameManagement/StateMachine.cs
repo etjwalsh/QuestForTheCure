@@ -54,7 +54,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, EndTurn }
+    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, SceneChange, EndTurn }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     private void Awake()
@@ -170,6 +170,11 @@ public class GameStateMachine : MonoBehaviour
                     Trivia();
                     break;
                 }
+            case GameState.SceneChange:
+                {
+                    SceneChange();
+                    break;
+                }
             case GameState.EndTurn:
                 {
                     EndTurn();
@@ -264,6 +269,7 @@ public class GameStateMachine : MonoBehaviour
             playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
 
             //spawn in a new player
+            Debug.Log("About to spawn in gameobject:" + PlayerManager.instance.players[i].characterPiece);
             GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
 
             //add this gameObject to the list of player pieces
@@ -277,9 +283,6 @@ public class GameStateMachine : MonoBehaviour
             Debug.Log("about to get the camera and set the priority to 0, and then print them both");
             var camera = spawnedPlayer.GetComponentInChildren<CinemachineVirtualCamera>();
             camera.Priority = 0;
-
-            // Debug.Log("camera = " + camera);
-            // Debug.Log("priority = " + camera.Priority);
         }
 
         //reset the list of roles
@@ -336,8 +339,22 @@ public class GameStateMachine : MonoBehaviour
 
         //transition
 
-        //save the player locations
-        PlayerManager.instance.SavePlayerLocations();
+        //save all the player locations to the list
+        PlayerManager.instance.playerLocations = new SpacesTree[PlayerManager.instance.players.Count];
+        Debug.Log("current player movement space outside loop:" + PlayerManager.instance.playerPieces[0].GetComponent<Movement>().space);
+
+        for (int i = 0; i < PlayerManager.instance.players.Count; i++)
+        {
+            Debug.Log("i = " + i);
+            Debug.Log("current player movement space inside loop:" + PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space);
+            //save the player pieces to the list
+            // PlayerManager.instance.playerPieces[i] = PlayerManager.instance.players[i].characterPiece;
+
+            //save the locations of the players
+            PlayerManager.instance.playerLocations[i] = PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space;
+
+            Debug.Log("printing out playerlocations[i] after setting it:" + PlayerManager.instance.playerLocations[i]);
+        }
 
         //enter the trivia scene
         SceneManager.LoadScene("Trivia");
@@ -359,6 +376,11 @@ public class GameStateMachine : MonoBehaviour
     public void Trivia()
     {
         // currentState = GameState.EndTurn;
+    }
+
+    public void SceneChange()
+    {
+        currentState = GameState.EndTurn;
     }
 
     public void EndTurn()
