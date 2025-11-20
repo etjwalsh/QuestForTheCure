@@ -149,17 +149,17 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         return newColor;
     }
 
-    private Sprite GetCharacterImage(string characterName)
-    {
-        Sprite newSprite = null;
+    // private Sprite GetCharacterImage(string characterName)
+    // {
+    //     Sprite newSprite = null;
 
-        for (int i = 0; i < characters.Length; i++)
-        {
-            if (characterName == characters[i].charName)
-            {
-                newSprite = characters[i].model;
-            }
-        }
-        return newSprite;
-    }
+    //     for (int i = 0; i < characters.Length; i++)
+    //     {
+    //         if (characterName == characters[i].charName)
+    //         {
+    //             newSprite = characters[i].model;
+    //         }
+    //     }
+    //     return newSprite;
+    // }
 }
