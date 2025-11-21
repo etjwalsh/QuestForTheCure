@@ -22,10 +22,10 @@ MonoBehaviour:
     spot patterns in how the disease starts, changes over time, and affects different
     individuals. This helps them focus on the aspects of the disease that matter
     most in everyday life, so new treatments target the problems patients care about.
-  correctAnswer: How the disease develops and progresses in different people
-  incorrectAnswer1: How safe and effective a new treatment is
-  incorrectAnswer2: How many patients will receive the new treatment
-  incorrectAnswer3: How patients will respond to a new treatment
+  correctAnswer: 'B: How the disease develops and progresses in different people'
+  incorrectAnswer1: 'A: How safe and effective a new treatment is'
+  incorrectAnswer2: 'C: How many patients will receive the new treatment'
+  incorrectAnswer3: 'D: How patients will respond to a new treatment'
   questionRole: Patient
   questionType: MultipleChoice
   questionStage: Discovery

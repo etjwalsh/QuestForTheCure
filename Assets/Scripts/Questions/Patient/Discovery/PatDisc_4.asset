@@ -22,10 +22,10 @@ MonoBehaviour:
     and even provide early clues about how people may respond to a new treatment.
     Without patient samples, researchers would be missing a crucial window into the
     real-world biology of disease.
-  correctAnswer: All the above
-  incorrectAnswer1: To understand how diseases work in real people
-  incorrectAnswer2: To identify potential targets for treatment
-  incorrectAnswer3: To predict patient responses to treatment
+  correctAnswer: 'D: All the above'
+  incorrectAnswer1: 'A: To understand how diseases work in real people'
+  incorrectAnswer2: 'B: To identify potential targets for treatment'
+  incorrectAnswer3: 'C: To predict patient responses to treatment'
   questionRole: Patient
   questionType: MultipleChoice
   questionStage: Discovery

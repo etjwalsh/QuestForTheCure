@@ -22,11 +22,11 @@ MonoBehaviour:
     important, the PI listens to patients \u2014 through feedback, advocacy groups,
     or shared experiences \u2014 to make sure the research focuses on areas that
     truly matter to people living with the disease."
-  correctAnswer: A and C
-  incorrectAnswer1: Lead the research project and make sure it follows ethical and
-    scientific standards
-  incorrectAnswer2: Approve or reject a new experimental drug or treatment
-  incorrectAnswer3: Use patient insights and samples to guide the research direction
+  correctAnswer: 'D: A and C'
+  incorrectAnswer1: 'A: Lead the research project and make sure it follows ethical
+    and scientific standards'
+  incorrectAnswer2: 'B: Approve or reject a new experimental drug or treatment'
+  incorrectAnswer3: 'C: Use patient insights and samples to guide the research direction'
   questionRole: Patient
   questionType: MultipleChoice
   questionStage: Discovery
