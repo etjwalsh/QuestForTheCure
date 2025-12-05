@@ -77,6 +77,13 @@ public class Movement : MonoBehaviour
 
         while (steps > 0)
         {
+            //check if this space is required
+            if (space.gameObject.CompareTag("RequiredTrivia") || space.gameObject.CompareTag("RequiredMinigame") || space.gameObject.CompareTag("EndOfStage"))
+            {
+                //stop moving
+                steps = 0;
+                continue;
+            }
             if (space.next == null)
             {
                 //check for split
@@ -145,16 +152,19 @@ public class Movement : MonoBehaviour
         // canMove = true;
 
         //change game state to whatever the player landed on
-        if (tagLandedOn == "Minigame")
+        if (tagLandedOn == "Minigame" || tagLandedOn == "RequiredMinigame")
         {
+            space.gameObject.tag = "Untagged";
             GameStateMachine.instance.currentState = GameStateMachine.GameState.MinigameEnter;
         }
-        else if (tagLandedOn == "Trivia")
+        else if (tagLandedOn == "Trivia" || tagLandedOn == "RequiredTrivia")
         {
+            space.gameObject.tag = "Untagged";
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }
         else if (tagLandedOn == "EndOfStage")
         {
+            Debug.Log("go to the next stage!");
             //move all players to the next stage
 
             //randomize all of the player's roles

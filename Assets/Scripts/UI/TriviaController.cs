@@ -152,6 +152,6 @@ public class TriviaController : MonoBehaviour
     public void OnDoneClicked()
     {
         //change scenes
-        PlayerManager.instance.LoadPlayerLocations("Sandbox");
+        StartCoroutine(PlayerManager.instance.LoadPlayerLocations(LevelLoader.instance.previousScene));
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - StartingSpace
   - ActivePlayer
   - InactivePlayer
+  - RequiredMinigame
+  - RequiredTrivia
+  - EndOfStage
   layers:
   - Default
   - TransparentFX

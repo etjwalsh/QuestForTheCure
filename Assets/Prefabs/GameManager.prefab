@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5501723156578017471}
   - component: {fileID: 7365389861144219506}
   - component: {fileID: 4664397348738879998}
+  - component: {fileID: 4698444298099513385}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,8 +65,19 @@ MonoBehaviour:
   characterSelectUI: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
   lrUI: {fileID: 577499676586257017, guid: 2a4818cfe1e23a049b10205ea8046f3d, type: 3}
   numPlayersUI: {fileID: 2194124980462399583, guid: d92a982aa7c7f3446b9dfc7ba554b3bf, type: 3}
-  transition: {fileID: 0}
-  transitionTime: 1
+  fadeUI: {fileID: 0}
+  fadeDuration: 1
+  roles:
+  - Patient
+  - Physician
+  - Community Advocate
+  - Research Coordinator
+  - Safety & Ethics
+  - Caregiver
+  currentPlayerRole: 
+  currentQuestion: {fileID: 0}
+  currentStage: Discovery
+  triviaQuesitons: []
   currentState: 0
 --- !u!114 &4664397348738879998
 MonoBehaviour:
@@ -80,4 +92,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
+  playerPieces: []
+  playerLocations: []
   currentPlayerIndex: 0
+  current: {fileID: 0}
+--- !u!114 &4698444298099513385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023217707697673239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7dbcd44c4a35184d80bc3b53e755e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
+  fadeDuration: 0.5

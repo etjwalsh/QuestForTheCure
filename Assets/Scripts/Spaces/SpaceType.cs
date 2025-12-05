@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class SpaceType : MonoBehaviour
 {
@@ -34,7 +31,6 @@ public class SpaceType : MonoBehaviour
     private void Regular()
     {
         Debug.Log("this is a regular space");
-        // GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
     }
     private void Trivia()
     {

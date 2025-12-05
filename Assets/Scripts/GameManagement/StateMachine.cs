@@ -1,15 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
-using Palmmedia.ReportGenerator.Core;
-using UnityEngine.TextCore.Text;
-using Unity.VisualScripting;
-using Cinemachine;
-using System;
-
 
 public class GameStateMachine : MonoBehaviour
 {
@@ -21,10 +13,6 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
     [SerializeField] public Image fadeUI; //reference to the black fade in / fade out UI element
     public float fadeDuration = 1f;
-
-
-    //for spawning players
-    private Movement playerScript;
 
     //for the rotating roles
     public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Coordinator", "Safety & Ethics", "Caregiver" };
@@ -227,68 +215,8 @@ public class GameStateMachine : MonoBehaviour
         //set UI correctly
         characterSelectUI.SetActive(false);
 
-        //set a function call for after the scene is loaded
-        SceneManager.sceneLoaded += OnLoaded;
-
         //change scenes
-        SceneManager.LoadScene("Sandbox");
-    }
-
-    //this method is just for use when going from the main menu to the sandbox scene
-    public void OnLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //make sure the correct scene loaded
-        if (scene.name != "Sandbox")
-        {
-            return;
-        }
-
-        //remove this function call so it doesn't dupe next time
-        SceneManager.sceneLoaded -= OnLoaded;
-
-        //get how many players need to be spawned in
-        int numPlayersToSpawn = PlayerManager.numPlayers;
-        // Debug.Log("number of players to spawn = " + numPlayersToSpawn);
-
-        //spawn in characters based on the characters inside of the player list (access from PlayerManager)
-        //add this later, for now just spawn in 4 of the same generic character
-
-        //vars for the spawning
-        float spacing = 2.0f;
-        float startOffset = -(spacing * (PlayerManager.numPlayers - 1) / 2f);
-
-        //for loop to spawn all the players
-        for (int i = 0; i < PlayerManager.numPlayers; i++)
-        {
-            playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
-
-            //offset along Z axis for spawning players
-            Vector3 offset = new Vector3(0, 0, startOffset + (i * spacing));
-
-            //locate the starting spot 
-            playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
-
-            //spawn in a new player
-            Debug.Log("About to spawn in gameobject:" + PlayerManager.instance.players[i].characterPiece);
-            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
-
-            //add this gameObject to the list of player pieces
-            PlayerManager.instance.playerPieces.Add(spawnedPlayer);
-
-            //assign the player a role
-            spawnedPlayer.GetComponent<Movement>().currentRole = AssignRoleToPlayer();
-            Debug.Log("player's role is now: " + spawnedPlayer.GetComponent<Movement>().currentRole);
-
-            //set the priority of the spawned player's camera to 0
-            Debug.Log("about to get the camera and set the priority to 0, and then print them both");
-            var camera = spawnedPlayer.GetComponentInChildren<CinemachineVirtualCamera>();
-            camera.Priority = 0;
-        }
-
-        //reset the list of roles
-        roles = ResetRolesList(roles);
-
-        currentState = GameState.Spinning; //will def need to change this later to include tutorial type stuff
+        LevelLoader.instance.LoadScene("LoadDiscovery");
     }
 
     public void Spinning()
@@ -338,10 +266,8 @@ public class GameStateMachine : MonoBehaviour
 
         Debug.Log("the selected question is now: " + currentQuestion);
 
-        //transition
-
         //save all the player locations to the list
-        PlayerManager.instance.playerLocations = new SpacesTree[PlayerManager.instance.players.Count];
+        PlayerManager.instance.playerLocations = new string[PlayerManager.instance.players.Count];
         Debug.Log("current player movement space outside loop:" + PlayerManager.instance.playerPieces[0].GetComponent<Movement>().space);
 
         for (int i = 0; i < PlayerManager.instance.players.Count; i++)
@@ -352,13 +278,13 @@ public class GameStateMachine : MonoBehaviour
             // PlayerManager.instance.playerPieces[i] = PlayerManager.instance.players[i].characterPiece;
 
             //save the locations of the players
-            PlayerManager.instance.playerLocations[i] = PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space;
+            PlayerManager.instance.playerLocations[i] = PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space.name;
 
             Debug.Log("printing out playerlocations[i] after setting it:" + PlayerManager.instance.playerLocations[i]);
         }
 
         //enter the trivia scene
-        SceneManager.LoadScene("Trivia");
+        LevelLoader.instance.LoadScene("Trivia");
 
         //set the first trivia UI up
         if (currentQuestion.questionType == "TrueFalse")

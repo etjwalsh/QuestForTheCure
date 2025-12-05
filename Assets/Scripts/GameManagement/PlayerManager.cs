@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     //list of player pieces
     public List<GameObject> playerPieces = new List<GameObject>();
     //for saving player locations
-    public SpacesTree[] playerLocations;
+    public string[] playerLocations;
     public int currentPlayerIndex = 0;
     public Movement current;
     CinemachineVirtualCamera activeCamera;
@@ -109,7 +109,7 @@ public class PlayerManager : MonoBehaviour
     public IEnumerator SavePlayerLocations()
     {
         //initialize the array
-        playerLocations = new SpacesTree[players.Count];
+        playerLocations = new string[players.Count];
 
         //save all the player locations to the list
         for (int i = 0; i < players.Count; i++)
@@ -119,7 +119,7 @@ public class PlayerManager : MonoBehaviour
 
             //save the locations of the players
             Debug.Log("Printing out the space the player is currently on:" + playerPieces[i].GetComponent<Movement>().space);
-            playerLocations[i] = playerPieces[i].GetComponent<Movement>().space;
+            playerLocations[i] = playerPieces[i].GetComponent<Movement>().space.name;
 
             Debug.Log("printing out playerlocations[i] after setting it:" + playerLocations[i]);
         }
@@ -133,24 +133,49 @@ public class PlayerManager : MonoBehaviour
         yield return null;
     }
 
-    public void LoadPlayerLocations(string sceneName)
+    public IEnumerator LoadPlayerLocations(string sceneName)
     {
         //change the game state to scene change
         GameStateMachine.instance.currentState = GameStateMachine.GameState.SceneChange;
-        SceneManager.LoadScene(sceneName);
+        LevelLoader.instance.LoadScene(sceneName);
 
+        yield return new WaitUntil(() => !LevelLoader.instance.isLoading);
+
+        Debug.Log("bookmark to figure out where i am bruh");
+
+        //loop through all of the pieces and set their player location
         for (int i = 0; i < playerPieces.Count; i++)
         {
-            Debug.Log("printing player locations list [i]" + playerLocations[i]);
-            Debug.Log("here are the player pieces after trivia: " + playerPieces[i]); //this is working?
-            playerPieces[i].GetComponent<Movement>().space = playerLocations[i];
-
-            Debug.Log("Printing out playerPieces[i]" + playerPieces[i]);
-            Debug.Log("Printing out playerPieces[i] movement component" + playerPieces[i].GetComponent<Movement>());
-            Debug.Log("Printing out playerPieces[i] space" + playerPieces[i].GetComponent<Movement>().space);
-
-            // Instantiate(playerPieces[i], playerPieces[i].GetComponent<Movement>().space.transform.position, playerPieces[i].GetComponent<Movement>().space.transform.rotation);
+            //get reference to the first space in the tree
+            Debug.Log("inside of the for loop for loading player locations");
+            playerPieces[currentPlayerIndex].GetComponent<Movement>().space = GameObject.Find(playerLocations[i]).GetComponent<SpacesTree>();
         }
         current = playerPieces[currentPlayerIndex].GetComponent<Movement>();
     }
+
+    // private void SearchPlayerTree(SpacesTree space, int i)
+    // {
+    //     Debug.Log("checking space: " + space);
+    //     //check if the current space is what you're looking for
+    //     if (space.gameObject.name == playerLocations[i])
+    //     {
+    //         Debug.Log("about to set " + playerPieces[i] + "'s space to " + space);
+    //         //set the current player's piece to this space
+    //         playerPieces[i].GetComponent<Movement>().space = space;
+    //         return;
+    //     }
+
+    //     if (space.left) //if left exists
+    //     {
+    //         SearchPlayerTree(space.left, i);
+    //     }
+    //     if (space.right) //if right exists
+    //     {
+    //         SearchPlayerTree(space.right, i);
+    //     }
+    //     if (space.next) //if next exists
+    //     {
+    //         SearchPlayerTree(space.next, i);
+    //     }
+    // }
 }
