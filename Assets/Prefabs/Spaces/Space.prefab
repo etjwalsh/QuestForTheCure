@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -8508464804566273096, guid: b94a27c1f547ee94386ad0178181f3cf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceType: 
-  start: {fileID: 0}
+  first: {fileID: 0}
+  previous: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
+  next: {fileID: 0}
