@@ -154,12 +154,20 @@ public class Movement : MonoBehaviour
         //change game state to whatever the player landed on
         if (tagLandedOn == "Minigame" || tagLandedOn == "RequiredMinigame")
         {
-            space.gameObject.tag = "Untagged";
+            if(tagLandedOn == "RequiredMinigame") //make this into a normal space
+            {
+                space.gameObject.tag = "Untagged";
+                space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
+            }
             GameStateMachine.instance.currentState = GameStateMachine.GameState.MinigameEnter;
         }
-        else if (tagLandedOn == "Trivia" || tagLandedOn == "RequiredTrivia")
+        else if (tagLandedOn == "Trivia" || tagLandedOn == "RequiredTrivia") //make this into a normal space
         {
-            space.gameObject.tag = "Untagged";
+            if(tagLandedOn == "RequiredTrivia")
+            {
+                space.gameObject.tag = "Untagged";
+                space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
+            }
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }
         else if (tagLandedOn == "EndOfStage")
@@ -181,7 +189,7 @@ public class Movement : MonoBehaviour
 
     IEnumerator MoveToPosition(Vector3 target)
     {
-        target.y += 0.05f; //makes the player land slightly above the space itself
+        target.y += 0.1f; //makes the player land slightly above the space itself
 
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {

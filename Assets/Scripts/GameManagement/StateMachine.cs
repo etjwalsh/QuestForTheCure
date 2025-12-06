@@ -11,8 +11,9 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject characterSelectUI; //reference to the char select screen ui
     [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
     [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
-    [SerializeField] public Image fadeUI; //reference to the black fade in / fade out UI element
-    public float fadeDuration = 1f;
+
+    //for changing the space after a required space gets landed on
+    public Material genericSpaceMat;
 
     //for the rotating roles
     public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Coordinator", "Safety & Ethics", "Caregiver" };
@@ -179,9 +180,6 @@ public class GameStateMachine : MonoBehaviour
         lrUI.SetActive(false);
         numPlayersUI.SetActive(false);
 
-        //fade the screen in
-        // StartCoroutine(FadeFromBlack());
-
         //change game state to main menu
         currentState = GameState.MainMenu;
     }
@@ -223,7 +221,6 @@ public class GameStateMachine : MonoBehaviour
     {
         //start the player's turn
         PlayerManager.instance.StartTurn();
-        // Debug.Log("current player is = " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
 
         //set reference to the current player's script
         lrUI.GetComponent<LeftRightChoice>().playerRef = PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].characterPiece;
@@ -264,23 +261,14 @@ public class GameStateMachine : MonoBehaviour
         //get the trivia question based on the current stage
         currentQuestion = GetQuestion(currentPlayerRole, currentStage);
 
-        Debug.Log("the selected question is now: " + currentQuestion);
 
         //save all the player locations to the list
         PlayerManager.instance.playerLocations = new string[PlayerManager.instance.players.Count];
-        Debug.Log("current player movement space outside loop:" + PlayerManager.instance.playerPieces[0].GetComponent<Movement>().space);
 
         for (int i = 0; i < PlayerManager.instance.players.Count; i++)
         {
-            Debug.Log("i = " + i);
-            Debug.Log("current player movement space inside loop:" + PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space);
-            //save the player pieces to the list
-            // PlayerManager.instance.playerPieces[i] = PlayerManager.instance.players[i].characterPiece;
-
             //save the locations of the players
             PlayerManager.instance.playerLocations[i] = PlayerManager.instance.playerPieces[i].GetComponent<Movement>().space.name;
-
-            Debug.Log("printing out playerlocations[i] after setting it:" + PlayerManager.instance.playerLocations[i]);
         }
 
         //enter the trivia scene
@@ -302,7 +290,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void Trivia()
     {
-        // currentState = GameState.EndTurn;
+        wheelUI.SetActive(false);
     }
 
     public void SceneChange()
@@ -323,7 +311,7 @@ public class GameStateMachine : MonoBehaviour
         }
 
         //get a random role
-        int randIndex = UnityEngine.Random.Range(0, roles.Count);
+        int randIndex = Random.Range(0, roles.Count);
         string chosenRole = roles[randIndex];
 
         //remove that number from the list of possible numbers
@@ -359,74 +347,8 @@ public class GameStateMachine : MonoBehaviour
         //search the dictionary for the right question
         if (questionsDictionary.TryGetValue((role, stage), out qs))
         {
-            return qs[UnityEngine.Random.Range(0, qs.Count)];
+            return qs[Random.Range(0, qs.Count)];
         }
         return null;
     }
-
-    // public IEnumerator FadeToBlack() //this one fades FROM NORMAL TO BLACK
-    // {
-    //     Debug.Log("inside of fade to black");
-    //     Color c = fadeUI.color;
-    //     float elapsed = 0f;
-    //     float startAlpha = c.a;
-
-    //     while (elapsed < fadeDuration)
-    //     {
-    //         elapsed += Time.deltaTime;
-    //         c.a = Mathf.Lerp(startAlpha, 1f, elapsed / fadeDuration); // gradually increase alpha
-    //         fadeUI.color = c;
-    //         yield return null;
-    //     }
-
-    //     //make sure it is fully black
-    //     c.a = 1f;
-    //     fadeUI.color = c;
-    // }
-    // public IEnumerator FadeFromBlack() //this one fades FROM BLACK TO NORMAL
-    // {
-    //     Debug.Log("inside of fade from black");
-    //     Color c = fadeUI.color;
-    //     float elapsed = 0f;
-    //     float startAlpha = c.a;
-
-    //     Debug.Log("Starting FadeFromBlack, alpha=" + fadeUI.color.a);
-    //     // gradually reduce alpha of the black image
-    //     while (elapsed < fadeDuration)
-    //     {
-    //         elapsed += Time.deltaTime;
-    //         c.a = Mathf.Lerp(startAlpha, 0f, elapsed / fadeDuration);
-    //         fadeUI.color = c;
-
-    //         Debug.Log("Loop: elapsed=" + elapsed + " alpha=" + fadeUI.color.a);
-
-    //         yield return null;
-
-    //     }
-    //     Debug.Log("FadeFromBlack finished, alpha=" + fadeUI.color.a);
-
-    //     //make sure it is fully transparent
-    //     c.a = 0f;
-    //     fadeUI.color = c;
-    // }
-
-    // --------------- for loading levels ---------------
-
-    //this will load the next level in the unity build order
-    // public void LoadNextLevel()
-    // {
-    //     StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    // }
-
-    // //for transitioning between scenes
-    // IEnumerator LoadLevel(int levelIndex)
-    // {
-    //     //trigger the crossfade to start
-    //     transition.SetTrigger("start");
-
-    //     //wait a sec
-    //     yield return new WaitForSeconds(transitionTime);
-
-    //     SceneManager.LoadScene(levelIndex);
-    // }
 }

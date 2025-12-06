@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8264289727756386345}
-  - component: {fileID: 3324322467989253196}
+  - component: {fileID: 6852991475162480295}
   m_Layer: 0
   m_Name: RequiredTriviaSpace
-  m_TagString: Untagged
+  m_TagString: RequiredTrivia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,15 +25,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8164751309842409133}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -572.2452, y: -0.01056584, z: 277.7203}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4716706706218112906}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3324322467989253196
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &6852991475162480295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8164751309842409133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f83bb2851545c4dab2eef0663c566e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b17ee5e3d22a9f4a9a9c12533629975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileType: 0
+  spaceType: 
+  first: {fileID: 0}
+  previous: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  next: {fileID: 0}
 --- !u!1001 &5115986643666874465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91bb186ab6760fd4589b145979858e5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0022240735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 91bb186ab6760fd4589b145979858e5c, type: 3}
       propertyPath: m_LocalPosition.z
