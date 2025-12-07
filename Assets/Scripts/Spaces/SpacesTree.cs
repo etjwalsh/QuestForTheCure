@@ -19,4 +19,6 @@ public class SpacesTree : MonoBehaviour
 
     //to determine which one comes next
     public SpacesTree next;
+
+    public GameObject stopSign;
 }

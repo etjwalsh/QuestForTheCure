@@ -154,10 +154,14 @@ public class Movement : MonoBehaviour
         //change game state to whatever the player landed on
         if (tagLandedOn == "Minigame" || tagLandedOn == "RequiredMinigame")
         {
-            if(tagLandedOn == "RequiredMinigame") //make this into a normal space
+            if(tagLandedOn == "RequiredMinigame") 
             {
+                //reset the space to be a normal space
                 space.gameObject.tag = "Untagged";
                 space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
+
+                //get rid of the stop sign
+                Destroy(space.stopSign);
             }
             GameStateMachine.instance.currentState = GameStateMachine.GameState.MinigameEnter;
         }
@@ -165,8 +169,12 @@ public class Movement : MonoBehaviour
         {
             if(tagLandedOn == "RequiredTrivia")
             {
+                //reset the space to be a normal space
                 space.gameObject.tag = "Untagged";
                 space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
+
+                //get rid of the stop sign
+                Destroy(space.stopSign);
             }
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
         }
