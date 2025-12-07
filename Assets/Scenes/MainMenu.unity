@@ -833,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: genericSpaceMat
       value: 
-      objectReference: {fileID: -8508464804566273096, guid: b94a27c1f547ee94386ad0178181f3cf, type: 3}
+      objectReference: {fileID: -8508464804566273096, guid: b0d0b87a4bac6f44db75d7cea3d932e6, type: 3}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: characterSelectUI
       value: 
@@ -1737,8 +1737,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096184960}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.11326596, y: 0.6979763, z: -0.11326597, w: 0.69797623}
+  m_LocalPosition: {x: -10.863999, y: 3.032, z: 1.0400007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1764,7 +1764,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 1
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []

@@ -1028,6 +1028,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4771584872561538067, guid: 48fa15b3493117c419c8ab42f53cd245, type: 3}
+      propertyPath: stopThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771584872561538067, guid: 48fa15b3493117c419c8ab42f53cd245, type: 3}
+      propertyPath: slideDeceleration
+      value: 0.99
+      objectReference: {fileID: 0}
     - target: {fileID: 7711924105662582628, guid: 48fa15b3493117c419c8ab42f53cd245, type: 3}
       propertyPath: m_Name
       value: Hydrogen
