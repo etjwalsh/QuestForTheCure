@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1744577669459860500}
   - component: {fileID: 9171741961828709428}
   m_Layer: 0
-  m_Name: Nitrogen
+  m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
