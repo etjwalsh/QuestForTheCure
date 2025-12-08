@@ -22,7 +22,10 @@ public class MoveElements : MonoBehaviour
 
     [Header("Boundary Settings")]
     public bool constrainToCameraBounds = true;
-    public float boundaryPadding = 0.5f; // Extra space from edge
+    public float boundaryPadding = 0.1f; // Extra space from edge
+
+    [Header("Gravity Settings")]
+    public float dropSpeed;
 
     private bool isDragging = false;
     private Vector3 offset;
@@ -33,17 +36,17 @@ public class MoveElements : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Stop any sliding immediately
+        //Stop any sliding immediately
         isSliding = false;
         velocity = Vector3.zero; // Reset velocity to prevent carrying over momentum
 
-        // Store the z-coordinate of the object (distance from camera)
+        //Store the z-coordinate of the object (distance from camera)
         zCoordinate = Camera.main.WorldToScreenPoint(transform.position).z;
 
-        // Calculate offset between mouse position and object position
+        //Calculate offset between mouse position and object position
         offset = transform.position - GetMouseWorldPos();
 
-        // Set target position immediately to prevent jump
+        //Set target position immediately to prevent jump
         targetPosition = transform.position;
 
         isDragging = true;
@@ -55,7 +58,7 @@ public class MoveElements : MonoBehaviour
         {
             targetPosition = GetMouseWorldPos() + offset;
 
-            // Constrain to camera bounds if enabled
+            //Constrain to camera bounds if enabled
             if (constrainToCameraBounds)
             {
                 targetPosition = ClampToCamera(targetPosition);
@@ -66,14 +69,14 @@ public class MoveElements : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
-        isSliding = true; // Start sliding with current velocity
+        isSliding = true; //Start sliding with current velocity
     }
 
     void Update()
     {
         if (isDragging)
         {
-            // Smooth movement while dragging
+            //Smooth movement while dragging
             transform.position = Vector3.SmoothDamp(
                 transform.position,
                 targetPosition,
@@ -83,19 +86,19 @@ public class MoveElements : MonoBehaviour
         }
         else if (isSliding)
         {
-            // Apply deceleration to velocity
+            //Apply deceleration to velocity
             velocity *= slideDeceleration;
 
-            // Move based on velocity
+            //Move based on velocity
             Vector3 desiredPosition = transform.position + velocity * Time.deltaTime;
             Vector3 newPosition = desiredPosition;
 
-            // Constrain to camera bounds if enabled
+            //Constrain to camera bounds if enabled
             if (constrainToCameraBounds)
             {
                 newPosition = ClampToCamera(newPosition);
 
-                // Bounce off edges by reversing velocity
+                //Bounce off edges by reversing velocity
                 if (newPosition.x != desiredPosition.x)
                 {
                     velocity.x *= -0.5f; // Bounce with energy loss
@@ -149,12 +152,7 @@ public class MoveElements : MonoBehaviour
             camWidth - spriteHalfWidth - boundaryPadding
         );
 
-        position.y = Mathf.Clamp(
-            position.y,
-            -camHeight + spriteHalfHeight + boundaryPadding,
-            camHeight - spriteHalfHeight - boundaryPadding
-        );
-
+        // position.y = Mathf.Clamp(position.y, -camHeight + spriteHalfHeight + boundaryPadding, camHeight - spriteHalfHeight - boundaryPadding);
         return position;
     }
 }
