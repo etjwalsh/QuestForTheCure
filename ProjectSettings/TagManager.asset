@@ -12,6 +12,7 @@ TagManager:
   - RequiredMinigame
   - RequiredTrivia
   - EndOfStage
+  - Element
   layers:
   - Default
   - TransparentFX

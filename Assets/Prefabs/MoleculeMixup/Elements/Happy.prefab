@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1198620746837258073}
   m_Layer: 0
   m_Name: Happy
-  m_TagString: Untagged
+  m_TagString: Element
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,3 +140,4 @@ MonoBehaviour:
   stopThreshold: 0.1
   constrainToCameraBounds: 1
   boundaryPadding: 0
+  dropSpeed: 0

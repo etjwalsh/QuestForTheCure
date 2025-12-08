@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MoveElements : MonoBehaviour
@@ -154,5 +155,86 @@ public class MoveElements : MonoBehaviour
 
         // position.y = Mathf.Clamp(position.y, -camHeight + spriteHalfHeight + boundaryPadding, camHeight - spriteHalfHeight - boundaryPadding);
         return position;
+    }
+
+    //everything that happens when the element hits a tube
+    void OnTriggerEnter(Collider other)
+    {
+        Tube tube = other.GetComponent<Tube>();
+        if (tube == null) return;
+
+        //stop it from being dragged
+        isDragging = false;
+        isSliding = false;
+        velocity = Vector3.zero;
+
+        //add to that tube's score
+        tube.AddScore();
+
+        switch (tube.tubeType)
+        {
+            case TubeType.Cross:
+                {
+                    Debug.Log("Hit Cross Tube");
+                    Destroy(gameObject.GetComponent<SphereCollider>());
+                    gameObject.transform.position = new Vector3(-1.25f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
+                    StartCoroutine(FadeElement(1.5f));
+                    break;
+                }
+            case TubeType.Diamond:
+                {
+                    Debug.Log("Hit Diamond Tube");
+                    Destroy(gameObject.GetComponent<SphereCollider>());
+                    gameObject.transform.position = new Vector3(-9.8f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
+                    StartCoroutine(FadeElement(1.5f));
+                    break;
+                }
+            case TubeType.Horizontal:
+                {
+                    Debug.Log("Hit Horizontal Tube");
+                    Destroy(gameObject.GetComponent<SphereCollider>());
+                    gameObject.transform.position = new Vector3(3.1f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
+                    StartCoroutine(FadeElement(1.5f));
+                    break;
+                }
+            case TubeType.Vertical:
+                {
+                    Debug.Log("Hit Vertcical Tube");
+                    Destroy(gameObject.GetComponent<SphereCollider>());
+                    gameObject.transform.position = new Vector3(-5.75f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
+                    StartCoroutine(FadeElement(1.5f));
+                    break;
+                }
+            case TubeType.Trash:
+                {
+                    Debug.Log("Hit Trash");
+                    Destroy(gameObject);
+                    break;
+                }
+        }
+    }
+
+    //Coroutine to fade out the element
+    public IEnumerator FadeElement(float fadeDuration)
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr == null) yield break;
+
+        Color startColor = sr.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            sr.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+            yield return null;
+        }
+
+        //Ensure fully transparent at the end
+        sr.color = new Color(startColor.r, startColor.g, startColor.b, 0f);
+
+        //Optionally destroy the object after fading
+        Destroy(gameObject);
     }
 }

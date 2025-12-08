@@ -8,7 +8,7 @@ public class MoleculeSpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
     public float spawnRate = 1.0f;
-    public float duration = 30.0f;
+    public float duration;
 
     [Header("Element Prefabs")]
     public List<GameObject> elements;
@@ -31,10 +31,39 @@ public class MoleculeSpawner : MonoBehaviour
         //reference to camera for spawn position
         Camera cam = Camera.main;
         float height = cam.orthographicSize * 2;
-        float width = height * cam.aspect;
+        float ogSpawnRate = spawnRate;
+        bool oneFourth = false;
+        bool oneHalf = false;
+        bool threeFourths = false;
+
+        Debug.Log("time - startTime: " + (Time.time - startTime));
+        Debug.Log("duration: " + duration);
+        Debug.Log("duration * 0.75: " + (duration * 0.75));
+        Debug.Log("duration * 0.50: " + (duration * 0.50));
+        Debug.Log("duration * 0.25: " + (duration * 0.25));
 
         while (Time.time - startTime < duration)
         {
+            //decrease the spawn rate as time goes on
+            if (Time.time - startTime < (duration * 0.75) && oneFourth) //if time is 25% completed
+            {
+                Debug.Log("spawn rate now at 75%");
+                spawnRate = ogSpawnRate * 0.75f;
+                oneFourth = true;
+            }
+            if (Time.time - startTime < (duration * 0.50) && oneHalf) //if time is 50% completed
+            {
+                Debug.Log("spawn rate now at 50%");
+                spawnRate = ogSpawnRate * 0.50f;
+                oneHalf = true;
+            }
+            if (Time.time - startTime < (duration * 0.50) && threeFourths) //if time is 75% completed
+            {
+                Debug.Log("spawn rate now at 25%");
+                spawnRate = ogSpawnRate * 0.25f;
+                threeFourths = true;
+            }
+
             //wait for spawn rate seconds
             yield return new WaitForSeconds(spawnRate);
 
@@ -42,8 +71,13 @@ public class MoleculeSpawner : MonoBehaviour
             int spawnIndex = Random.Range(0, elements.Count);
 
             //spawn that one just above the camera's bounds
-            Debug.Log("cam x: " + cam.transform.position.x + " and width * 2: " + width * 2);
-            Instantiate(elements[spawnIndex], new Vector3(Random.Range(-9, 9), height + 1, -1), Quaternion.identity);
+            GameObject newElement = Instantiate(elements[spawnIndex], new Vector3(Random.Range(-9, 5.75f), height + 0.5f, -1), Quaternion.identity);
+
+            //lock rotation
+            newElement.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+            //change how fast they fall at random
+            newElement.GetComponent<Rigidbody>().drag = Random.Range(5, 15);
 
             yield return null;
         }
