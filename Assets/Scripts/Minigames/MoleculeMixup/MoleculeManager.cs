@@ -4,12 +4,14 @@ using System;
 
 public enum PharmaceuticalElement
 {
-    Hydrogen,      // H - Basic building block
-    Carbon,        // C - Organic backbone
-    Oxygen,        // O - Common in drugs
-    Nitrogen,      // N - Found in many medications
-    Fluorine,      // F - Used in psychiatric/antibiotic drugs
-    Chlorine       // Cl - Found in sedatives and antihistamines
+    Hydrogen, 
+    Carbon,   
+    Oxygen,   
+    Nitrogen, 
+    Fluorine, 
+    Chlorine, 
+    Happy,         
+    Sad
 }
 
 

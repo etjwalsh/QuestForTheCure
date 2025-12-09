@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class MoveElements : MonoBehaviour
@@ -34,6 +35,8 @@ public class MoveElements : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector3 targetPosition;
     private bool isSliding = false;
+    public int happyValue;
+    public int sadValue;
 
     void OnMouseDown()
     {
@@ -168,14 +171,15 @@ public class MoveElements : MonoBehaviour
         isSliding = false;
         velocity = Vector3.zero;
 
-        //add to that tube's score
-        tube.AddScore();
-
         switch (tube.tubeType)
         {
             case TubeType.Cross:
                 {
                     Debug.Log("Hit Cross Tube");
+                    //check to make sure its the right element and manage score
+                    CheckElement(PharmaceuticalElement.Nitrogen, tube);
+
+                    //fade element out
                     Destroy(gameObject.GetComponent<SphereCollider>());
                     gameObject.transform.position = new Vector3(-1.25f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
@@ -184,6 +188,9 @@ public class MoveElements : MonoBehaviour
             case TubeType.Diamond:
                 {
                     Debug.Log("Hit Diamond Tube");
+                    //check to make sure its the right element and manage score
+                    CheckElement(PharmaceuticalElement.Carbon, tube);
+
                     Destroy(gameObject.GetComponent<SphereCollider>());
                     gameObject.transform.position = new Vector3(-9.8f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
@@ -192,6 +199,9 @@ public class MoveElements : MonoBehaviour
             case TubeType.Horizontal:
                 {
                     Debug.Log("Hit Horizontal Tube");
+                    //check to make sure its the right element and manage score
+                    CheckElement(PharmaceuticalElement.Oxygen, tube);
+
                     Destroy(gameObject.GetComponent<SphereCollider>());
                     gameObject.transform.position = new Vector3(3.1f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
@@ -200,6 +210,9 @@ public class MoveElements : MonoBehaviour
             case TubeType.Vertical:
                 {
                     Debug.Log("Hit Vertcical Tube");
+                    //check to make sure its the right element and manage score
+                    CheckElement(PharmaceuticalElement.Hydrogen, tube);
+
                     Destroy(gameObject.GetComponent<SphereCollider>());
                     gameObject.transform.position = new Vector3(-5.75f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
@@ -208,6 +221,9 @@ public class MoveElements : MonoBehaviour
             case TubeType.Trash:
                 {
                     Debug.Log("Hit Trash");
+
+                    //track the trash
+                    TrashTracker(tube);
                     Destroy(gameObject);
                     break;
                 }
@@ -236,5 +252,72 @@ public class MoveElements : MonoBehaviour
 
         //Optionally destroy the object after fading
         Destroy(gameObject);
+    }
+
+    private void CheckElement(PharmaceuticalElement element, Tube tube)
+    {
+        //if this is the correct element
+        if(elementType == element)
+        {
+            //add to that tube's score
+            tube.AddScore();
+        }
+        //give it the happy multiplier
+        else if (elementType == PharmaceuticalElement.Happy)
+        {
+            //multiply the tube's score
+            tube.MultiplyScore(happyValue);
+        }
+        //give it the sad multiplier
+        else if (elementType == PharmaceuticalElement.Sad)
+        {
+            tube.DivideScore(sadValue);
+        }
+        else
+        {
+            tube.SubtractScore();
+        }
+    }
+    
+    private void TrashTracker(Tube tube)
+    {
+        //add to the number of things trashed UI
+        tube.AddScore();
+
+        //if its a sad
+        if(elementType == PharmaceuticalElement.Sad)
+        {
+            MoleculeSpawner.instance.sadTrashed++;
+        }
+
+        //if its a happy
+        else if(elementType == PharmaceuticalElement.Happy)
+        {
+            MoleculeSpawner.instance.happyTrashed++;
+        }
+
+        //if its a diamond
+        else if(elementType == PharmaceuticalElement.Carbon)
+        {
+            MoleculeSpawner.instance.diamondsTrashed++;
+        }
+
+        //if its a cross
+        else if(elementType == PharmaceuticalElement.Nitrogen)
+        {
+            MoleculeSpawner.instance.crossesTrashed++;
+        }
+
+        //if its a vert - hydrogen
+        else if(elementType == PharmaceuticalElement.Hydrogen)
+        {
+            MoleculeSpawner.instance.vertsTrashed++;
+        }
+
+        //if its a horiz - oxygen
+        else if(elementType == PharmaceuticalElement.Oxygen)
+        {
+            MoleculeSpawner.instance.horizTrashed++;
+        }
     }
 }
