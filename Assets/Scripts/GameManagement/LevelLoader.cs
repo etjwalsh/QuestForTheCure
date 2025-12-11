@@ -16,6 +16,14 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 0.5f;
 
+    //all references to stuff
+    private GameObject environment;
+    private GameObject spacesTree;
+    private GameObject activePlayer;
+    private GameObject[] inactivePlayers;
+    private GameObject cam;
+
+
     //for spawning players
     private Movement playerScript;
 
@@ -76,7 +84,8 @@ public class LevelLoader : MonoBehaviour
         if (currentScene == "MoleculeMayhem")
         {
             Debug.Log("about to activate discovery");
-            ActivateDiscovery(true);
+
+            ActivateScene(true);
         }
 
         //Store previous scene before loading new one
@@ -110,7 +119,15 @@ public class LevelLoader : MonoBehaviour
 
         if (sceneName == "MoleculeMayhem")
         {
-            ActivateDiscovery(false);
+            //get references to objects
+            environment = GameObject.FindGameObjectWithTag("Environment");
+            spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
+            activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
+            inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
+            cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
+
+            //turn them all off
+            ActivateScene(false);
         }
 
         //fade in
@@ -119,27 +136,18 @@ public class LevelLoader : MonoBehaviour
         isLoading = false;
     }
 
-    private void ActivateDiscovery(bool value)
+    private void ActivateScene(bool value)
     {
         //activate the scene stuff
-        GameObject.FindGameObjectWithTag("Environment").SetActive(value);
-        GameObject.FindGameObjectWithTag("SpacesTree").SetActive(value);
-        GameObject.FindGameObjectWithTag("CinemachineCamera").SetActive(value);
+        environment.SetActive(value);
+        spacesTree.SetActive(value);
+        cam.SetActive(value);
+        activePlayer.SetActive(value);
 
         //activate players
-        for (int i = 0; i < PlayerManager.instance.players.Count; i++)
+        for (int i = 0; i < inactivePlayers.Length; i++)
         {
-            GameObject active = GameObject.FindGameObjectWithTag("ActivePlayer");
-            GameObject inactive = GameObject.FindGameObjectWithTag("InactivePlayer");
-
-            if (active)
-            {
-                active.SetActive(value);
-            }
-            if (inactive)
-            {
-                inactive.SetActive(value);
-            }
+            inactivePlayers[i].SetActive(value);
         }
 
         Debug.Log("everything should now be: " + value);
@@ -155,6 +163,12 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
+        //reset the time scale
+        if (Time.timeScale != 1)
+        {
+            Time.timeScale = 1;
+        }
+
         if (fadeImage == null) yield break;
 
         float elapsed = 0f;
@@ -162,7 +176,7 @@ public class LevelLoader : MonoBehaviour
 
         while (elapsed < fadeDuration)
         {
-            elapsed += Time.unscaledDeltaTime;
+            elapsed += Time.deltaTime;
             c.a = Mathf.Clamp01(elapsed / fadeDuration);
             fadeImage.color = c;
             yield return null;
