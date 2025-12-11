@@ -4977,7 +4977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1247371989163424220, guid: 551fd69d8bb2b4f44bca889b244f89ae, type: 3}
       propertyPath: m_TagString
-      value: RequiredMinigame
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3536992083188215703, guid: 551fd69d8bb2b4f44bca889b244f89ae, type: 3}
       propertyPath: left

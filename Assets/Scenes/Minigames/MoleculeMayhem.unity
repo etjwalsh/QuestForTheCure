@@ -1854,7 +1854,7 @@ MonoBehaviour:
   spawnRate1: 2
   spawnRate2: 1
   spawnRate3: 0.65
-  duration: 1
+  duration: 60
   elements:
   - {fileID: 3508410943223845785, guid: 98d89039ea09d994ebfb100298b073d7, type: 3}
   - {fileID: 7711924105662582628, guid: 48fa15b3493117c419c8ab42f53cd245, type: 3}
@@ -5078,6 +5078,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 17874330}
     m_Modifications:
+    - target: {fileID: 2624857585470917649, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624857585470917649, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624857585470917649, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624857585470917649, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3393291064649818516, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_Name
       value: ExitButton
