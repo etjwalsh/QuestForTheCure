@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CommAddDisc 4
+  m_EditorClassIdentifier: 
+  question: "You attend a monthly \u201Cresearch open house\u201D where a lab team
+    shares their new ideas and early lab experiments with the community. They describe
+    several new drug compounds being tested in the lab and invite feedback on which
+    kinds of treatments would be most meaningful to cancer patients. When meeting
+    with the team, you advocate for affordable treatment options that prioritize
+    the patients\u2019 quality of life, both short- and long-term.\n\nIn this situation,
+    what role does a community advocate play in the Discovery stage?"
+  explanation: "By sharing the patient perspective, community advocates help researchers
+    focus on what matters most to patients and the community. This guidance can shape
+    research priorities before preclinical studies begin. By speaking up about patients\u2019
+    needs and experiences, advocates help ensure early research addresses real-world
+    concerns and has meaningful impact for the people it aims to help."
+  correctAnswer: 'D: Helping researchers understand patient priorities early on'
+  incorrectAnswer1: 'A: Designing and conducting lab experiments on cancer cells'
+  incorrectAnswer2: 'B: Approving or denying specific drug compounds for clinical
+    trials'
+  incorrectAnswer3: "C: Organizing the research team\u2019s data and tracking patient
+    samples"
+  questionRole: Community Advocate
+  questionType: MultipleChoice
+  questionStage: Discovery

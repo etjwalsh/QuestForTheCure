@@ -13,6 +13,9 @@ TagManager:
   - RequiredTrivia
   - EndOfStage
   - Element
+  - CinemachineCamera
+  - Environment
+  - SpacesTree
   layers:
   - Default
   - TransparentFX

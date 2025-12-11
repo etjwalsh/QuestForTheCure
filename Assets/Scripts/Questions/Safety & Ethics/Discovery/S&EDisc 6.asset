@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: S&EDisc 6
+  m_EditorClassIdentifier: 
+  question: 'At a weekly lab meeting, your research team discusses early results
+    from several drug compounds being tested in cancer cell samples. A new student
+    researcher, who recently joined the lab from another institution, notices that
+    one of the compounds is showing promising early results. He wonders whether these
+    early findings need to be reviewed by a scientific committee now, even though
+    the work is limited to only discovery-stage lab experiments and tests.
+
+
+    What
+    does a Scientific Review Committee (SRC) do?'
+  explanation: A Scientific Review Committee (SRC) focuses on making sure the research
+    plan is scientifically solid before it moves into more advanced stages of clinical
+    research, especially before human trials begin. They do not usually review early
+    discovery work, like basic testing in dishes of cancer cells in the lab. However,
+    even in the discovery stage, the SRC helps ensure that research is conducted
+    safely and ethically, following accepted standards.
+  correctAnswer: "A: They thoroughly review the research plan before human trials,
+    but they usually don\u2019t review early discovery work. "
+  incorrectAnswer1: 'B: They approve or deny every research idea before any testing
+    begins at any stage of clinical research.'
+  incorrectAnswer2: 'C: They only evaluate the research after the FDA has given full
+    approval for a new cancer drug.'
+  incorrectAnswer3: 'D: None of the above.'
+  questionRole: Safety & Ethics
+  questionType: MultipleChoice
+  questionStage: Discovery

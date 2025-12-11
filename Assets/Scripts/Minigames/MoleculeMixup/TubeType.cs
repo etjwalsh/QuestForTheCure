@@ -10,15 +10,15 @@ public class Tube : MonoBehaviour
 
     public int score = 0;
 
-    public void AddScore()
+    public void AddScore(int value)
     {
-        score++;
+        score += value;
         UpdateScoreDisplay();
     }
 
-    public void SubtractScore()
+    public void SubtractScore(int value)
     {
-        score -= 5;
+        score -= value;
         if (score <= 0)
         {
             score = 0;

@@ -848,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.size
-      value: 29
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: questionsList.Array.data[0]
@@ -953,123 +953,123 @@ PrefabInstance:
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[24]
       value: 
-      objectReference: {fileID: 11400000, guid: 2bd6611c99fc7224087f561a299266b8, type: 2}
+      objectReference: {fileID: 11400000, guid: 855fb7e569f1bc748b90a18696d2e6f2, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[25]
       value: 
-      objectReference: {fileID: 11400000, guid: b13d376bb4ff45a41bdc9fe85e2ebe7d, type: 2}
+      objectReference: {fileID: 11400000, guid: ff2362368f0d17749a9aa25a9938048d, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[26]
       value: 
-      objectReference: {fileID: 11400000, guid: c155b0f6a323cf645ae085ac78359620, type: 2}
+      objectReference: {fileID: 11400000, guid: fc61da1d4c48bf546908aba862e026f6, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[27]
       value: 
-      objectReference: {fileID: 11400000, guid: bd762601d7369fe4da0ae6111f5556df, type: 2}
+      objectReference: {fileID: 11400000, guid: dc225bab892032848a6f06c229d96b4b, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[28]
       value: 
-      objectReference: {fileID: 11400000, guid: 974fcffdb62d527429dcb5c2b0131aa9, type: 2}
+      objectReference: {fileID: 11400000, guid: dbade157ca81694448c0536f8eb47425, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[29]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 8d5caaf5d3e16b04488892823e8c9486, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[30]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 6d1bf1fe1d0b148448c87d9b581583a4, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[31]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: d0165921d1f8c3d4a985a9ccc70daa6c, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[32]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e926958b1ba81e948abb51dfb81b2b68, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[33]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: f0bec9bdb39f67a48a304825feed98d5, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[34]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: dea93cbf669ddb44392871b64f958d34, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[35]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 2b656c9cfe6e0ac48826171b8ed44ca1, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[36]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: a6cc394aa4a6a6b4bbc7e4fa04540720, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[37]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 310f0e742fe6a1c49b33ec391c106733, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[38]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: cb3781a2fa9c44540a0b2bf6fb040b1a, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[39]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: eb99f2877100d194ab0986f1aadf2c4e, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[40]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 923a203b854f0c44a9bc6881eeaa7ce6, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[41]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 0b43c9f2580b6c149a5b46e68ebf1a75, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[42]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 979d4385eb4b1c7419498a021a88b757, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[43]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 176ca5cadc5588c4d80a2a8cacdcdd30, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[44]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e7fa5eaaa1791724b8fa979d75c61db6, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[45]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 8a8e524999763554c8cf95ecdd12da7e, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[46]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 9b5e01f03ba02414382af7a3b1214fa8, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[47]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: d2400bcfcb2e9e646b62e541bd1835e1, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[48]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 2c32f3c24ffcc6f4988263dbc696e0ef, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[49]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 288e90fd2356d874f9ca806b3f30c6f8, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[50]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 938d8abb4450be84d9e1d369b1787f1c, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[51]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 022ceaeedf470d04da1c49a8e3a6e1df, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[52]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ecda0f33d1ad2b3439a8448c94ce07f3, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[53]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 212b75757966c63458e1b7c60b330b09, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[54]
       value: 
@@ -1664,8 +1664,8 @@ GameObject:
   - component: {fileID: 2096184965}
   - component: {fileID: 2096184964}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: CinemachineCamera
+  m_TagString: CinemachineCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

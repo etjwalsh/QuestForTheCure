@@ -257,65 +257,65 @@ public class MoveElements : MonoBehaviour
     private void CheckElement(PharmaceuticalElement element, Tube tube)
     {
         //if this is the correct element
-        if(elementType == element)
+        if (elementType == element)
         {
             //add to that tube's score
-            tube.AddScore();
+            tube.AddScore(1);
         }
         //give it the happy multiplier
         else if (elementType == PharmaceuticalElement.Happy)
         {
             //multiply the tube's score
-            tube.MultiplyScore(happyValue);
+            tube.AddScore(happyValue);
         }
         //give it the sad multiplier
         else if (elementType == PharmaceuticalElement.Sad)
         {
-            tube.DivideScore(sadValue);
+            tube.SubtractScore(sadValue);
         }
         else
         {
-            tube.SubtractScore();
+            tube.SubtractScore(1);
         }
     }
-    
+
     private void TrashTracker(Tube tube)
     {
         //add to the number of things trashed UI
-        tube.AddScore();
+        tube.AddScore(1);
 
         //if its a sad
-        if(elementType == PharmaceuticalElement.Sad)
+        if (elementType == PharmaceuticalElement.Sad)
         {
             MoleculeSpawner.instance.sadTrashed++;
         }
 
         //if its a happy
-        else if(elementType == PharmaceuticalElement.Happy)
+        else if (elementType == PharmaceuticalElement.Happy)
         {
             MoleculeSpawner.instance.happyTrashed++;
         }
 
         //if its a diamond
-        else if(elementType == PharmaceuticalElement.Carbon)
+        else if (elementType == PharmaceuticalElement.Carbon)
         {
             MoleculeSpawner.instance.diamondsTrashed++;
         }
 
         //if its a cross
-        else if(elementType == PharmaceuticalElement.Nitrogen)
+        else if (elementType == PharmaceuticalElement.Nitrogen)
         {
             MoleculeSpawner.instance.crossesTrashed++;
         }
 
         //if its a vert - hydrogen
-        else if(elementType == PharmaceuticalElement.Hydrogen)
+        else if (elementType == PharmaceuticalElement.Hydrogen)
         {
             MoleculeSpawner.instance.vertsTrashed++;
         }
 
         //if its a horiz - oxygen
-        else if(elementType == PharmaceuticalElement.Oxygen)
+        else if (elementType == PharmaceuticalElement.Oxygen)
         {
             MoleculeSpawner.instance.horizTrashed++;
         }

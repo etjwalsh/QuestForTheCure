@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public CharacterData[] characters;
     [SerializeField] private GameObject CharacterSelectUI;
-    // [SerializeField] private GameObject characterImage;
     [SerializeField] private GameObject highlight;
     [SerializeField] private TMP_Text bigName;
     [SerializeField] private TMP_Text description;
@@ -144,18 +139,4 @@ public class CharacterSelect : MonoBehaviour, IPointerEnterHandler, IPointerExit
         }
         return newColor;
     }
-
-    // private Sprite GetCharacterImage(string characterName)
-    // {
-    //     Sprite newSprite = null;
-
-    //     for (int i = 0; i < characters.Length; i++)
-    //     {
-    //         if (characterName == characters[i].charName)
-    //         {
-    //             newSprite = characters[i].model;
-    //         }
-    //     }
-    //     return newSprite;
-    // }
 }

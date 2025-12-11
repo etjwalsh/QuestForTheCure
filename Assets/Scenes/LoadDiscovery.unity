@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 135049412}
   m_Layer: 0
   m_Name: DiscoveryEnvironment
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1675,6 +1675,10 @@ PrefabInstance:
       objectReference: {fileID: -8508464804566273096, guid: 91bb186ab6760fd4589b145979858e5c, type: 3}
     - target: {fileID: 4912514979159591302, guid: 1070cbb707aa90d49a562c7c2cf4ed5e, type: 3}
       propertyPath: m_Name
+      value: SpacesTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912514979159591302, guid: 1070cbb707aa90d49a562c7c2cf4ed5e, type: 3}
+      propertyPath: m_TagString
       value: SpacesTree
       objectReference: {fileID: 0}
     - target: {fileID: 5089502100976398589, guid: 1070cbb707aa90d49a562c7c2cf4ed5e, type: 3}
@@ -4970,6 +4974,10 @@ PrefabInstance:
     - target: {fileID: 1247371989163424220, guid: 551fd69d8bb2b4f44bca889b244f89ae, type: 3}
       propertyPath: m_Name
       value: Space1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1247371989163424220, guid: 551fd69d8bb2b4f44bca889b244f89ae, type: 3}
+      propertyPath: m_TagString
+      value: RequiredMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 3536992083188215703, guid: 551fd69d8bb2b4f44bca889b244f89ae, type: 3}
       propertyPath: left

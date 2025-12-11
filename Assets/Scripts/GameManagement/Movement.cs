@@ -154,7 +154,7 @@ public class Movement : MonoBehaviour
         //change game state to whatever the player landed on
         if (tagLandedOn == "Minigame" || tagLandedOn == "RequiredMinigame")
         {
-            if(tagLandedOn == "RequiredMinigame") 
+            if (tagLandedOn == "RequiredMinigame")
             {
                 //reset the space to be a normal space
                 space.gameObject.tag = "Untagged";
@@ -167,16 +167,14 @@ public class Movement : MonoBehaviour
         }
         else if (tagLandedOn == "Trivia" || tagLandedOn == "RequiredTrivia") //make this into a normal space
         {
-            if(tagLandedOn == "RequiredTrivia")
-            {
-                //reset the space to be a normal space
-                space.gameObject.tag = "Untagged";
-                space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
-
-                //get rid of the stop sign
-                Destroy(space.stopSign);
-            }
+            //change to the trivia game state
             GameStateMachine.instance.currentState = GameStateMachine.GameState.TriviaEnter;
+
+            if (tagLandedOn == "RequiredTrivia")
+            {
+                //wait to see the answer to the trivia
+                StartCoroutine(WaitForTrivia(space));
+            }
         }
         else if (tagLandedOn == "EndOfStage")
         {
@@ -192,6 +190,30 @@ public class Movement : MonoBehaviour
         {
             //end the player's turn
             GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
+        }
+    }
+
+    IEnumerator WaitForTrivia(SpacesTree space)
+    {
+        //reset the booleans
+        TriviaController.triviaCompleted = false;
+        TriviaController.answeredRight = false;
+
+        //wait until trivia is completed
+        yield return new WaitUntil(() => TriviaController.triviaCompleted);
+
+        //check if they answered correctly
+        if (TriviaController.answeredRight)
+        {
+            //convert the space to normal
+            space.gameObject.tag = "Untagged";
+            space.GetComponentInChildren<MeshRenderer>().material = GameStateMachine.instance.genericSpaceMat;
+
+            //get rid of the stop sign
+            if (space.stopSign != null)
+            {
+                Destroy(space.stopSign);
+            }
         }
     }
 

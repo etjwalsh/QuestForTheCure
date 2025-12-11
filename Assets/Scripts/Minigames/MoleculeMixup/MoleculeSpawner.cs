@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class MoleculeSpawner : MonoBehaviour
 {
@@ -23,7 +21,7 @@ public class MoleculeSpawner : MonoBehaviour
     public int horizTrashed = 0;
     public int vertsTrashed = 0;
     public int happyTrashed = 0;
-    public int sadTrashed  = 0;
+    public int sadTrashed = 0;
     private List<int> trashStats;
 
     [Header("UI")]
@@ -33,6 +31,7 @@ public class MoleculeSpawner : MonoBehaviour
     public List<GameObject> textsToShow;
     public List<GameObject> trashToShow;
     public List<GameObject> trashToTell;
+    public GameObject exitButton;
 
     [Header("Tubes")]
     public List<Tube> tubes;
@@ -54,9 +53,10 @@ public class MoleculeSpawner : MonoBehaviour
     void Awake()
     {
         //set up the end UI to be invisible
-        gameOverScreen.alpha = 0f; 
+        gameOverScreen.alpha = 0f;
         gameOverScreen.interactable = false;
-        gameOverScreen.blocksRaycasts = false; 
+        gameOverScreen.blocksRaycasts = false;
+        exitButton.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -111,19 +111,19 @@ public class MoleculeSpawner : MonoBehaviour
             int spawnIndex = Random.Range(0, elements.Count);
 
             //spawn that one just above the camera's bounds
-            GameObject newElement = Instantiate(elements[spawnIndex], new Vector3(Random.Range(-9, 5.5f), height + 0.05f, -1), Quaternion.identity);
+            GameObject newElement = Instantiate(elements[spawnIndex], new Vector3(Random.Range(-9, 5.5f), height - 0.5f, -1), Quaternion.identity);
 
             //lock rotation
             newElement.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
             //change how fast they fall at random
-            newElement.GetComponent<Rigidbody>().drag = Random.Range(4, 8);
+            newElement.GetComponent<Rigidbody>().drag = Random.Range(6, 10);
 
-            //make some of them drop really fast randomly
-            if(newElement.GetComponent<Rigidbody>().drag < 4.5f)
-            {
-                newElement.GetComponent<Rigidbody>().drag = 2;
-            }
+            // //make some of them drop really fast randomly
+            // if (newElement.GetComponent<Rigidbody>().drag < 4.5f)
+            // {
+            //     newElement.GetComponent<Rigidbody>().drag = 2;
+            // }
 
             yield return null;
         }
@@ -131,14 +131,14 @@ public class MoleculeSpawner : MonoBehaviour
     private IEnumerator UpdateTimer()
     {
         float timeRemaining = duration;
-        
+
         while (timeRemaining > 0)
         {
             // Update the text
             int seconds = Mathf.FloorToInt(timeRemaining);
             timer.text = seconds.ToString();
 
-            if(seconds <= 10 && seconds % 2 == 0)
+            if (seconds <= 10 && seconds % 2 == 0)
             {
                 timer.color = Color.red;
             }
@@ -146,11 +146,11 @@ public class MoleculeSpawner : MonoBehaviour
             {
                 timer.color = Color.black;
             }
-            
+
             yield return new WaitForSeconds(1f);
             timeRemaining -= 1f;
         }
-        
+
         // Timer finished
         Time.timeScale = 0f;
         timer.color = Color.black;
@@ -165,7 +165,7 @@ public class MoleculeSpawner : MonoBehaviour
     private IEnumerator ShowScores(CanvasGroup canvasGroup, float duration, float delayBetween)
     {
         //get the trash stats
-        trashStats = new List<int>{sadTrashed, diamondsTrashed, vertsTrashed, crossesTrashed, horizTrashed, happyTrashed};
+        trashStats = new List<int> { sadTrashed, diamondsTrashed, vertsTrashed, crossesTrashed, horizTrashed, happyTrashed };
 
         //Hide all first
         for (int i = 0; i < imagesToShow.Count; i++)
@@ -175,7 +175,7 @@ public class MoleculeSpawner : MonoBehaviour
 
             //set the UI inactive
             imagesToShow[i].SetActive(false);
-            textsToShow[i].SetActive(false);   
+            textsToShow[i].SetActive(false);
         }
         //set the trash stats up too
         for (int i = 0; i < trashToShow.Count; i++)
@@ -184,7 +184,7 @@ public class MoleculeSpawner : MonoBehaviour
             trashToTell[i].GetComponent<TextMeshProUGUI>().text = "x" + trashStats[i].ToString();
 
             //make them green or red depending on what it should be, skipping the sad faces
-            if(trashStats[i] == 0 && i > 0)
+            if (trashStats[i] == 0 && i > 0)
             {
                 trashToTell[i].GetComponent<TextMeshProUGUI>().color = Color.green;
             }
@@ -200,18 +200,18 @@ public class MoleculeSpawner : MonoBehaviour
 
         float elapsedTime = 0f;
         canvasGroup.alpha = 0f; //Start fully transparent
-        
+
         while (elapsedTime < duration)
         {
             elapsedTime += Time.unscaledDeltaTime; //Use unscaledDeltaTime so it works even when Time.timeScale = 0
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
             yield return null;
         }
-        
+
         canvasGroup.alpha = 1f; //Ensure it's fully visible
         gameOverScreen.interactable = true; //enable the ui
         gameOverScreen.blocksRaycasts = true; //enable the ui
-        
+
         // Show pairs one at a time
         for (int i = 0; i < imagesToShow.Count; i++)
         {
@@ -230,5 +230,14 @@ public class MoleculeSpawner : MonoBehaviour
             trashToTell[i].SetActive(true);
             yield return new WaitForSecondsRealtime(delayBetween);
         }
+
+        //spawn in the exit button
+        exitButton.SetActive(true);
+    }
+
+    public void OnDoneClicked()
+    {
+        //change scenes
+        StartCoroutine(PlayerManager.instance.LoadPlayerLocations(LevelLoader.instance.previousScene));
     }
 }

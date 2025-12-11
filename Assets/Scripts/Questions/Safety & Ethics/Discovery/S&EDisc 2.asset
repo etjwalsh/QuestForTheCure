@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: S&EDisc 2
+  m_EditorClassIdentifier: 
+  question: "You\u2019re talking with a patient advocate who is visiting a research
+    lab for the first time. She asks about your research team\u2019s early tests
+    and experiments in the lab, and you share that your team has identified a potential
+    cancer drug that will be moving into animal studies soon. \u201CThat\u2019s awesome!\u201D
+    she replies, \u201CSo, now that the research is moving into animal studies, the
+    institutional review board (IRB) must review and approve it before the research
+    can continue, right?\u201D\n\nIs this true or false?"
+  explanation: An Institutional Review Board (IRB) is a committee that reviews and
+    approves research that involves humans, because its main job is to protect people
+    who volunteer for research studies. Because early discovery work does not involve
+    humans, it does not require IRB review. Animal studies are reviewed and approved
+    by a different oversight group called an Institutional Animal Care and Use Committee
+    (IACUC). IRBs become involved later, before any research involving patient participants
+    can begin.
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Safety & Ethics
+  questionType: TrueFalse
+  questionStage: Discovery

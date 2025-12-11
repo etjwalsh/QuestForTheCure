@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CareDisc 4
+  m_EditorClassIdentifier: 
+  question: 'A cancer research team is exploring ideas for new treatments designed
+    to reduce tumor growth. They meet with caregivers to learn what patients and
+    their families go through day-to-day during treatment. When meeting with the
+    research team, you explain how difficult it is for patients to manage treatments
+    that require frequent hospital visits and/or long hospital stays.
+
+
+    In this
+    situation, what role does the caregiver play in the Discovery stage?'
+  explanation: "At the discovery stage, caregivers can share insights that help scientists
+    focus on developing treatments that better fit patients\u2019 real lives \u2014
+    even before any drug is tested in humans. These insights can shape early research
+    so future treatments are easier for patients and families to manage. By understanding
+    these real-world needs early on, researchers can set goals that lead to more
+    practical, compassionate innovations down the line."
+  correctAnswer: 'B: Helping researchers understand real-life challenges patients
+    face during treatment'
+  incorrectAnswer1: 'A: Managing treatment dosage and side effects of the patient'
+  incorrectAnswer2: 'C: Reviewing patient safety plans for upcoming clinical trials'
+  incorrectAnswer3: 'D: Providing patient data to help hospitals decide which treatments
+    to use'
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Discovery

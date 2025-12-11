@@ -60,6 +60,8 @@ public class LevelLoader : MonoBehaviour
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
+        Debug.Log("about to load scene async: " + sceneName);
+        Debug.Log("coming from the scene: " + currentScene);
         isLoading = true;
 
         //Fade out
@@ -70,6 +72,11 @@ public class LevelLoader : MonoBehaviour
         {
             //set a function call for after the scene is loaded
             SceneManager.sceneLoaded += OnLoaded;
+        }
+        if (currentScene == "MoleculeMayhem")
+        {
+            Debug.Log("about to activate discovery");
+            ActivateDiscovery(true);
         }
 
         //Store previous scene before loading new one
@@ -92,7 +99,7 @@ public class LevelLoader : MonoBehaviour
             yield return null;
         }
 
-        //Optional: Add minimum loading time for polish
+        //wait, minimum loading time
         yield return new WaitForSeconds(0.5f);
 
         //Activate the scene
@@ -101,10 +108,41 @@ public class LevelLoader : MonoBehaviour
         //Wait for activation to complete
         yield return operation;
 
+        if (sceneName == "MoleculeMayhem")
+        {
+            ActivateDiscovery(false);
+        }
+
         //fade in
         yield return StartCoroutine(FadeIn());
 
         isLoading = false;
+    }
+
+    private void ActivateDiscovery(bool value)
+    {
+        //activate the scene stuff
+        GameObject.FindGameObjectWithTag("Environment").SetActive(value);
+        GameObject.FindGameObjectWithTag("SpacesTree").SetActive(value);
+        GameObject.FindGameObjectWithTag("CinemachineCamera").SetActive(value);
+
+        //activate players
+        for (int i = 0; i < PlayerManager.instance.players.Count; i++)
+        {
+            GameObject active = GameObject.FindGameObjectWithTag("ActivePlayer");
+            GameObject inactive = GameObject.FindGameObjectWithTag("InactivePlayer");
+
+            if (active)
+            {
+                active.SetActive(value);
+            }
+            if (inactive)
+            {
+                inactive.SetActive(value);
+            }
+        }
+
+        Debug.Log("everything should now be: " + value);
     }
 
     // Optional: Get scene by index
@@ -124,7 +162,7 @@ public class LevelLoader : MonoBehaviour
 
         while (elapsed < fadeDuration)
         {
-            elapsed += Time.deltaTime;
+            elapsed += Time.unscaledDeltaTime;
             c.a = Mathf.Clamp01(elapsed / fadeDuration);
             fadeImage.color = c;
             yield return null;

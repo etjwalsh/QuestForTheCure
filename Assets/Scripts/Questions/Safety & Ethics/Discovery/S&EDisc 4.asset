@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: S&EDisc 4
+  m_EditorClassIdentifier: 
+  question: "Your research team is narrowing down which cancer drug candidates should
+    move forward to preclinical animal studies next. A new graduate student, who
+    is observing your team\u2019s early lab work, is curious whether the animal care
+    committee has to review the project now, even though no animal studies have started
+    yet.\n\nWhen does the Institutional Animal Care and Use Committee (IACUC) need
+    to be involved?"
+  explanation: "The Institutional Animal Care and Use Committee (IACUC) oversees
+    research involving animals, but they don\u2019t review early lab experiments
+    that happen before animals are involved. Their review begins when a team plans
+    to use live animals, making sure the studies are humane, safe, and scientifically
+    justified. They also check that animals are cared for properly throughout the
+    study, including housing, feeding, and minimizing pain or stress."
+  correctAnswer: 'B: They only get involved when the team begins planning or conducting
+    actual animal studies.'
+  incorrectAnswer1: 'A: They must approve every lab experiment even before animals
+    are used.'
+  incorrectAnswer2: 'C: They only review the results of the research after animal
+    studies are complete.'
+  incorrectAnswer3: 'D: They must review and approve human studies after the animal
+    studies are complete.'
+  questionRole: Safety & Ethics
+  questionType: MultipleChoice
+  questionStage: Discovery

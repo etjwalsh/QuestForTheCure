@@ -243,14 +243,15 @@ public class GameStateMachine : MonoBehaviour
 
     public void MinigameEnter()
     {
-        // Debug.Log("yayyy minigame");
+        //get a random minigame based on the stage we are in (choose one or the other)
         currentState = GameState.Minigame;
+        //change eventually to enter a minigame
+        LevelLoader.instance.LoadScene("MoleculeMayhem");
     }
 
     public void Minigame()
     {
-        //change eventually to enter a minigame
-        currentState = GameState.EndTurn;
+        //minigame
     }
 
     public void TriviaEnter()

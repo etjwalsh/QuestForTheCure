@@ -1,11 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -46,7 +42,6 @@ public class PlayerManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
-
     }
 
     public void StartTurn()
@@ -58,6 +53,11 @@ public class PlayerManager : MonoBehaviour
         current.canMove = true;
 
         //tag the player so the game knows which one to move
+        for (int i = 0; i < playerPieces.Count; i++)
+        {
+            playerPieces[i].gameObject.tag = "InactivePlayer";
+        }
+
         current.gameObject.tag = "ActivePlayer";
 
         //set the active camera
@@ -117,9 +117,12 @@ public class PlayerManager : MonoBehaviour
     {
         //change the game state to scene change
         GameStateMachine.instance.currentState = GameStateMachine.GameState.SceneChange;
+        Debug.Log("about to load: " + sceneName);
         LevelLoader.instance.LoadScene(sceneName);
 
         yield return new WaitUntil(() => !LevelLoader.instance.isLoading);
+
+        Debug.Log("loaded scene");
 
         //loop through all of the pieces and set their player location
         for (int i = 0; i < playerPieces.Count; i++)

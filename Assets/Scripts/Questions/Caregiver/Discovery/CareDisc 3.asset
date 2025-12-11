@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CareDisc 3
+  m_EditorClassIdentifier: 
+  question: "In the waiting room, you\u2019re come across a flyer about a research
+    team exploring new treatments for thyroid cancer. It mentions that scientists
+    are reviewing caregiver reports to better understand what makes current treatments
+    difficult for patients. Your friend, whose father is in treatment for thyroid
+    cancer, turns to you and says, \u201CThis must be for a clinical trial \u2013
+    researchers don\u2019t really seek out caregiver experiences until new treatments
+    reach clinical trials.\u201D\n\nIs this true or false?"
+  explanation: Caregiver input is valuable even in the earliest stages of research.
+    Their real-world experiences help scientists understand which problems matter
+    most, guiding early discovery work toward treatments that better support patients
+    and families. This early insight can shape the direction of discovery, inspiring
+    treatments that are not only effective but also kinder and more practical for
+    those who need them most.
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Caregiver
+  questionType: TrueFalse
+  questionStage: Discovery

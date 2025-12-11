@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CommAddDisc 2
+  m_EditorClassIdentifier: 
+  question: "At a patient advisory board meeting, a research team updates the community
+    on ongoing discovery work. They mention that they are collecting donated patient
+    blood samples to test how new drug compounds work on cancer cells. You want to
+    ask how these samples will be used and how the donors\u2019 wishes are respected,
+    but the discussion has quickly become science-focused \u2014 and community advocates
+    have no role in ethical considerations until human trials begin, anyway. "
+  explanation: "Community advocates can highlight ethical considerations even before
+    trials start, such as how donated samples are handled and how research is communicated.
+    Their involvement helps ensure research stays patient-centered and ethically
+    responsible from the very beginning. By speaking up about patients\u2019 rights
+    and preferences early on, advocates help build trust and transparency between
+    the research team and the community."
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Community Advocate
+  questionType: TrueFalse
+  questionStage: Discovery

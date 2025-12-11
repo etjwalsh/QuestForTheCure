@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PhysDisc 6
+  m_EditorClassIdentifier: 
+  question: "You notice that patients with a rare type of cancer often have limited
+    treatment options and poor outcomes, and that current therapies do not address
+    some critical aspects of their care. Later, you decide to share these observations
+    with a research team to help them understand where new therapies could make the
+    biggest difference.\r\n\r\nHow could the physician\u2019s observations influence
+    early drug discovery in this scenario?"
+  explanation: "Physicians provide crucial insight from their clinical experience,
+    noticing where current treatments don\u2019t work well or leave important needs
+    unmet. By sharing these observations early, they help research teams prioritize
+    which diseases or patient populations should be the focus of new drug development,
+    increasing the likelihood that new therapies will be meaningful for patients\u2014even
+    before any lab experiments or preclinical studies begin."
+  correctAnswer: 'A: It highlights gaps in current treatment options, potentially
+    leading to the development of new therapies'
+  incorrectAnswer1: 'B: It helps the research team decide how a future drug should
+    be administered to patients'
+  incorrectAnswer2: "C: It informs the lab team\u2019s decisions about which animal
+    models to use in preclinical studies"
+  incorrectAnswer3: 'D: It directly determines which chemical compounds the lab team
+    should study first'
+  questionRole: Physician
+  questionType: MultipleChoice
+  questionStage: Discovery

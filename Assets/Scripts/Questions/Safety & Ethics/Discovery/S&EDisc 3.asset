@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: S&EDisc 3
+  m_EditorClassIdentifier: 
+  question: "A new lab volunteer notices your research team working with human tumor
+    cells and viruses that have been modified in the lab to study how potential cancer
+    drugs might work. Curious, he asks another volunteer if these experiments had
+    to be approved by the Institutional Biosafety Committee (IBC). The other volunteer
+    explains, \u201CThe IBC has to approve the overall project and give safety guidelines
+    when using certain materials, but they don\u2019t need to approve every single
+    experiment in early discovery work.\u201D\n\nIs this true or false?"
+  explanation: "In early discovery work, the IBC doesn\u2019t review every individual
+    experiment. Instead, they approve the overall project and set the safety rules
+    for working with materials like human cells and lab-modified viruses. Once the
+    project is approved, researchers follow standard practices \u2014 using personal
+    protective equipment (PPE), working in biosafety cabinets, and handling materials
+    properly. As long as they follow these guidelines, they don\u2019t need separate
+    approval for each experiment. "
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Safety & Ethics
+  questionType: TrueFalse
+  questionStage: Discovery

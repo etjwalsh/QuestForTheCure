@@ -13,7 +13,8 @@ public class TriviaController : MonoBehaviour
     [SerializeField] private TMP_Text rightWrong;
     private QuestionTemplate question;
     private List<string> wrongAnswers = new List<string> { };
-
+    public static bool answeredRight = false;
+    public static bool triviaCompleted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -122,15 +123,19 @@ public class TriviaController : MonoBehaviour
         {
             //show the player "correct"
             rightWrong.text = "Correct!";
+            answeredRight = true;
         }
         else
         {
             //show the player "incorrect"
             rightWrong.text = "Incorrect!";
+            answeredRight = false;
         }
 
+        triviaCompleted = true;
+
         //move to explanation screen
-        // deactivate the question
+        //deactivate the question
         questionText.gameObject.SetActive(false);
 
         //deactivate the buttons

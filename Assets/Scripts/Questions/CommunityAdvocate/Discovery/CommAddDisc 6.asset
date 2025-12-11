@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CommAddDisc 6
+  m_EditorClassIdentifier: 
+  question: 'A research team creates a short, educational video explaining how scientists
+    test new drug compounds in the lab during the discovery stage. They share this
+    video with your advocacy organization to get feedback on how to make the explanation
+    clearer for patients and families. You suggest different ways that research teams
+    can share updates regularly with the community and stress the importance of using
+    patient-friendly language.
+
+
+    In this situation, what impact do community
+    advocates have on the research team and community?'
+  explanation: "Community advocates help scientists and lab teams share research
+    in ways that patients and families can easily understand. By encouraging patient-friendly
+    language and regular updates, community advocates help researchers build trust
+    with the community. Their feedback ensures that research \u2014 at any stage
+    \u2014 is transparent, meaningful, and connected to the needs and perspectives
+    of the cancer patient community."
+  correctAnswer: 'B: Helping the research team communicate early research information
+    effectively and build trust with the community'
+  incorrectAnswer1: 'A: Helping the research team recruit patients for clinical trials
+    and prevent misconceptions about participation in the community'
+  incorrectAnswer2: 'C: Helping the research team decide which drug compounds to
+    focus on and produce new treatment options for the community'
+  incorrectAnswer3: 'D: None of the above'
+  questionRole: Community Advocate
+  questionType: MultipleChoice
+  questionStage: Discovery

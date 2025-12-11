@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ResCoordDisc 6
+  m_EditorClassIdentifier: 
+  question: "You overhear a research nurse talking to one of the lab researchers
+    about using stored patient tissue samples to help study a specific cancer mutation.
+    The researcher tells the nurse that you are double-checking that the research
+    team has the right approvals and patient permissions to use those samples first
+    \u2014 an important aspect of the research coordinator\u2019s role in early discovery.\n\nHow
+    does the research coordinator\u2019s role differ from a lab researcher\u2019s
+    role in the Discovery stage?"
+  explanation: "In early discovery, lab researchers carry out the hands-on scientific
+    work \u2014 studying tissue samples, analyzing cancer cells, and identifying
+    new mutations. Research coordinators, on the other hand, help ensure that any
+    patient samples or data used in those experiments follow proper ethical, legal,
+    and privacy standards. While research coordinators aren\u2019t running experiments
+    or coming up with scientific questions, they make sure research teams follow
+    the rules and keep things organized from the very start."
+  correctAnswer: 'B: The research coordinator focuses on approvals and proper use
+    of patient samples, while the lab researcher conducts experiments and runs tests
+    in the lab'
+  incorrectAnswer1: 'A: The research coordinator runs laboratory tests, while the
+    lab researcher reviews patient consent forms'
+  incorrectAnswer2: 'C: The research coordinator decides which scientific questions
+    the research team should study, while the lab researcher gathers patient tissue
+    samples'
+  incorrectAnswer3: 'D: None of the above'
+  questionRole: Research Coordinator
+  questionType: MultipleChoice
+  questionStage: Discovery

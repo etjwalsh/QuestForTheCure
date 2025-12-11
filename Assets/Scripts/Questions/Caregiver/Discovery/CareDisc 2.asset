@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CareDisc 2
+  m_EditorClassIdentifier: 
+  question: "A cancer research team is creating a new survey to better understand
+    what matters most to cancer patients in early treatment. As a caregiver for a
+    loved one with lung cancer, you begin to spread the word in your community, encouraging
+    other families to share their experiences. When someone asks how the survey results
+    will be used, you explain, \u201CBy helping connect patients, their families,
+    and other caregivers with researchers, their input can actually help shape what
+    scientists decide to study in early cancer research.\u201D\n\nIs this true or
+    false?"
+  explanation: "Caregivers often serve as a bridge between scientists and the patient
+    community. Their involvement helps ensure early research reflects real-life needs,
+    priorities, and challenges faced by those living with cancer, ensuring that early
+    discoveries are guided by real experiences \u2014 not just laboratory data. Their
+    voices keep research grounded in the human side of cancer care from the very
+    beginning."
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Caregiver
+  questionType: TrueFalse
+  questionStage: Discovery

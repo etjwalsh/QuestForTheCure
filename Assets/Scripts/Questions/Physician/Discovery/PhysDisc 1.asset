@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PhysDisc 1
+  m_EditorClassIdentifier: 
+  question: "While reviewing cases in your clinic, you notice patterns in how certain
+    patients respond to existing treatments. You make a note of your findings and
+    compile relevant patient data. Later, you ask your residents what this could
+    mean for new cancer research, and one of them responds, \u201CI\u2019m pretty
+    sure that information physicians gather from patients, like patterns in symptoms
+    or treatment response, can help identify unmet needs in current treatments.\u201D\r\n\r\nIs
+    this true or false?\r"
+  explanation: When reviewing patient data, physicians may notice patterns in symptoms,
+    disease progression, or responses to existing treatments that can shape drug
+    discovery. These observations can point researchers toward new biological targets
+    or highlight areas where current therapies fall short. By sharing this clinical
+    knowledge and patient data with scientists, physicians help ensure that the earliest
+    stages of discovery focus on questions that truly matter for patient care.
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Physician
+  questionType: TrueFalse
+  questionStage: Discovery

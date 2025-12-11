@@ -102,13 +102,13 @@ MonoBehaviour:
   elementType: 7
   isMolecule: 0
   dragSmoothness: 0.01
-  slideDeceleration: 0.8
+  slideDeceleration: 0.95
   stopThreshold: 0.1
   constrainToCameraBounds: 1
   boundaryPadding: 0
   dropSpeed: 0
   happyValue: 0
-  sadValue: 2
+  sadValue: 3
 --- !u!135 &1931245937584651166
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.45
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2319345167295498345
 Rigidbody:

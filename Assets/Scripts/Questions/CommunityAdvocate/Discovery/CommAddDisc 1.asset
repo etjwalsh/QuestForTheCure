@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: CommAddDisc 1
+  m_EditorClassIdentifier: 
+  question: "Your advocacy organization has been invited to attend a meeting with
+    a research team that is testing several drug compounds that might become part
+    of a new cancer treatment. You\u2019ve never attended a meeting like this before,
+    so you ask a fellow advocate about it. She explains, \u201CAt this early stage,
+    input from community advocates \u2014 like what kinds of cancer treatments would
+    be most meaningful to patients \u2014 can help shape research priorities and
+    guide which drug compound(s) the team focuses on.\u201D\n\nIs this true or false?"
+  explanation: "Even though community advocates aren\u2019t conducting lab experiments,
+    their perspective helps researchers understand what matters most to cancer patients.
+    This input can guide decisions about which directions are most important to explore
+    in the discovery stage. By sharing what patients and families value, community
+    advocates help ensure that early research stays focused on meaningful outcomes
+    and real-world needs."
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Community Advocate
+  questionType: TrueFalse
+  questionStage: Discovery
