@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,8 +13,11 @@ public class MainMenu : MonoBehaviour
     //function to exit the game
     public void OnExitClicked()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
-        // Application.Quit();
+        //for not in build
+        // UnityEditor.EditorApplication.isPlaying = false;
+
+        //in build
+        Application.Quit();
     }
 
     //function to open the settings
