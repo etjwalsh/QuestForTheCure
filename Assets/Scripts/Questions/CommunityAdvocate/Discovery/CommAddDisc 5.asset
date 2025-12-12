@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
   m_Name: CommAddDisc 5
   m_EditorClassIdentifier: 
-  question: You are part of a patient advocacy group that has been invited to participate
+  question: 'You are part of a patient advocacy group that has been invited to participate
     in a research planning session at your local cancer center. The research team
     is developing a new system to track how patient samples are stored and used in
     the lab during early discovery work. During the session, you give suggestions
     about how to explain the donation process clearly to patients and how to respect
     donor preferences.
+
+
+    How do community advocates contribute to early discovery
+    in this scenario?'
   explanation: Community advocates help ensure that ethical considerations, such
     as donor consent and transparency about sample use, are included in research
     planning. Their input helps research stay patient-centered and responsible from

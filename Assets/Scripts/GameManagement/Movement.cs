@@ -179,6 +179,11 @@ public class Movement : MonoBehaviour
         else if (tagLandedOn == "EndOfStage")
         {
             Debug.Log("go to the next stage!");
+
+            //for now, just bring up the end credits UI
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
+            LevelLoader.instance.LoadScene("End");
+
             //move all players to the next stage
 
             //randomize all of the player's roles

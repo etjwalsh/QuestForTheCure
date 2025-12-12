@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LeftRightChoice : MonoBehaviour
@@ -8,9 +7,14 @@ public class LeftRightChoice : MonoBehaviour
     [SerializeField] public GameObject playerRef;
     private Movement playerScript;
 
-    public void OnLeftArrowClicked()
+    void Update()
     {
         StartCoroutine(WaitForPlayer());
+    }
+
+    public void OnLeftArrowClicked()
+    {
+        // StartCoroutine(WaitForPlayer());
         playerScript = playerRef.GetComponent<Movement>();
         Debug.Log("left clicked");
         //set the player's choice to next (left)
@@ -19,7 +23,7 @@ public class LeftRightChoice : MonoBehaviour
 
     public void OnRightArrowClicked()
     {
-        StartCoroutine(WaitForPlayer());
+        // StartCoroutine(WaitForPlayer());
         playerScript = playerRef.GetComponent<Movement>();
         Debug.Log("right clicked");
         //set the player choice to next (right)
