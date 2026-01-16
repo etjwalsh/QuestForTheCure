@@ -848,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.size
-      value: 54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: questionsList.Array.data[0]
