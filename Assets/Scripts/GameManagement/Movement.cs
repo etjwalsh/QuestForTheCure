@@ -16,6 +16,9 @@ public class Movement : MonoBehaviour
     //string for the player's current role
     public string currentRole;
 
+    //for the clinical trials minigame
+    public int clinicalStage = 1;
+
 
     private void Awake()
     {
