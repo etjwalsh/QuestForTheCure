@@ -1,20 +1,14 @@
 using System.Collections.Generic;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 
 
 /*
 Still need to add:
-- random assignment of sick vs healthy
 - more characters to the list
-- removing the sick people when clicked
-- counter to keep track of sick people
-- timer counting up to keep track of length of minigame
 - prolly more idk
 */
-
-
-
-
 
 public class SymptomSearchController : MonoBehaviour
 {
@@ -28,11 +22,19 @@ public class SymptomSearchController : MonoBehaviour
     public float spacing = 2f;
     public bool center = true;
     public Camera mainCam;
+    private float sideEffectRate;
 
     [Header("Camera Positions")]
-    public Vector3 camPos1 = new Vector3(0.5f, 4.5f, -8f);
+    public Vector3 camPos1 = new Vector3(1f, 4.5f, -8f);
     public Vector3 camPos2 = new Vector3(3.7f, 6f, -13f);
     public Vector3 camPos3 = new Vector3(0f, 5f, -9f);
+
+    [Header("UI Settings")]
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI numSickText;
+    private int numSickPeople;
+    public int totalSickPeople;
+    private float elapsedTime = 0.0f;
 
     //for adding people to spawned in list
     private GameObject personSpawned;
@@ -41,7 +43,7 @@ public class SymptomSearchController : MonoBehaviour
     {
         //set the stage to be what the current player's clinical stage is
         // stage = PlayerManager.instance.current.clinicalStage;
-        stage = 3;
+        stage = 1;
 
         //increase it for next time
         // PlayerManager.instance.current.clinicalStage++;
@@ -58,6 +60,7 @@ public class SymptomSearchController : MonoBehaviour
                     gridY = 4;
                     spacing = 2;
                     mainCam.transform.position = camPos1;
+                    sideEffectRate = 50;
                     SpawnGrid();
                     break;
                 }
@@ -68,7 +71,8 @@ public class SymptomSearchController : MonoBehaviour
                     gridX = 5;
                     gridY = 10;
                     spacing = 1.5f;
-                    mainCam.transform.position = camPos1;
+                    mainCam.transform.position = camPos2;
+                    sideEffectRate = 25;
                     SpawnGrid();
                     break;
                 }
@@ -79,15 +83,31 @@ public class SymptomSearchController : MonoBehaviour
                     gridX = 10;
                     gridY = 10;
                     spacing = 1;
+                    mainCam.transform.position = camPos3;
+                    sideEffectRate = 5;
                     SpawnGrid();
-                    mainCam.transform.position = camPos1;
                     break;
                 }
         }
     }
     void Update()
     {
+        if (totalSickPeople > numSickPeople)
+        {
+            //start the timer
+            elapsedTime += Time.deltaTime;
 
+            int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+            int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+            int milliseconds = Mathf.FloorToInt(elapsedTime * 100f % 100f);
+
+            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+        }
+        else
+        {
+            //end the game
+            Time.timeScale = 0;
+        }
     }
 
     //function for spawning in the first stage
@@ -105,6 +125,7 @@ public class SymptomSearchController : MonoBehaviour
             );
         }
 
+        //spawn the grid of people
         for (int x = 0; x < gridY; x++)
         {
             for (int z = 0; z < gridX; z++)
@@ -113,22 +134,21 @@ public class SymptomSearchController : MonoBehaviour
                 Vector3 position = new Vector3(x * spacing, 0, z * spacing) + offset;
                 personSpawned = Instantiate(peopleToSpawn[Random.Range(0, peopleToSpawn.Count - 1)], position, Quaternion.identity, transform);
 
+                //make some of the people sick
+                personSpawned.GetComponent<SymptomChecker>().CheckSideEffects(sideEffectRate);
+
                 //add the spawned person to the list
                 people.Add(personSpawned);
-
-                //assign a sick or not sick value to the person spawned
-                SymptomChecker sc = personSpawned.GetComponent<SymptomChecker>();
-                //if it exists
-                if (sc)
-                {
-                    //set isSick based on a 20% chance
-                    sc.isSick = Random.value < 0.2;
-                }
-                else
-                {
-                    Debug.LogError("There is no symptom checker on this game object");
-                }
             }
         }
+    }
+
+    public void IncreaseScore()
+    {
+        //increase the number of sick people
+        numSickPeople++;
+
+        //update the UI
+        numSickText.text = "x" + numSickPeople.ToString();
     }
 }

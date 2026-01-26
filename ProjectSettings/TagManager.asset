@@ -16,6 +16,7 @@ TagManager:
   - CinemachineCamera
   - Environment
   - SpacesTree
+  - MinigameManager
   layers:
   - Default
   - TransparentFX
