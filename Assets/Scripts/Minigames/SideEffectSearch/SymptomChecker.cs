@@ -2,12 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//still have to make the material for the sick person change!
+
 public class SymptomChecker : MonoBehaviour
 {
     public GameObject sicklyUI;
-    public Image faceImage;
-    public Sprite sickImage;
-    public Sprite healthyImage;
+    public Image sickImage;
+    public Material sickMat;
+    public Material healthyMat;
     private bool sick;
 
     public bool isSick;
@@ -82,7 +84,7 @@ public class SymptomChecker : MonoBehaviour
         {
             //make the person sick
             sick = true;
-            faceImage.sprite = sickImage;
+            // sickImage.sprite = sickImage;
             ssc.totalSickPeople++;
         }
     }

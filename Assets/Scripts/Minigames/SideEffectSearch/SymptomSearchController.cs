@@ -7,7 +7,6 @@ using UnityEngine;
 /*
 Still need to add:
 - more characters to the list
-- prolly more idk
 */
 
 public class SymptomSearchController : MonoBehaviour
