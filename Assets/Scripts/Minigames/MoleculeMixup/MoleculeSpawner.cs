@@ -212,7 +212,7 @@ public class MoleculeSpawner : MonoBehaviour
         gameOverScreen.interactable = true; //enable the ui
         gameOverScreen.blocksRaycasts = true; //enable the ui
 
-        // Show pairs one at a time
+        //Show pairs one at a time
         for (int i = 0; i < imagesToShow.Count; i++)
         {
             imagesToShow[i].SetActive(true);
@@ -223,7 +223,7 @@ public class MoleculeSpawner : MonoBehaviour
         //wait between showing collected and trash too
         yield return new WaitForSecondsRealtime(delayBetween);
 
-        // Show trash one at a time
+        //Show trash one at a time
         for (int i = 0; i < trashToShow.Count; i++)
         {
             trashToShow[i].SetActive(true);

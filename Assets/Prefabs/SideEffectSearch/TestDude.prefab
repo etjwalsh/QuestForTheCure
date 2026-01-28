@@ -313,7 +313,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sicklyUI: {fileID: 8871984312209924540}
-  sickImage: {fileID: 21300000, guid: 22f4e9065b725b946b43ec3c18b4a288, type: 3}
-  sickMat: {fileID: 0}
-  healthyMat: {fileID: 0}
-  isSick: 0
+  sickMat: {fileID: 2100000, guid: f761960950e9f5e4180b65e423e9ff42, type: 2}
+  healthyMat: {fileID: 2100000, guid: 86bb471388698ab4b908e126ea830e7a, type: 2}

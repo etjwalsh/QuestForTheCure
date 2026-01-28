@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System.Threading;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 /*
 Still need to add:
@@ -12,6 +12,7 @@ Still need to add:
 public class SymptomSearchController : MonoBehaviour
 {
     public int stage = 1;
+    private bool gameEnded = false;
 
     [Header("Spawner Settings")]
     public List<GameObject> peopleToSpawn = new List<GameObject>(); //list to pull from to get the prefabs to spawn in 
@@ -29,17 +30,34 @@ public class SymptomSearchController : MonoBehaviour
     public Vector3 camPos3 = new Vector3(0f, 5f, -9f);
 
     [Header("UI Settings")]
+    public GameObject mainUI;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI numSickText;
     private int numSickPeople;
     public int totalSickPeople;
     private float elapsedTime = 0.0f;
+    private float finalTime;
+
+    [Header("End Screen Settings")]
+    public GameObject endUI;
+    public EndScreenUI endUIScript;
+    public List<GameObject> textToShow;
+    public GameObject timeUpText;
+
 
     //for adding people to spawned in list
     private GameObject personSpawned;
 
     void Awake()
     {
+        //set the end screen to inactive
+        for (int i = 0; i < textToShow.Count; i++)
+        {
+            textToShow[i].SetActive(false);
+        }
+        endUI.SetActive(false);
+        timeUpText.SetActive(false);
+
         //set the stage to be what the current player's clinical stage is
         // stage = PlayerManager.instance.current.clinicalStage;
         stage = 1;
@@ -104,8 +122,14 @@ public class SymptomSearchController : MonoBehaviour
         }
         else
         {
-            //end the game
-            Time.timeScale = 0;
+            if (!gameEnded)
+            {
+                gameEnded = true;
+                //end the game
+                finalTime = elapsedTime;
+                mainUI.SetActive(false);
+                EndMinigame();
+            }
         }
     }
 
@@ -149,5 +173,27 @@ public class SymptomSearchController : MonoBehaviour
 
         //update the UI
         numSickText.text = "x" + numSickPeople.ToString();
+    }
+
+    private void EndMinigame()
+    {
+
+        StartCoroutine(ShowResults());
+    }
+
+
+    public IEnumerator ShowResults()
+    {
+        timeUpText.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        timeUpText.SetActive(false);
+        yield return new WaitForSeconds(1.0f);
+        endUI.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        for (int i = 0; i < textToShow.Count; i++)
+        {
+            textToShow[i].SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }

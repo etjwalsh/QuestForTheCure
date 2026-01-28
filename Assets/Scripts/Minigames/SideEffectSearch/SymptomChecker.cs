@@ -1,21 +1,15 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 //still have to make the material for the sick person change!
 
 public class SymptomChecker : MonoBehaviour
 {
     public GameObject sicklyUI;
-    public Image sickImage;
     public Material sickMat;
-    public Material healthyMat;
     private bool sick;
-
-    public bool isSick;
     private GameObject minigameManager;
     private SymptomSearchController ssc;
-
 
     void Awake()
     {
@@ -58,22 +52,6 @@ public class SymptomChecker : MonoBehaviour
             //get rid of the person
             gameObject.SetActive(false);
         }
-
-
-        //Check if the person is sick
-        // if (sick)
-        // {
-        //     //Add one to the number of sick people
-        //     numSickPeople++;
-
-        //     //display that number in the UI
-        //     numSickText.text = "Number of people with\nside effects found: " + numSickPeople.ToString();
-        // }
-
-        // //Add one to the number of people that are sick
-
-        //Make this person inactive
-
     }
 
     public void CheckSideEffects(float percentChance)
@@ -84,7 +62,11 @@ public class SymptomChecker : MonoBehaviour
         {
             //make the person sick
             sick = true;
-            // sickImage.sprite = sickImage;
+
+            //change the sprite of the character to be sick
+            gameObject.GetComponentInChildren<Renderer>().material = sickMat;
+
+            //keep track of how many sick people there are
             ssc.totalSickPeople++;
         }
     }
