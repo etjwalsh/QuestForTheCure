@@ -119,12 +119,6 @@ public class MoleculeSpawner : MonoBehaviour
             //change how fast they fall at random
             newElement.GetComponent<Rigidbody>().drag = Random.Range(6, 10);
 
-            // //make some of them drop really fast randomly
-            // if (newElement.GetComponent<Rigidbody>().drag < 4.5f)
-            // {
-            //     newElement.GetComponent<Rigidbody>().drag = 2;
-            // }
-
             yield return null;
         }
     }

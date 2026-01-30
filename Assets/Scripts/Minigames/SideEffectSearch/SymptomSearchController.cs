@@ -2,7 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 /*
 Still need to add:
@@ -39,10 +38,15 @@ public class SymptomSearchController : MonoBehaviour
     private float finalTime;
 
     [Header("End Screen Settings")]
-    public GameObject endUI;
+    public CanvasGroup endUI;
     public EndScreenUI endUIScript;
     public List<GameObject> textToShow;
     public GameObject timeUpText;
+    public float duration;
+    public TextMeshProUGUI timeResult;
+    public TextMeshProUGUI sickResult;
+    public TextMeshProUGUI effectivenessResult;
+    public TextMeshProUGUI message;
 
 
     //for adding people to spawned in list
@@ -55,8 +59,11 @@ public class SymptomSearchController : MonoBehaviour
         {
             textToShow[i].SetActive(false);
         }
-        endUI.SetActive(false);
         timeUpText.SetActive(false);
+        endUI.alpha = 0f;
+        endUI.interactable = false;
+        endUI.blocksRaycasts = false;
+        message.gameObject.SetActive(false);
 
         //set the stage to be what the current player's clinical stage is
         // stage = PlayerManager.instance.current.clinicalStage;
@@ -177,23 +184,101 @@ public class SymptomSearchController : MonoBehaviour
 
     private void EndMinigame()
     {
-
         StartCoroutine(ShowResults());
     }
 
-
     public IEnumerator ShowResults()
     {
+        //add the scores to the textToShow (time first)
+        float time = finalTime;
+        //get the effectiveness score
+        float effectivenessScore = 100 - ((float)numSickPeople / people.Count * 100f);
+
+        int minutes = Mathf.FloorToInt(time / 60f);
+        int seconds = Mathf.FloorToInt(time % 60f);
+        int hundredths = Mathf.FloorToInt(time * 100f % 100f);
+
+        timeResult.text = $"{minutes:00}:{seconds:00}.{hundredths:00}";
+        
+        // timeResult.text = finalTime.ToString();
+        sickResult.text = numSickPeople.ToString();
+
+        //calculate effectiveness based on sick result and total people
+        effectivenessResult.text = effectivenessScore.ToString() + "%";
+
+        //change the color of the score depending on how good it is
+        //change the ending message based on the score
+        if(effectivenessScore < 50)
+        {
+            effectivenessResult.color = Hex("#D2082E");
+            message.text = "This treatment was not very effective...";
+        }
+        else if(effectivenessScore > 50 && effectivenessScore < 75)
+        {
+            effectivenessResult.color = Hex("#FFB07C");
+            message.text = "Time to take this treatment back to the lab...";
+        }
+        else if(effectivenessScore > 75 && effectivenessScore < 90)
+        {
+            effectivenessResult.color = Hex("#FFC526");
+            message.text = "We're getting somewhere but that score could still be improved!";
+        }
+        else if(effectivenessScore > 90 && effectivenessScore < 95)
+        {
+            effectivenessResult.color = Hex("#45A682");
+            message.text = "Wow this treatment is pretty good!";
+        }
+        else if(effectivenessScore > 95)
+        {
+            effectivenessResult.color = Hex("#90D5FF");
+            message.text = "This treatment is super effective!!";
+        }
+
+        //add those texts to the list of stuff to show
+        textToShow.Add(timeResult.gameObject);
+        textToShow.Add(sickResult.gameObject);
+        textToShow.Add(effectivenessResult.gameObject);
+
+        //make sure they are hidden to start
+        timeResult.gameObject.SetActive(false);
+        sickResult.gameObject.SetActive(false);
+        effectivenessResult.gameObject.SetActive(false);
+
+        //tell the player their time is up
         timeUpText.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         timeUpText.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
-        endUI.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
+
+        //vars for fading the end UI in
+        float elapsedTime = 0f;
+        endUI.alpha = 0f; //Start fully transparent
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.unscaledDeltaTime; //Use unscaledDeltaTime so it works even when Time.timeScale = 0
+            endUI.alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
+            yield return null;
+        }
+
+        //wait a sec
+        yield return new WaitForSeconds(0.5f);
+
+        //loop through all the texts that are needed to show
         for (int i = 0; i < textToShow.Count; i++)
         {
             textToShow[i].SetActive(true);
             yield return new WaitForSeconds(0.5f);
         }
+
+        //activate the message
+        message.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1.0f);
+    }
+
+    Color Hex(string hex)
+    {
+        ColorUtility.TryParseHtmlString(hex, out Color c);
+        return c;
     }
 }
