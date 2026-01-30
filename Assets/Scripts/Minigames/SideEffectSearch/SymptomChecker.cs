@@ -1,12 +1,13 @@
-using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 //still have to make the material for the sick person change!
 
 public class SymptomChecker : MonoBehaviour
 {
     public GameObject sicklyUI;
-    public Material sickMat;
+    public List<Material> sickMatDudes = new List<Material>();
+    public List<Material> matDudes = new List<Material>();
     private bool sick;
     private GameObject minigameManager;
     private SymptomSearchController ssc;
@@ -64,10 +65,16 @@ public class SymptomChecker : MonoBehaviour
             sick = true;
 
             //change the sprite of the character to be sick
-            gameObject.GetComponentInChildren<Renderer>().material = sickMat;
+            gameObject.GetComponentInChildren<Renderer>().material = sickMatDudes[Random.Range(0, sickMatDudes.Count)];
 
             //keep track of how many sick people there are
             ssc.totalSickPeople++;
+            ssc.everySickPeople++;
+        }
+        else //they aren't sick
+        {
+            //set them to be one of the non sick dudes
+            gameObject.GetComponentInChildren<Renderer>().material = matDudes[Random.Range(0, matDudes.Count)];
         }
     }
 }

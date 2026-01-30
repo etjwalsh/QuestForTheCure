@@ -313,5 +313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sicklyUI: {fileID: 8871984312209924540}
-  sickMat: {fileID: 2100000, guid: f761960950e9f5e4180b65e423e9ff42, type: 2}
-  healthyMat: {fileID: 2100000, guid: 86bb471388698ab4b908e126ea830e7a, type: 2}
+  sickMatDudes:
+  - {fileID: 2100000, guid: f761960950e9f5e4180b65e423e9ff42, type: 2}
+  - {fileID: 2100000, guid: c5af0abe1a9e0ea47a1569f1507c8551, type: 2}
+  - {fileID: 2100000, guid: 27e51ba1976393746aa7e79832eb9ab7, type: 2}
+  matDudes:
+  - {fileID: 2100000, guid: 86bb471388698ab4b908e126ea830e7a, type: 2}
+  - {fileID: 2100000, guid: eba5d37ca53294748b5b4774c5cd371d, type: 2}
+  - {fileID: 2100000, guid: f314e706be578a14a96e0bf7c85302ba, type: 2}

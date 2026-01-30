@@ -3,14 +3,9 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 
-/*
-Still need to add:
-- more characters to the list
-*/
-
 public class SymptomSearchController : MonoBehaviour
 {
-    public int stage = 1;
+    private int stage;
     private bool gameEnded = false;
 
     [Header("Spawner Settings")]
@@ -22,6 +17,8 @@ public class SymptomSearchController : MonoBehaviour
     public bool center = true;
     public Camera mainCam;
     private float sideEffectRate;
+    private int wave = 1;
+    private int numWaves = 3;
 
     [Header("Camera Positions")]
     public Vector3 camPos1 = new Vector3(1f, 4.5f, -8f);
@@ -33,9 +30,11 @@ public class SymptomSearchController : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI numSickText;
     private int numSickPeople;
+    public int everySickPeople;
     public int totalSickPeople;
     private float elapsedTime = 0.0f;
     private float finalTime;
+    private int totalNumPeople = 0;
 
     [Header("End Screen Settings")]
     public CanvasGroup endUI;
@@ -47,6 +46,7 @@ public class SymptomSearchController : MonoBehaviour
     public TextMeshProUGUI sickResult;
     public TextMeshProUGUI effectivenessResult;
     public TextMeshProUGUI message;
+    public GameObject exitButton;
 
 
     //for adding people to spawned in list
@@ -106,7 +106,7 @@ public class SymptomSearchController : MonoBehaviour
                     //set up the scene for the third level of the minigame
                     gridX = 10;
                     gridY = 10;
-                    spacing = 1;
+                    spacing = 1.25f;
                     mainCam.transform.position = camPos3;
                     sideEffectRate = 5;
                     SpawnGrid();
@@ -125,9 +125,32 @@ public class SymptomSearchController : MonoBehaviour
             int seconds = Mathf.FloorToInt(elapsedTime % 60f);
             int milliseconds = Mathf.FloorToInt(elapsedTime * 100f % 100f);
 
-            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+            timerText.text = "Group: " + wave + "\n" + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
         }
-        else
+        else if (wave != numWaves && totalSickPeople == numSickPeople)
+        {
+            //reset for another wave
+            if (totalSickPeople == numSickPeople)
+            {
+                totalSickPeople = 0;
+                numSickPeople = 0;
+                wave++;
+
+                //delete all current people
+                for (int i = 0; i < people.Count; i++)
+                {
+                    //destroy every game object in the list
+                    Destroy(people[i].gameObject);
+                }
+
+                //clear the list
+                people.Clear();
+
+                //spawn new people
+                SpawnGrid();
+            }
+        }
+        else if (wave == numWaves)
         {
             if (!gameEnded)
             {
@@ -163,6 +186,7 @@ public class SymptomSearchController : MonoBehaviour
                 //spawn each person with an offset
                 Vector3 position = new Vector3(x * spacing, 0, z * spacing) + offset;
                 personSpawned = Instantiate(peopleToSpawn[Random.Range(0, peopleToSpawn.Count - 1)], position, Quaternion.identity, transform);
+                totalNumPeople++;
 
                 //make some of the people sick
                 personSpawned.GetComponent<SymptomChecker>().CheckSideEffects(sideEffectRate);
@@ -192,43 +216,43 @@ public class SymptomSearchController : MonoBehaviour
         //add the scores to the textToShow (time first)
         float time = finalTime;
         //get the effectiveness score
-        float effectivenessScore = 100 - ((float)numSickPeople / people.Count * 100f);
+        float effectivenessScore = (int)(100 - ((float)everySickPeople / totalNumPeople * 100f));
 
         int minutes = Mathf.FloorToInt(time / 60f);
         int seconds = Mathf.FloorToInt(time % 60f);
         int hundredths = Mathf.FloorToInt(time * 100f % 100f);
 
         timeResult.text = $"{minutes:00}:{seconds:00}.{hundredths:00}";
-        
+
         // timeResult.text = finalTime.ToString();
-        sickResult.text = numSickPeople.ToString();
+        sickResult.text = everySickPeople.ToString() + " / " + totalNumPeople;
 
         //calculate effectiveness based on sick result and total people
         effectivenessResult.text = effectivenessScore.ToString() + "%";
 
         //change the color of the score depending on how good it is
         //change the ending message based on the score
-        if(effectivenessScore < 50)
+        if (effectivenessScore <= 50)
         {
             effectivenessResult.color = Hex("#D2082E");
             message.text = "This treatment was not very effective...";
         }
-        else if(effectivenessScore > 50 && effectivenessScore < 75)
+        else if (effectivenessScore > 50 && effectivenessScore < 65)
         {
             effectivenessResult.color = Hex("#FFB07C");
             message.text = "Time to take this treatment back to the lab...";
         }
-        else if(effectivenessScore > 75 && effectivenessScore < 90)
+        else if (effectivenessScore >= 65 && effectivenessScore <= 90)
         {
             effectivenessResult.color = Hex("#FFC526");
             message.text = "We're getting somewhere but that score could still be improved!";
         }
-        else if(effectivenessScore > 90 && effectivenessScore < 95)
+        else if (effectivenessScore > 90 && effectivenessScore <= 95)
         {
             effectivenessResult.color = Hex("#45A682");
             message.text = "Wow this treatment is pretty good!";
         }
-        else if(effectivenessScore > 95)
+        else if (effectivenessScore > 95)
         {
             effectivenessResult.color = Hex("#90D5FF");
             message.text = "This treatment is super effective!!";
@@ -252,6 +276,7 @@ public class SymptomSearchController : MonoBehaviour
         //vars for fading the end UI in
         float elapsedTime = 0f;
         endUI.alpha = 0f; //Start fully transparent
+        endUI.blocksRaycasts = true;
 
         while (elapsedTime < duration)
         {
@@ -272,6 +297,12 @@ public class SymptomSearchController : MonoBehaviour
 
         //activate the message
         message.gameObject.SetActive(true);
+
+        //set the UI to be interactable
+        endUI.interactable = true;
+
+        //activate the exit button
+        exitButton.SetActive(true);
 
         yield return new WaitForSeconds(1.0f);
     }
