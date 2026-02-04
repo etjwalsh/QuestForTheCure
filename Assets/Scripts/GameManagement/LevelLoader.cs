@@ -22,6 +22,7 @@ public class LevelLoader : MonoBehaviour
     private GameObject activePlayer;
     private GameObject[] inactivePlayers;
     private GameObject cam;
+    private bool val;
 
 
     //for spawning players
@@ -117,30 +118,40 @@ public class LevelLoader : MonoBehaviour
         //Wait for activation to complete
         yield return operation;
 
-        if (sceneName == "MoleculeMayhem")
+        //get references to activate the scene with
+        Debug.Log("Scene name right before all this stuff is: " + sceneName);
+        if (sceneName == "MoleculeMayhem" || sceneName == "LoadDiscovery")
         {
+            val = false;
             //get references to objects
             environment = GameObject.FindGameObjectWithTag("DiscoveryEnvironment");
+            spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
+            activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
+            inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
+            cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
         }
         else if (sceneName == "")
         {
+            val = false;
             //add in preclinical environment
         }
-        else if(sceneName == "SideEffectSearch")
+        else if (sceneName == "SideEffectSearch" || sceneName == "LoadClinical")
         {
+            val = false;
             environment = GameObject.FindGameObjectWithTag("ClinicalEnvironment");
         }
         else if (sceneName == "")
         {
+            val = false;
             //add in approval environment
         }
-        spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
-        activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
-        inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
-        cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
+        else if (sceneName == "Discovery" || sceneName == "PreClinical" || sceneName == "Clinical" || sceneName == "Approval")
+        {
+            val = true;
+        }
 
         //turn them all off
-        ActivateScene(false);
+        ActivateScene(val);
 
         //fade in
         yield return StartCoroutine(FadeIn());
@@ -153,8 +164,11 @@ public class LevelLoader : MonoBehaviour
         //activate the scene stuff
         environment.SetActive(value);
         spacesTree.SetActive(value);
-        cam.SetActive(value);
-        activePlayer.SetActive(value);
+        // cam.SetActive(value);
+        if (activePlayer)
+        {
+            activePlayer.SetActive(value);
+        }
 
         //activate players
         for (int i = 0; i < inactivePlayers.Length; i++)

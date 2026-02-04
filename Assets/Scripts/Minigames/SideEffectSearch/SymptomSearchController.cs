@@ -132,8 +132,12 @@ public class SymptomSearchController : MonoBehaviour
             //reset for another wave
             if (totalSickPeople == numSickPeople)
             {
+                //reset number of sick people and update ui
                 totalSickPeople = 0;
                 numSickPeople = 0;
+                numSickText.text = "x" + numSickPeople.ToString();
+
+                //increase wave number
                 wave++;
 
                 //delete all current people
