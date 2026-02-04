@@ -21,8 +21,11 @@ public class LoadPreClinical : MonoBehaviour
         //set the new environment active
         newSpacesTree.SetActive(true);
         preClinicalEnvironment.SetActive(true);
+    }
 
-        //load the next scene
+    void Update()
+    {
+         //load the next scene
         LevelLoader.instance.LoadScene("PreClinical");
     }
 }

@@ -17,11 +17,10 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.5f;
 
     //all references to stuff
-    private GameObject environment;
-    private GameObject spacesTree;
-    private GameObject activePlayer;
-    private GameObject[] inactivePlayers;
-    private GameObject cam;
+    public GameObject environment = null;
+    public GameObject spacesTree = null;
+    public GameObject activePlayer = null;
+    public GameObject[] inactivePlayers = null;
     private bool val;
 
 
@@ -120,34 +119,23 @@ public class LevelLoader : MonoBehaviour
 
         //get references to activate the scene with
         Debug.Log("Scene name right before all this stuff is: " + sceneName);
-        if (sceneName == "MoleculeMayhem" || sceneName == "LoadDiscovery")
+        if(environment == null)
         {
-            val = false;
             //get references to objects
             environment = GameObject.FindGameObjectWithTag("DiscoveryEnvironment");
             spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
             activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
             inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
-            cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
         }
-        else if (sceneName == "")
-        {
-            val = false;
-            //add in preclinical environment
-        }
-        else if (sceneName == "SideEffectSearch" || sceneName == "LoadClinical")
-        {
-            val = false;
-            environment = GameObject.FindGameObjectWithTag("ClinicalEnvironment");
-        }
-        else if (sceneName == "")
-        {
-            val = false;
-            //add in approval environment
-        }
-        else if (sceneName == "Discovery" || sceneName == "PreClinical" || sceneName == "Clinical" || sceneName == "Approval")
+
+        //set when you want the scene stuff to be active vs inactive
+        if (sceneName == "Discovery" || sceneName == "PreClinical" || sceneName == "Clinical" || sceneName == "Approval")
         {
             val = true;
+        }
+        else
+        {
+            val = false;
         }
 
         //turn them all off
@@ -164,7 +152,6 @@ public class LevelLoader : MonoBehaviour
         //activate the scene stuff
         environment.SetActive(value);
         spacesTree.SetActive(value);
-        // cam.SetActive(value);
         if (activePlayer)
         {
             activePlayer.SetActive(value);
