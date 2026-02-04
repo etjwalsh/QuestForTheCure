@@ -848,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.size
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: questionsList.Array.data[0]
@@ -857,27 +857,27 @@ PrefabInstance:
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 04c3a4e7f4714f64c90b69b1a9a7c71a, type: 2}
+      objectReference: {fileID: 11400000, guid: a6cc394aa4a6a6b4bbc7e4fa04540720, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 927847e224a3394409a77094a8a5e69a, type: 2}
+      objectReference: {fileID: 11400000, guid: 979d4385eb4b1c7419498a021a88b757, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: ebb1234dddbf1bb4b87b17fc7ee46cb6, type: 2}
+      objectReference: {fileID: 11400000, guid: 04c3a4e7f4714f64c90b69b1a9a7c71a, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 2b72ec4682e437543add66a39f3e5d65, type: 2}
+      objectReference: {fileID: 11400000, guid: 855fb7e569f1bc748b90a18696d2e6f2, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: e354c4836d239ef489312aca01326c4e, type: 2}
+      objectReference: {fileID: 11400000, guid: e926958b1ba81e948abb51dfb81b2b68, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 4c6e06bf1bc6ca641bb983f63aedd427, type: 2}
+      objectReference: {fileID: 11400000, guid: 2c32f3c24ffcc6f4988263dbc696e0ef, type: 2}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: triviaQuesitons.Array.data[6]
       value: 
@@ -1737,13 +1737,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096184960}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11326596, y: 0.6979763, z: -0.11326597, w: 0.69797623}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -10.863999, y: 3.032, z: 1.0400007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &2096184964
 MonoBehaviour:
   m_ObjectHideFlags: 0

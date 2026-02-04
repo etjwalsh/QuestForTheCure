@@ -246,7 +246,14 @@ public class GameStateMachine : MonoBehaviour
         //get a random minigame based on the stage we are in (choose one or the other)
         currentState = GameState.Minigame;
         //change eventually to enter a minigame
-        LevelLoader.instance.LoadScene("MoleculeMayhem");
+        if(currentStage == "Discovery")
+        {
+            LevelLoader.instance.LoadScene("MoleculeMayhem");
+        }
+        else if (currentStage == "Clinical")
+        {
+            LevelLoader.instance.LoadScene("SideEffectSearch");
+        }
     }
 
     public void Minigame()

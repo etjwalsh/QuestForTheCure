@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -183,15 +184,36 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("go to the next stage!");
 
-            //for now, just bring up the end credits UI
-            GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
-            LevelLoader.instance.LoadScene("End");
+            string stageOn = GameStateMachine.instance.currentStage;
 
             //move all players to the next stage
+            if(stageOn == "Discovery")
+            {
+                LevelLoader.instance.LoadScene("LoadPreClinical");
+            }
+            else if(stageOn == "PreClinical")
+            {
+                LevelLoader.instance.LoadScene("LoadClinical");
+            }
+            else if(stageOn == "Clinical")
+            {
+                LevelLoader.instance.LoadScene("LoadApproval");
+            }
+            else if(stageOn == "Approval")
+            {
+                LevelLoader.instance.LoadScene("End");
+            }
 
             //randomize all of the player's roles
+            for(int i = 0; i < PlayerManager.instance.players.Count - 1; i++)
+            {
+                PlayerManager.instance.players[i].GetComponent<Movement>().currentRole = GameStateMachine.instance.AssignRoleToPlayer();
+            }
+            //reset the roles list
+            GameStateMachine.instance.ResetRolesList(GameStateMachine.instance.roles);
 
             //go to next player's turn
+            GameStateMachine.instance.currentState = GameStateMachine.GameState.EndTurn;
         }
         //has no tag
         else

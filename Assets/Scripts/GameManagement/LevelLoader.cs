@@ -120,15 +120,27 @@ public class LevelLoader : MonoBehaviour
         if (sceneName == "MoleculeMayhem")
         {
             //get references to objects
-            environment = GameObject.FindGameObjectWithTag("Environment");
-            spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
-            activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
-            inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
-            cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
-
-            //turn them all off
-            ActivateScene(false);
+            environment = GameObject.FindGameObjectWithTag("DiscoveryEnvironment");
         }
+        else if (sceneName == "")
+        {
+            //add in preclinical environment
+        }
+        else if(sceneName == "SideEffectSearch")
+        {
+            environment = GameObject.FindGameObjectWithTag("ClinicalEnvironment");
+        }
+        else if (sceneName == "")
+        {
+            //add in approval environment
+        }
+        spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
+        activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
+        inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
+        cam = GameObject.FindGameObjectWithTag("CinemachineCamera");
+
+        //turn them all off
+        ActivateScene(false);
 
         //fade in
         yield return StartCoroutine(FadeIn());

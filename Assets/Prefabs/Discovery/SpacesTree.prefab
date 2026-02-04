@@ -69,6 +69,7 @@ MonoBehaviour:
   left: {fileID: 0}
   right: {fileID: 0}
   next: {fileID: 0}
+  stopSign: {fileID: 0}
 --- !u!114 &1469336548072632032
 MonoBehaviour:
   m_ObjectHideFlags: 0
