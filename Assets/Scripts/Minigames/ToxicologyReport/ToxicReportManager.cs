@@ -1,16 +1,28 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ToxicReportManager : MonoBehaviour
 {
+    [Header("GeneralSettings")]
     public RectTransform container;
-    public CanvasGroup[] screens; // Your 3 UI panels
+    public CanvasGroup[] screens;
     public float transitionDuration = 0.5f;
+
+    [Header("Game 1 Settings")]
+    public List<ToxicTubes> tubes;
     
     private int currentScreen = 0;
     private Vector2 screenSize;
     private int n = 0;
-    
+    public ToxicTubes tubeSelected;
+
+    void Awake()
+    {
+        //set one of the tubes to be a good one
+        tubes[Random.Range(0, tubes.Count - 1)].isToxic = false;
+    }
+
     void Start()
     {
         screenSize = GetComponent<RectTransform>().rect.size;
