@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ToxicTubes : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
+public class ToxicTubes : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool isToxic = true;
 
@@ -46,11 +48,16 @@ public class ToxicTubes : MonoBehaviour , IPointerEnterHandler, IPointerExitHand
 
     private IEnumerator Stank()
     {
-        yield return new WaitForSeconds(0.2f);
-
-        if(isToxic)
+        while (true)
         {
-            stank.SetActive(true);
+            yield return new WaitForSeconds(Random.Range(0.2f, 5.0f));
+
+            if (isToxic)
+            {
+                stank.SetActive(true);
+                yield return new WaitForSeconds(1.0f);
+                stank.SetActive(false);
+            }
         }
     }
 }
