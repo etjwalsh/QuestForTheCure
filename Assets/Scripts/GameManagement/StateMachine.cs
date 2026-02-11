@@ -254,9 +254,17 @@ public class GameStateMachine : MonoBehaviour
         {
             LevelLoader.instance.LoadScene("MoleculeMayhem");
         }
+        else if (currentStage == "PreClinical")
+        {
+            LevelLoader.instance.LoadScene("ToxicologyReport");
+        }
         else if (currentStage == "Clinical")
         {
             LevelLoader.instance.LoadScene("SideEffectSearch");
+        }
+        else if (currentStage == "Approval")
+        {
+            Debug.LogWarning("Approval minigame needs to go here!");
         }
     }
 
