@@ -23,22 +23,7 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        if (space == null && spacesParent == null)
-        {
-            spacesParent = GameObject.Find("SpacesTree/StartingSpace").GetComponent<SpacesTree>();
-        }
-
-        //assign the parent space and the left and right spaces of the parent space
-        if (spacesParent != null)
-        {
-            space = spacesParent;
-            Debug.Log("space left is now = " + space.left);
-            Debug.Log("space right is now = " + space.right);
-        }
-        else
-        {
-            Debug.LogWarning("spacesParent not assigned for player " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
-        }
+        SetSpaces();
 
         //set a reference to the wheel UI from the state machine
         wheel = GameStateMachine.instance.wheelUI.GetComponent<WheelSpin>();
@@ -68,6 +53,7 @@ public class Movement : MonoBehaviour
             Debug.Log("about to print out the active player");
             Debug.Log(activePlayer);
 
+            Debug.Log("roll is: " + roll + " and activePlayer is: " + activePlayer);
             StartCoroutine(MovePlayer(roll, activePlayer));
         }
     }
@@ -187,25 +173,25 @@ public class Movement : MonoBehaviour
             string stageOn = GameStateMachine.instance.currentStage;
 
             //move all players to the next stage
-            if(stageOn == "Discovery")
+            if (stageOn == "Discovery")
             {
                 LevelLoader.instance.LoadScene("LoadPreClinical");
             }
-            else if(stageOn == "PreClinical")
+            else if (stageOn == "PreClinical")
             {
                 LevelLoader.instance.LoadScene("LoadClinical");
             }
-            else if(stageOn == "Clinical")
+            else if (stageOn == "Clinical")
             {
                 LevelLoader.instance.LoadScene("LoadApproval");
             }
-            else if(stageOn == "Approval")
+            else if (stageOn == "Approval")
             {
                 LevelLoader.instance.LoadScene("End");
             }
 
             //randomize all of the player's roles
-            for(int i = 0; i < PlayerManager.instance.players.Count - 1; i++)
+            for (int i = 0; i < PlayerManager.instance.players.Count - 1; i++)
             {
                 PlayerManager.instance.players[i].GetComponent<Movement>().currentRole = GameStateMachine.instance.AssignRoleToPlayer();
             }
@@ -283,5 +269,25 @@ public class Movement : MonoBehaviour
         }
         //change game state to moving
         GameStateMachine.instance.currentState = GameStateMachine.GameState.PlayerMoving;
+    }
+
+    public void SetSpaces()
+    {
+        if (space == null && spacesParent == null)
+        {
+            spacesParent = GameObject.Find("SpacesTree/StartingSpace").GetComponent<SpacesTree>();
+        }
+
+        //assign the parent space and the left and right spaces of the parent space
+        if (spacesParent != null)
+        {
+            space = spacesParent;
+            Debug.Log("space left is now = " + space.left);
+            Debug.Log("space right is now = " + space.right);
+        }
+        else
+        {
+            Debug.LogWarning("spacesParent not assigned for player " + PlayerManager.instance.players[PlayerManager.instance.currentPlayerIndex].playerName);
+        }
     }
 }

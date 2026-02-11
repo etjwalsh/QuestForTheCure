@@ -91,6 +91,10 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.N))
+        {
+            LevelLoader.instance.LoadScene("LoadPreClinical");
+        }
         //state machine switch statement
         switch (currentState)
         {
@@ -246,7 +250,7 @@ public class GameStateMachine : MonoBehaviour
         //get a random minigame based on the stage we are in (choose one or the other)
         currentState = GameState.Minigame;
         //change eventually to enter a minigame
-        if(currentStage == "Discovery")
+        if (currentStage == "Discovery")
         {
             LevelLoader.instance.LoadScene("MoleculeMayhem");
         }

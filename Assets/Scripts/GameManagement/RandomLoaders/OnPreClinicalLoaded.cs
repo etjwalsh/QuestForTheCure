@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Playables;
+
+public class OnPreClinicalLoaded : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        //set all of the characters to have the starting space be the starting space
+        Movement playerScript;
+
+        //set the players to be in the correct position
+        for (int i = 0; i < PlayerManager.numPlayers; i++)
+        {
+            playerScript = PlayerManager.instance.playerPieces[i].GetComponent<Movement>();
+
+            //locate the starting spot 
+            playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
+            playerScript.space = playerScript.startingSpot.GetComponent<SpacesTree>();
+        }
+
+        Destroy(gameObject);
+    }
+}

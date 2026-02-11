@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadPreClinical : MonoBehaviour
@@ -14,18 +12,54 @@ public class LoadPreClinical : MonoBehaviour
         newSpacesTree.SetActive(false);
         preClinicalEnvironment.SetActive(false);
 
-        //destroy everything from the Discovery scene NOT the players though
-        Destroy(GameObject.FindWithTag("DiscoveryEnvironment"));
+        //activate the whole previous scene
+        LevelLoader.instance.environment.SetActive(true);
+        LevelLoader.instance.spacesTree.SetActive(true);
+
+        //destroy everything from the precious scene NOT the players though
+        Destroy(GameObject.FindWithTag("Environment"));
         Destroy(GameObject.FindWithTag("SpacesTree"));
 
         //set the new environment active
         newSpacesTree.SetActive(true);
         preClinicalEnvironment.SetActive(true);
+
+        //set the level loader to have this scene's stuff in it
+        LevelLoader.instance.environment = preClinicalEnvironment;
+        LevelLoader.instance.spacesTree = newSpacesTree;
+
+        float spacing = 2.0f;
+        float startOffset = -(spacing * (PlayerManager.numPlayers - 1) / 2f);
+        Movement playerScript;
+
+        //set the players to be in the correct position
+        for (int i = 0; i < PlayerManager.numPlayers; i++)
+        {
+            playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
+
+            //offset along Z axis for spawning players
+            Vector3 offset = new Vector3(0, 0, startOffset + (i * spacing));
+
+            //locate the starting spot 
+            playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
+
+            //set each player's position to be the position of the 
+            Debug.Log("player script starting spot is: " + playerScript.startingSpot);
+            Debug.Log("player position: " + PlayerManager.instance.playerPieces[i].transform.position);
+            PlayerManager.instance.playerPieces[i].transform.position = playerScript.startingSpot.transform.position + offset + new Vector3(-0.5f, 0.05f, -0.5f);
+            PlayerManager.instance.playerPieces[i].transform.rotation = playerScript.startingSpot.transform.rotation;
+        }
+
+        //shuffle the player's roles
+        for (int i = 0; i < PlayerManager.instance.players.Count; i++)
+        {
+            PlayerManager.instance.playerPieces[i].GetComponent<Movement>().currentRole = GameStateMachine.instance.AssignRoleToPlayer();
+        }
     }
 
     void Update()
     {
-         //load the next scene
+        //load the next scene
         LevelLoader.instance.LoadScene("PreClinical");
     }
 }

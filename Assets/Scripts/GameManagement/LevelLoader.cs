@@ -66,7 +66,7 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-    private IEnumerator LoadSceneAsync(string sceneName)
+    public IEnumerator LoadSceneAsync(string sceneName)
     {
         Debug.Log("about to load scene async: " + sceneName);
         Debug.Log("coming from the scene: " + currentScene);
@@ -118,7 +118,10 @@ public class LevelLoader : MonoBehaviour
         if (environment == null)
         {
             //get references to objects
-            environment = GameObject.FindGameObjectWithTag("DiscoveryEnvironment");
+            environment = GameObject.FindGameObjectWithTag("Environment");
+
+            Debug.Log("environment is: " + environment);
+
             spacesTree = GameObject.FindGameObjectWithTag("SpacesTree");
             activePlayer = GameObject.FindGameObjectWithTag("ActivePlayer");
             inactivePlayers = GameObject.FindGameObjectsWithTag("InactivePlayer");
@@ -143,7 +146,7 @@ public class LevelLoader : MonoBehaviour
         isLoading = false;
     }
 
-    private void ActivateScene(bool value)
+    public void ActivateScene(bool value)
     {
         //activate the scene stuff
         environment.SetActive(value);
@@ -244,6 +247,7 @@ public class LevelLoader : MonoBehaviour
         //for loop to spawn all the players
         for (int i = 0; i < PlayerManager.numPlayers; i++)
         {
+            //get reference to current player's script
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
 
             //offset along Z axis for spawning players
