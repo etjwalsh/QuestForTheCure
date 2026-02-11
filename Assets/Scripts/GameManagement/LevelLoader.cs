@@ -76,14 +76,14 @@ public class LevelLoader : MonoBehaviour
         yield return StartCoroutine(FadeOut());
 
         //check if moving from the main menu
-        if (currentScene == "MainMenu")
+        if (currentScene == "MainMenu" || currentScene == "Discovery" || currentScene == "PreClinical" || currentScene == "Clinical" || currentScene == "Approval")
         {
             //set a function call for after the scene is loaded
             SceneManager.sceneLoaded += OnLoaded;
         }
-        if (currentScene == "MoleculeMayhem")
+        if (currentScene == "MoleculeMayhem" || currentScene == "ToxicologyReport" || currentScene == "SideEffectSearch" || currentScene == "") //insert approval minigame
         {
-            Debug.Log("about to activate discovery");
+            Debug.Log("about to activate current scene: " + currentScene);
 
             ActivateScene(true);
         }
@@ -91,10 +91,6 @@ public class LevelLoader : MonoBehaviour
         //Store previous scene before loading new one
         previousScene = currentScene;
         currentScene = sceneName;
-
-        //Optional: Load a loading screen first
-        //SceneManager.LoadScene("LoadingScene");
-        //yield return null;
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;
@@ -119,7 +115,7 @@ public class LevelLoader : MonoBehaviour
 
         //get references to activate the scene with
         Debug.Log("Scene name right before all this stuff is: " + sceneName);
-        if(environment == null)
+        if (environment == null)
         {
             //get references to objects
             environment = GameObject.FindGameObjectWithTag("DiscoveryEnvironment");
@@ -152,6 +148,10 @@ public class LevelLoader : MonoBehaviour
         //activate the scene stuff
         environment.SetActive(value);
         spacesTree.SetActive(value);
+
+        // activePlayer = PlayerManager.instance.playerPieces[PlayerManager.instance.currentPlayerIndex];
+
+        Debug.Log("Active Player is: " + activePlayer + "and they should be: " + value);
         if (activePlayer)
         {
             activePlayer.SetActive(value);
