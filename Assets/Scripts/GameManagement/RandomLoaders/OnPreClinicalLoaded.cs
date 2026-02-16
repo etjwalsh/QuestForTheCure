@@ -16,9 +16,12 @@ public class OnPreClinicalLoaded : MonoBehaviour
         {
             playerScript = PlayerManager.instance.playerPieces[i].GetComponent<Movement>();
 
-            //locate the starting spot 
-            playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
-            playerScript.space = playerScript.startingSpot.GetComponent<SpacesTree>();
+            if(!playerScript.space)
+            {
+                //locate the starting spot 
+                playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
+                playerScript.space = playerScript.startingSpot.GetComponent<SpacesTree>(); 
+            }
         }
 
         Destroy(gameObject);
