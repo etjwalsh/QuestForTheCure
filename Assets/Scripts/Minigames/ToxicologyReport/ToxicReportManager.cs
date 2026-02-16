@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
@@ -9,6 +10,7 @@ public class ToxicReportManager : MonoBehaviour
     public RectTransform container;
     public CanvasGroup[] screens;
     public float transitionDuration = 0.5f;
+    public bool isToxic;
 
     [Header("Game 1 Settings")]
     public List<ToxicTubes> tubes;
@@ -22,10 +24,31 @@ public class ToxicReportManager : MonoBehaviour
     public int isGoodDose = -1;
 
     [Header("Game 3 Settings")]
+    public Animator curtains;
+    public Image rat;
+    public GameObject syringe;
     public List<Sprite> rats = new List<Sprite>();
+    public List<Sprite> ratsHappy = new List<Sprite>();
+    public List<Sprite> ratsSad = new List<Sprite>();
+    private int ratNum;
 
+
+    public static ToxicReportManager instance { get; private set; }
     void Awake()
     {
+        //singleton pattern
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+
+        //get which rat will be displayed
+        ratNum = Random.Range(0,6);
+        rat.sprite = rats[ratNum];
+        Debug.Log("rat to use: " + rats[ratNum]);
+
         //set screens 2 and 3 to inactive to start
         screens[1].gameObject.SetActive(false);
         screens[2].gameObject.SetActive(false);
@@ -53,10 +76,17 @@ public class ToxicReportManager : MonoBehaviour
 
         //save a reference to the tube you clicked on
         tubeSelected = EventSystem.current.currentSelectedGameObject.GetComponent<ToxicTubes>();
+
+        //check if that tube was toxic
+        if(tubeSelected.isToxic)
+        {
+            isToxic = true;
+        }
     }
 
     public void GoToScreen(int screenIndex)
     {
+        Debug.Log("going to: " + currentScreen);
         if (screenIndex < 0 || screenIndex >= screens.Length) return;
 
         StartCoroutine(TransitionToScreen(screenIndex));
@@ -89,5 +119,50 @@ public class ToxicReportManager : MonoBehaviour
 
         //deactivate the previous screen
         screens[targetScreen - 1].gameObject.SetActive(false);
+
+        //check if you are on the third screen
+        if(currentScreen == 2)
+        {
+            StartCoroutine(Screen3Changes());
+        }
+    }
+
+    private IEnumerator Screen3Changes()
+    {
+        yield return new WaitForSeconds(transitionDuration);
+        Debug.Log("done waiting for transitoin");
+        curtains.Play("Curtains");
+        yield return new WaitForSeconds(5.0f);
+        Debug.Log("done waiting for curtains to close");
+        
+        //check if they chose a toxic tube
+        if(isToxic || isGoodDose == 2)
+        {
+            Debug.Log("this is a sad rat " + ratsSad[ratNum]);
+            rat.sprite = ratsSad[ratNum];
+        }
+        //check if they got everything right
+        else if (!isToxic && isGoodDose == 0)
+        { 
+            Debug.Log("this is a happy rat "+ ratsHappy[ratNum]);
+            rat.sprite = ratsHappy[ratNum];
+        }
+        else if (!isToxic && isGoodDose == 1)
+        {
+            Debug.Log("this is a normal rat"+ rats[ratNum]);
+            rat.sprite = rats[ratNum];
+        }
+        else
+        {
+            Debug.Log("this should never be the case");
+        }
+
+        //get rid of the syringe
+        Debug.Log("about to set the syringe to false");
+        syringe.SetActive(false);
+
+        //open the curtains
+        Debug.Log("about to open up the curtains");
+        curtains.Play("CurtainsBackwards");
     }
 }
