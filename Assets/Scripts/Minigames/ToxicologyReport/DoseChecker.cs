@@ -31,7 +31,7 @@ public class DoseChecker : MonoBehaviour
 
         //set the good fills to be random
         minGoodFill = Random.Range(.2f, .6f);
-        maxGoodFill = minGoodFill + Random.Range(.1f, .25f);
+        maxGoodFill = minGoodFill + Random.Range(.2f, .3f);
         Debug.Log("heres the range: " + minGoodFill + " - " + maxGoodFill);
     }
 

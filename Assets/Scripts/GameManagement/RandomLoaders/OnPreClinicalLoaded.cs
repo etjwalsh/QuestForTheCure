@@ -24,6 +24,9 @@ public class OnPreClinicalLoaded : MonoBehaviour
             }
         }
 
+        //set the correct stage of the game
+        GameStateMachine.instance.currentStage = "PreClinical";
+
         Destroy(gameObject);
     }
 }

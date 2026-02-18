@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ToxicReportManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class ToxicReportManager : MonoBehaviour
     public List<Sprite> ratsHappy = new List<Sprite>();
     public List<Sprite> ratsSad = new List<Sprite>();
     private int ratNum;
+    public TextMeshProUGUI endText;
+    public GameObject exitButton;
 
 
     public static ToxicReportManager instance { get; private set; }
@@ -50,6 +53,7 @@ public class ToxicReportManager : MonoBehaviour
         Debug.Log("rat to use: " + rats[ratNum]);
 
         //set screens 2 and 3 to inactive to start
+        exitButton.SetActive(false);
         screens[1].gameObject.SetActive(false);
         screens[2].gameObject.SetActive(false);
 
@@ -130,27 +134,38 @@ public class ToxicReportManager : MonoBehaviour
     private IEnumerator Screen3Changes()
     {
         yield return new WaitForSeconds(transitionDuration);
-        Debug.Log("done waiting for transitoin");
         curtains.Play("Curtains");
-        yield return new WaitForSeconds(5.0f);
-        Debug.Log("done waiting for curtains to close");
+        yield return new WaitForSeconds(2.0f);
         
         //check if they chose a toxic tube
         if(isToxic || isGoodDose == 2)
         {
             Debug.Log("this is a sad rat " + ratsSad[ratNum]);
             rat.sprite = ratsSad[ratNum];
+
+            if(isGoodDose == 2)
+            {
+                //this means dose is too high
+                endText.text = "I think the dose was too high...";
+            }
+            else if(isToxic)
+            {
+                //this means that the drug was toxic
+                endText.text = "I think we chose the wrong test tube...";
+            }
         }
         //check if they got everything right
         else if (!isToxic && isGoodDose == 0)
         { 
             Debug.Log("this is a happy rat "+ ratsHappy[ratNum]);
             rat.sprite = ratsHappy[ratNum];
+            endText.text = "Wow it worked great!";
         }
         else if (!isToxic && isGoodDose == 1)
         {
             Debug.Log("this is a normal rat"+ rats[ratNum]);
             rat.sprite = rats[ratNum];
+            endText.text = "Maybe we need to up the dosage next time...";
         }
         else
         {
@@ -164,5 +179,8 @@ public class ToxicReportManager : MonoBehaviour
         //open the curtains
         Debug.Log("about to open up the curtains");
         curtains.Play("CurtainsBackwards");
+
+        yield return new WaitForSeconds(1.5f);
+        exitButton.SetActive(true);
     }
 }
