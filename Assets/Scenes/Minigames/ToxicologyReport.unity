@@ -3085,7 +3085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4291,14 +4291,14 @@ PrefabInstance:
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1919935308}
+      objectReference: {fileID: 1364792078}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPress
+      value: OnDoneClicked
       objectReference: {fileID: 0}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonPress, Assembly-CSharp
+      value: ToxicReportManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4315,17 +4315,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
   m_PrefabInstance: {fileID: 1919935304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1919935308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1155640385868673866, guid: 0088122658409224aa49919e3608a8d9, type: 3}
-  m_PrefabInstance: {fileID: 1919935304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919935305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac3ee67bfecf334d97d646b48aa8c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2074131989
 GameObject:
   m_ObjectHideFlags: 0

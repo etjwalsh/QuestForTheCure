@@ -183,4 +183,10 @@ public class ToxicReportManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         exitButton.SetActive(true);
     }
+    
+    public void OnDoneClicked()
+    {
+        //change scenes
+        StartCoroutine(PlayerManager.instance.LoadPlayerLocations(LevelLoader.instance.previousScene));
+    }
 }
