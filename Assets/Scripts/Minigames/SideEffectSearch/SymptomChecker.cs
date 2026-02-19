@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class SymptomChecker : MonoBehaviour
 {
     public GameObject sicklyUI;
+    public GameObject particles;
     public List<Material> sickMatDudes = new List<Material>();
     public List<Material> matDudes = new List<Material>();
     private bool sick;
@@ -16,6 +17,7 @@ public class SymptomChecker : MonoBehaviour
     {
         //disable the UI
         sicklyUI.SetActive(false);
+        particles.SetActive(false);
 
         //get a reference to the minigame manager
         minigameManager = GameObject.FindGameObjectWithTag("MinigameManager");
@@ -36,14 +38,11 @@ public class SymptomChecker : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"Clicked on {gameObject.name} at position {transform.position}");
         OnClicked();
     }
 
     void OnClicked()
     {
-        Debug.Log("Clicked: " + gameObject.name);
-
         //tell the minigame manager that a sick person has been clicked
         if (sick)
         {
@@ -57,12 +56,12 @@ public class SymptomChecker : MonoBehaviour
 
     public void CheckSideEffects(float percentChance)
     {
-        Debug.Log("Checking side effects at a rate of: " + percentChance);
         //check if this person is going to be sick based on the percent chance passed into the function
         if (Random.value < percentChance / 100)
         {
             //make the person sick
             sick = true;
+            particles.SetActive(true);
 
             //change the sprite of the character to be sick
             gameObject.GetComponentInChildren<Renderer>().material = sickMatDudes[Random.Range(0, sickMatDudes.Count)];
