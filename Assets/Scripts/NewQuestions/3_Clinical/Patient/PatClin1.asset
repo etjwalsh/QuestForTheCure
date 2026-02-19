@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatClin1
+  m_EditorClassIdentifier: 
+  question: "You are discussing treatment options with your doctor, and he mentions
+    a phase III clinical trial as a potential option for you. You\u2019ve heard of
+    clinical trials, but naturally, you still have questions.\r\n\r\n<b>Clinical
+    trials are only for patients who don\u2019t have other treatment options.</b>\r\n\r\nIs
+    this <b>true</b> or <b>false?</b>"
+  explanation: "Clinical trials can offer new opportunities for patients at many
+    stages of disease \u2013 sometimes even as a first treatment, not just when other
+    options haven\u2019t worked. These trials test whether a new treatment may work
+    better than the current standard, so patients may be offered a trial treatment
+    alongside, or instead of, existing options."
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Patient
+  questionType: TrueFalse
+  questionStage: Clinical

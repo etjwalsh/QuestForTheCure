@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatApp3
+  m_EditorClassIdentifier: 
+  question: "Your doctor explains that the trial treatment you received has now been
+    approved for wider use. Even though approval has been granted, your doctor explains
+    that they still carefully track how the treatment performs in real-world patients
+    like you.\r\n\r\n<b>Why do researchers continue to monitor treatments after they\u2019ve
+    been approved?</b>\r\n"
+  explanation: 'Even after approval, ongoing safety monitoring (AKA: post-market
+    surveillance) helps ensure new treatments remain safe and effective in the real
+    world, especially once they are used by larger, more diverse groups. This allows
+    researchers, doctors, and regulatory agencies like the Food and Drug Administration
+    (FDA) to track outcomes and monitor any new side effects or long-term effects
+    that may appear, helping to protect patients and improve how treatments are used
+    over time.'
+  correctAnswer: To watch for rare or long-term side effects that may not have shown
+    up during the trial
+  incorrectAnswer1: To decide which patients should be the first to receive the newly
+    approved treatment
+  incorrectAnswer2: To determine the appropriate cost of the newly approved treatment
+  incorrectAnswer3: To test whether patient participants followed the rules of the
+    trial
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: Approval

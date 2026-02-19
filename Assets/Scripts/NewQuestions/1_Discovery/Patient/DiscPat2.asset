@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscPat2
+  m_EditorClassIdentifier: 
+  question: 'Your care team explains that patients may be invited to share their
+    perspectives early in the research process so researchers can understand what
+    matters most in daily life and design studies that reflect those needs.
+
+    <b>By
+    including patient voices early, new treatments are more likely to be safer and
+    more effective for more people.</b>
+
+    Is this <b>true</b> or <b>false</b>?'
+  explanation: When patients, particularly those from historically underrepresented
+    groups, share their experiences, researchers can design studies that better reflect
+    real-world needs. While it is not guaranteed that every new treatment will ever
+    work for every patient, diverse patient perspectives increase the chances that
+    discoveries will lead to safer, more effective treatments that benefit as many
+    people as possible.
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Patient
+  questionType: TrueFalse
+  questionStage: Discovery

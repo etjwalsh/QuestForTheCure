@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PatPre4
+  m_EditorClassIdentifier: 
+  question: "When talking to your oncologist about clinical trials, the topic of
+    animal studies (in vivo) comes up. She explains that these studies look at how
+    a treatment works inside a whole, living body rather than just in a lab dish
+    of cells \u2014 before it is tested in people.\r\n\r\n<b>Why is it important
+    for researchers to test new treatments in animals (in vivo) before human trials?</b>\r\n"
+  explanation: Animal studies help protect patients by showing how a new treatment
+    works inside a living body before it is ever tested in people. They allow researchers
+    to look for possible side effects, learn what dose might be safest, and understand
+    how different parts of the body respond. This information helps scientists design
+    safer clinical trials and improves the chances that new treatments will be both
+    helpful and safe for patients.
+  correctAnswer: They help researchers understand how a treatment might affect organs,
+    systems, and overall health in a living body before human testing
+  incorrectAnswer1: They show researchers if a new treatment will work in patients
+  incorrectAnswer2: They allow researchers to skip lab testing and move forward into
+    clinical trials faster
+  incorrectAnswer3: They show researchers how diverse patient populations will respond
+    to a new treatment
+  questionRole: Patient
+  questionType: MultipleChoice
+  questionStage: PreClinical
