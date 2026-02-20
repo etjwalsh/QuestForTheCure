@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PreCare 3
+  m_EditorClassIdentifier: 
+  question: "Your mother\u2019s treatment plan requires her to take medications at
+    exact times each day. You share that this complex dosing schedule combined with
+    the side effects from treatment have made it hard for her to stay on track without
+    constant help.\n\n<b>Based on this scenario, how might caregiver feedback influence
+    preclinical research?</b>"
+  explanation: When caregivers share how hard it can be to manage complex medication
+    schedules and side effects at home, researchers can take this into account early
+    on, guiding them toward treatment options that may be easier to follow and fit
+    better into everyday life. By considering these challenges during preclinical
+    research, scientists can focus on treatments that are not only effective but
+    also more realistic for patients and families to manage.
+  correctAnswer: It can guide researchers toward treatment options that are more
+    manageable for patients and caregivers in everyday life.
+  incorrectAnswer1: It helps researchers better understand the emotional bond between
+    caregivers and patients during treatment.
+  incorrectAnswer2: It gives caregivers permission to change how medications are
+    prescribed during clinical care.
+  incorrectAnswer3: None of these answers
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: PreClinical

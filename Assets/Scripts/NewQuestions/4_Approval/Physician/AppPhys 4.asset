@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: AppPhys 4
+  m_EditorClassIdentifier: 
+  question: "You\u2019ve been tracking how your patients do on a new, recently approved
+    treatment compared to standard options so you can share what you learn with your
+    cancer center\u2019s treatment committee.\n\n<b>In this scenario, what is the
+    physician\u2019s role in post-market research once a new treatment is approved?</b>"
+  explanation: "Even after approval, physicians play a key role in evaluating how
+    new treatments work in real-world care alongside existing options, ensuring they\u2019re
+    used in the right ways and for the right patients. By closely tracking outcomes,
+    side effects, and patient experiences, they help identify when a treatment is
+    truly beneficial or when another option may be better. This real-world feedback
+    helps refine treatment guidelines and improves care for future patients."
+  correctAnswer: Physicians continue to evaluate how the new treatment performs compared
+    to standard options, helping refine when and for whom they should be used.
+  incorrectAnswer1: Only the physician(s) on the research team decide how it fits
+    into care.
+  incorrectAnswer2: Physicians should prescribe it to all their patients as a treatment
+    alternative to the other standard therapies.
+  incorrectAnswer3: None of these answers
+  questionRole: Physician
+  questionType: MultipleChoice
+  questionStage: Approval

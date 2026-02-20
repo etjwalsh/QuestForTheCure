@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscS&E 2
+  m_EditorClassIdentifier: 
+  question: 'A research team is working with human tumor cells and viruses that have
+    been modified in the lab to study how potential cancer drugs might work.
+
+
+    <b>The
+    Institutional Biosafety Committee (IBC) reviews projects and provides safety
+    guidance when certain materials are used, but it is not required to approve early
+    discovery experiments.</b>
+
+
+    Is this <b>true</b> or <b>false</b>?'
+  explanation: "The IBC oversees projects that involve biological hazards, such as
+    modified viruses or human cells, to ensure safety procedures are in place\u2014like
+    using personal protective equipment (PPE), working in biosafety cabinets, and
+    handling materials properly. As long as researchers follow the safety guidelines,
+    they don\u2019t need separate approval from the IBC for each experiment in early
+    discovery work. "
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Safety & Ethics
+  questionType: TrueFalse
+  questionStage: Discovery

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: AppPhys 2
+  m_EditorClassIdentifier: 
+  question: "A new cancer treatment was approved using data from mostly younger patients.
+    Over time, you notice that older patients may need different dosing or extra
+    monitoring.\n\n<b>Physicians help identify when treatment guidelines may need
+    to be updated to better serve groups who weren\u2019t fully represented in trials.</b>\n\nIs
+    this <b>true</b> or <b>false</b>?"
+  explanation: "Physicians\u2019 real-world insights help ensure treatments stay
+    fair, safe, and effective for all patients\u2014not just those studied in the
+    trials. By noticing how different groups respond and speaking up when something
+    needs to be adjusted, physicians help guide updates to guidelines and practices
+    so more people can benefit from the treatment."
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Physician
+  questionType: TrueFalse
+  questionStage: Approval

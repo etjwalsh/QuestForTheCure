@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ClinS&E 2
+  m_EditorClassIdentifier: 
+  question: 'A potential new cancer drug is being tested in a phase III clinical
+    trial. As the study progresses, patient participant safety data is reviewed on
+    a regular basis.
+
+
+    <b>In a clinical trial, the Food and Drug Administration
+    (FDA) reviews ongoing safety data and can recommend changes or stop the trial
+    if necessary.</b>
+
+
+    Is this <b>true</b> or <b>false</b>?'
+  explanation: "While the FDA oversees and regulates clinical trials, it does not
+    review day-to-day safety data. Instead, an independent Data and Safety Monitoring
+    Board (DSMB)\u2014or study sponsor\u2014reviews ongoing safety information and
+    can recommend changes or stop the trial if concerns arise. The DSMB helps protect
+    patient participants throughout the trial by identifying risks early and ensuring
+    the study remains safe and ethical."
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Safety & Ethics
+  questionType: TrueFalse
+  questionStage: Clinical

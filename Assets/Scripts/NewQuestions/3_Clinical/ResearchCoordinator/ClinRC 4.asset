@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ClinRC 4
+  m_EditorClassIdentifier: 
+  question: "During a clinical trial visit, a patient mentions that they\u2019ve
+    been feeling unusually dizzy and nauseated after starting the trial treatment.\n\n<b>As
+    the research coordinator, what should you do in this situation?</b>"
+  explanation: Research coordinators help support monitoring and reporting during
+    clinical trials by carefully documenting side effects and communicating them
+    to the research team. This ensures potential safety concerns are reviewed promptly
+    and helps protect participants throughout the study. Sharing this information
+    quickly allows the care team to respond if changes or follow-up are needed.
+  correctAnswer: Document the side effect and share it with the research team
+  incorrectAnswer1: Decide whether the patient should stop or continue the trial
+  incorrectAnswer2: Reassure the patient that side effects are expected and no further
+    action is needed
+  incorrectAnswer3: Change the dose of the trial treatment to prevent further side
+    effects
+  questionRole: Research Coordinator
+  questionType: MultipleChoice
+  questionStage: Clinical

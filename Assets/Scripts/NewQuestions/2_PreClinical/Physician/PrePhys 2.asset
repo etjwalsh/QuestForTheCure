@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PrePhys 2
+  m_EditorClassIdentifier: 
+  question: 'You are meeting with a research team to give feedback on their ideas
+    for preclinical studies and finalize a plan before animal studies begin.
+
+
+    <b>Physicians
+    often help design preclinical lab and animal experiments to make sure they are
+    relevant to human disease.</b>
+
+
+    Is this <b>true</b> or <b>false</b>?'
+  explanation: Physicians use their knowledge of how the disease affects people,
+    how treatments work, and what side effects matter most to patients to help guide
+    lab and animal studies. Their input helps the research team choose the right
+    models, endpoints, and measurements so the studies are relevant to human disease.
+    In doing so, physicians increase the chances that the results will lead to treatments
+    that are safe, effective, and truly beneficial for people in the future.
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Physician
+  questionType: TrueFalse
+  questionStage: PreClinical

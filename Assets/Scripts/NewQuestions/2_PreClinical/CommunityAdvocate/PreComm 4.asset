@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PreComm 4
+  m_EditorClassIdentifier: 
+  question: 'After seeing promising results in animal studies, a research team begins
+    planning a clinical trial for a new treatment approach. You ask how they will
+    design the trial so people from diverse communities can take part.
+
+
+    How
+    could this question influence study design?'
+  explanation: By raising this question, the community advocate encourages the research
+    team to think about who can realistically join the trial and how to reduce barriers
+    to participation. Asking this at the preclinical stage helps guide the trial
+    design from the beginning. This helps ensure the study includes diverse perspectives
+    so the results better reflect the real-world community the treatment is meant
+    to serve.
+  correctAnswer: It encourages the team to plan recruitment and access strategies
+    that include diverse communities
+  incorrectAnswer1: It could change how the new treatment is tested in the lab
+  incorrectAnswer2: It could determine the treatment dose that will be used during
+    the trial
+  incorrectAnswer3: It helps the team decide which patients and how many will receive
+    the trial treatment
+  questionRole: Community Advocate
+  questionType: MultipleChoice
+  questionStage: PreClinical

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: AppCare 4
+  m_EditorClassIdentifier: 
+  question: 'Although your mother is responding well to the new treatment, managing
+    side effects at home and coordinating follow-up care has been challenging. You
+    share these concerns through a caregiver survey.
+
+
+    <b>How can caregiver feedback
+    like this contribute to post-market surveillance for newly approved treatments?</b>'
+  explanation: "When caregivers share real-life challenges\u2014like managing side
+    effects at home or coordinating follow-up care\u2014this information helps researchers
+    and healthcare teams see where support may be lacking after a treatment is approved.
+    As part of post-market surveillance, this feedback can lead to better education,
+    closer monitoring, and improved care resources to help future patients and families
+    manage treatment more safely and confidently."
+  correctAnswer: It helps identify gaps in support and guides improvements in patient
+    education, monitoring, and care resources.
+  incorrectAnswer1: It gives caregivers permission to adjust treatment plans without
+    involving the healthcare team.
+  incorrectAnswer2: 'It replaces the need for ongoing safety monitoring once a new
+    treatment is approved. '
+  incorrectAnswer3: It guarantees that future patients will not experience side effects
+    from the new treatment.
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Approval

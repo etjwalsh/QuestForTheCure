@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscPhys 3
+  m_EditorClassIdentifier: 
+  question: 'You notice that many patients with the same type of cancer stop responding
+    to a standard treatment after about six months. You share this observation with
+    a research team, sparking ideas for new drugs that could work once resistance
+    develops.
+
+
+    <b>In this scenario, what role is the physician playing in drug
+    discovery?</b>'
+  explanation: "Physicians play an important role early in the research process by
+    sharing what they see while caring for patients. By noticing patterns\u2014such
+    as how a disease changes over time, how well treatments work, or what side effects
+    patients experience\u2014doctors can help spark new research ideas. This early
+    input helps researchers focus on the most important patient needs and develop
+    treatments that are more likely to make a real difference in people\u2019s lives."
+  correctAnswer: Identifying patterns in patient care that may inspire new research
+  incorrectAnswer1: Identifying specific parts of the disease that a new treatment
+    could target
+  incorrectAnswer2: Deciding whether a new treatment would be realistic and manageable
+    for patients to use
+  incorrectAnswer3: Deciding how often and how much of a treatment patients might
+    receive in a future study
+  questionRole: Physician
+  questionType: MultipleChoice
+  questionStage: Discovery

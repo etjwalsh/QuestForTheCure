@@ -15,7 +15,7 @@ MonoBehaviour:
   question: "You\u2019re meeting with the lead researcher \u2014 <b>Principal Investigator</b>
     (PI) \u2014 of a research team at your cancer center. He explains how patient
     insights help guide research priorities and study design, making the research
-    more relevant and meaningful to patients.\n<b>What does a PI do, and how does
+    more relevant and meaningful to patients.\n\n<b>What does a PI do, and how does
     it affect patients right before trials begin?</b>"
   explanation: "The PI is the lead researcher who ensures the study is carried out
     properly, following ethical and scientific standards to protect patients. Equally

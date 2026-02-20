@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PreComm 2
+  m_EditorClassIdentifier: 
+  question: 'Researchers are preparing a public update about preclinical safety results
+    from animal studies. They are unsure how much detail to share about what is known
+    and what is still being studied.
+
+
+    <b>Community advocates should encourage
+    researchers to wait until clinical trials begin before sharing any safety results.</b>
+
+
+    Is
+    this <b>true</b> or <b>false</b>?'
+  explanation: 'Community advocates can support transparency even during the preclinical
+    stage by encouraging honest, timely communication. Their involvement helps ensure
+    the community understands both what is known and what is still being studied.
+    By promoting openness early, advocates strengthen trust and help people feel
+    informed and included as research moves forward. '
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Community Advocate
+  questionType: TrueFalse
+  questionStage: PreClinical

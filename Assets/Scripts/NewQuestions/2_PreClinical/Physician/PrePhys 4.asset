@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PrePhys 4
+  m_EditorClassIdentifier: 
+  question: "A research team is testing several new treatment ideas to slow cancer
+    progression. Based on your experience caring for patients, you review the preclinical
+    data to help the team identify which compounds will move forward into future
+    clinical trials.\n\n<b>In this scenario, why is the physician\u2019s input necessary
+    before moving forward to trials?</b>"
+  explanation: "Physicians help connect what\u2019s learned in the lab to what really
+    matters for patients. By helping researchers choose the treatment ideas most
+    likely to work for people and fit their needs, physicians help focus efforts
+    on the best options before testing begins in patients. This guidance increases
+    the chances that treatments moving into clinical trials are safer, more effective,
+    and truly meaningful for patients."
+  correctAnswer: To determine which treatment ideas align best with disease behavior
+    in humans and patient needs
+  incorrectAnswer1: To design and conduct laboratory experiments for each treatment
+    idea then compare the results
+  incorrectAnswer2: To prove which patients will respond to each of the new treatment
+    ideas
+  incorrectAnswer3: To approve or deny the use of the treatment ideas for immediate
+    clinical use
+  questionRole: Physician
+  questionType: MultipleChoice
+  questionStage: PreClinical

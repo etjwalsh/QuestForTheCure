@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: AppRC 2
+  m_EditorClassIdentifier: 
+  question: 'Months after a new treatment is approved, some patients are asked to
+    complete follow-up surveys so researchers can learn how the treatment is working
+    over time.
+
+
+    <b>Once a new treatment is approved for widespread use, research
+    coordinators must analyze follow-up data and decide what the results mean for
+    patient care.<b>
+
+
+    Is this <b>true</b> or <b>false</b>?'
+  explanation: Research coordinators help coordinate follow-up and ensure information
+    is collected and shared accurately, but they do not analyze the data or make
+    decisions about patient care. By carefully organizing patient surveys and reports,
+    they help ensure real-world experiences are clearly documented so experts can
+    review them and take action if needed.
+  correctAnswer: False
+  incorrectAnswer1: True
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Research Coordinator
+  questionType: TrueFalse
+  questionStage: Approval

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ClinCare 3
+  m_EditorClassIdentifier: 
+  question: "Your wife is participating in a clinical trial that follows a strict
+    medication schedule. One evening, you notice that she forgot a dose. You remind
+    her to take her medicine and help her record the late dose and her symptoms in
+    her trial diary.\n\n<b>Which of the following best describes the caregiver\u2019s
+    role in this situation?</b>"
+  explanation: Caregivers play an important supportive role by helping patients manage
+    treatment schedules and track symptoms, ensuring accurate data collection and
+    reducing stress for the patient. By staying organized and attentive, caregivers
+    help patients keep up with complex routines and communicate key information to
+    help the trial reach its goals. This partnership between patients and caregivers
+    helps researchers get the most reliable information while keeping participation
+    as manageable as possible.
+  correctAnswer: Providing essential logistical and emotional support to the patient
+    to help maintain trial accuracy.
+  incorrectAnswer1: "Limiting their involvement in the patient\u2019s treatment plan
+    to avoid influencing trial data."
+  incorrectAnswer2: Acting as a substitute researcher for the trial.
+  incorrectAnswer3: "Overstepping\u2014only the research team should track the patient\u2019s
+    ability to follow the treatment plan. "
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Clinical

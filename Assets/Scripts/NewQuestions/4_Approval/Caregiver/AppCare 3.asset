@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: AppCare 3
+  m_EditorClassIdentifier: 
+  question: "During a follow-up visit, your father\u2019s oncologist asks how the
+    new treatment is going at home. You share that while it\u2019s working, the frequent
+    dosing schedule makes daily life challenging.\n\n<b>What impact could this feedback
+    have?</b>"
+  explanation: "Caregiver feedback helps researchers and healthcare teams assess
+    how realistic treatment plans are for patients. This can lead to improved instructions,
+    better support, and future treatments that are easier to manage at home. Their
+    observations highlight what truly works\u2014and what may need to be adjusted\u2014in
+    everyday care routines."
+  correctAnswer: It highlights real-life challenges that can help researchers improve
+    how approved treatments are used.
+  incorrectAnswer1: It may cause the doctor to increase the dose or stop the medication
+    entirely.
+  incorrectAnswer2: "None\u2014treatment plans can\u2019t change after approval."
+  incorrectAnswer3: It allows caregivers to change the dosing schedule of approved
+    treatments on their own.
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Approval

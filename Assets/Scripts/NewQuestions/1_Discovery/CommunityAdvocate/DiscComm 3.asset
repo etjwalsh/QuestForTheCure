@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscComm 3
+  m_EditorClassIdentifier: 
+  question: "At your local cancer center\u2019s research open house, a research team
+    shares early ideas for new cancer treatments. You speak up about the importance
+    of affordable treatment options that support patients\u2019 quality of life.
+    \r\n\r\n<b>In this situation, what role does a community advocate play in early
+    research?</b>"
+  explanation: "By sharing the patient perspective early on, community advocates
+    help researchers focus on what matters most to patients and the community. This
+    guidance can shape research priorities before preclinical studies begin. By speaking
+    up about patients\u2019 needs and experiences, advocates help ensure early research
+    addresses real-world concerns and has meaningful impact for the people it aims
+    to help."
+  correctAnswer: Sharing patient priorities to help guide how research ideas are
+    shaped
+  incorrectAnswer1: Voting on which drug compounds the research team should test
+    next
+  incorrectAnswer2: "Approving the research team\u2019s study so it can move forward"
+  incorrectAnswer3: "Helping manage the team\u2019s lab experiments and data collection"
+  questionRole: Community Advocate
+  questionType: MultipleChoice
+  questionStage: Discovery

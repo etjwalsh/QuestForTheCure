@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PreRC 3
+  m_EditorClassIdentifier: 
+  question: 'As preclinical research gets underway, scientists must follow safety
+    guidelines and obtain approvals before lab and animal studies can continue. You
+    help organize paperwork, track approvals, and confirm that the research follows
+    ethical standards.
+
+
+    <b>As the research coordinator, what is your role in
+    this situation?</b>'
+  explanation: "During preclinical research, research coordinators help make sure
+    studies are done safely and ethically by organizing important paperwork, tracking
+    required approvals, and confirming that research teams follow established guidelines.
+    While research coordinators aren\u2019t responsible for approving studies or
+    running experiments, they help keep everything organized and on track behind
+    the scenes."
+  correctAnswer: Making sure the research has the right approvals and follows safety
+    and ethical guidelines
+  incorrectAnswer1: Reviewing the research and determining whether it meets ethical
+    standards
+  incorrectAnswer2: Designing safety experiments to test whether the new treatment
+    is ready to be tested in people
+  incorrectAnswer3: Deciding when the research is ready to move forward into clinical
+    trials
+  questionRole: Research Coordinator
+  questionType: MultipleChoice
+  questionStage: PreClinical

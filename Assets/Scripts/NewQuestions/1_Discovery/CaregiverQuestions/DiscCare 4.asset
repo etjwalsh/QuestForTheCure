@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscCare 4
+  m_EditorClassIdentifier: 
+  question: "During a community advisory board meeting, you share that your mother\u2019s
+    treatment caused severe nerve pain that made daily tasks difficult. The research
+    team uses this feedback to explore new treatments that might avoid this side
+    effect.\n\n<b>Why is it important for research teams to hear from caregivers?</b>"
+  explanation: Caregivers see firsthand how cancer and its treatments affect daily
+    life. Their experiences help scientists focus early research on what truly matters
+    to patients and families. By including these perspectives from the start, researchers
+    can design treatments that are not only effective, but also easier, safer, and
+    more supportive for those living with cancer.
+  correctAnswer: Because caregivers can share what lesser-known treatment side effects
+    and challenges affect daily life most.
+  incorrectAnswer1: Because caregivers can help determine which treatments move forward
+    to clinical trials.
+  incorrectAnswer2: Because caregivers know how to design and test new treatments
+    in the lab.
+  incorrectAnswer3: "Because caregivers can help researchers write medical regulations
+    for new treatments once they\u2019ve been approved."
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Discovery

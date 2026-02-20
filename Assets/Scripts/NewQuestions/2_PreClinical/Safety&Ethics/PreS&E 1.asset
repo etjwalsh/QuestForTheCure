@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: PreS&E 1
+  m_EditorClassIdentifier: 
+  question: 'A research team is planning a large preclinical research project that
+    will require funding, lab space, and shared resources across several departments.
+
+
+    <b>The
+    study sponsor may review the project to ensure it is feasible, properly resourced,
+    and aligned with research policies before it moves forward.</b>
+
+
+    Is this
+    <b>true</b> or <b>false</b>?'
+  explanation: Sponsors help confirm that a study has the funding, staff, space,
+    and systems needed to be carried out responsibly. They also check that the project
+    follows organizational policies and ethical standards. This helps ensure the
+    research can be completed as planned and managed safely from start to finish.
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Safety & Ethics
+  questionType: TrueFalse
+  questionStage: PreClinical

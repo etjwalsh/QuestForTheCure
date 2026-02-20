@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscS&E 3
+  m_EditorClassIdentifier: 
+  question: 'A research team is testing several chemical compounds in the lab for
+    future cancer studies. One researcher noticed that some of the chemicals being
+    tested can irritate the skin or eyes.
+
+
+    <b>What is the role of the Health
+    & Safety Office in this situation?</b>'
+  explanation: "The Health & Safety Office\u2014part of the Environmental Health
+    & Safety (EHS) team\u2014helps protect researchers by identifying risks, providing
+    safety training, and recommending protective equipment and procedures. Their
+    role is to prevent injuries and keep the lab environment safe, not to make scientific
+    or medical decisions. Their oversight allows researchers to work safely as they
+    investigate which compounds might eventually become useful cancer treatments."
+  correctAnswer: To provide safety guidance, training, and procedures to reduce risk
+    of injury.
+  incorrectAnswer1: To decide which chemical compounds should be tested in early
+    drug discovery.
+  incorrectAnswer2: "To review and approve the research team\u2019s scientific goals
+    and study design."
+  incorrectAnswer3: To test the chemical compounds to see if they are safe for patients.
+  questionRole: Safety & Ethics
+  questionType: MultipleChoice
+  questionStage: Discovery

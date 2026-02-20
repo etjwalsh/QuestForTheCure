@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: "When attending a research open house at your cancer center, you learn
     that scientists often look at patient data \u2014 like medical records, lab tests,
-    or genetic information \u2014 even before any clinical trials start. \n<b>What
+    or genetic information \u2014 even before any clinical trials start. \n\n<b>What
     can patient data tell researchers in the Discovery Stage of clinical research?</b>"
   explanation: In this stage, patient data helps researchers understand how a disease
     behaves in real people. By comparing data from many patients, scientists can

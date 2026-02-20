@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: DiscPhys 1
+  m_EditorClassIdentifier: 
+  question: 'While reviewing cases in your clinic, you notice patterns in how certain
+    patients respond to existing treatments. You take note of your findings and compile
+    relevant patient data.
+
+
+    <b>Information that physicians gather from patients
+    can help identify unmet needs in current treatments.</b>
+
+
+    Is this <b>true</b>
+    or <b>false</b>?'
+  explanation: "When doctors care for patients, they often notice shared patterns\u2014symptoms
+    people experience, how a disease changes over time, or how well current treatments
+    work. These real-world observations can help researchers identify new ideas for
+    treatments or recognize where today\u2019s options aren\u2019t working well enough.
+    By sharing what they learn from caring for patients, physicians help guide early
+    research toward questions that truly matter for improving patient care and outcomes."
+  correctAnswer: True
+  incorrectAnswer1: False
+  incorrectAnswer2: 
+  incorrectAnswer3: 
+  questionRole: Physician
+  questionType: TrueFalse
+  questionStage: Discovery

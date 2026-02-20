@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ClinCare 4
+  m_EditorClassIdentifier: 
+  question: "Halfway through a trial, your brother begins to feel discouraged because
+    the side effects are challenging, and treatment results aren\u2019t yet clear.
+    You reassure him that participation is always voluntary, and he can leave the
+    trial at any time for any reason.\n\n<b>In this situation, what key responsibility
+    is the caregiver demonstrating?</b>"
+  explanation: "Caregivers help patients understand their rights, including informed
+    consent and the option to withdraw at any time, serving as advocates for patient
+    autonomy and well-being throughout the trial process. By making sure patients
+    never feel pressured or confused about their choices, caregivers reinforce the
+    ethical foundation of clinical research, ensuring that participation remains
+    voluntary, respectful, and centered on the patient\u2019s best interests."
+  correctAnswer: Reminding the patient of their rights during a clinical trial
+  incorrectAnswer1: Helping the patient stay on track with their treatment plan
+  incorrectAnswer2: Sharing important trial information with the research team
+  incorrectAnswer3: Observing and sharing how the patient is responding to treatment
+  questionRole: Caregiver
+  questionType: MultipleChoice
+  questionStage: Clinical

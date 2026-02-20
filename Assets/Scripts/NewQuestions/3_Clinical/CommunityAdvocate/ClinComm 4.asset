@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60af0432a3c869e48a591344a8dafd71, type: 3}
+  m_Name: ClinComm 4
+  m_EditorClassIdentifier: 
+  question: 'After the clinical trial begins, researchers send regular trial updates
+    to patient participants. You review their communication plan and make suggestions,
+    such as including plain-language summaries and clear next steps.
+
+
+    <b>What
+    impact does the community advocate have in this situation?<b/>'
+  explanation: Community advocates encourage open and honest communication throughout
+    a clinical trial. By suggesting plain-language updates, they help patient participants
+    better understand what is happening and what comes next. This transparency helps
+    patients feel informed and respected, and strengthens trust between the research
+    team and the community over time.
+  correctAnswer: Encouraging clear, patient-friendly communication throughout the
+    trial
+  incorrectAnswer1: Deciding when the clinical trial should end
+  incorrectAnswer2: Designing experiments to determine if the trial treatment works
+  incorrectAnswer3: Assisting with recruitment for the clinical trial and determining
+    patient eligibility
+  questionRole: Community Advocate
+  questionType: MultipleChoice
+  questionStage: Clinical
