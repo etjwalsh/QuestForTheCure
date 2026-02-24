@@ -67,7 +67,7 @@ public class SymptomSearchController : MonoBehaviour
 
         //set the stage to be what the current player's clinical stage is
         // stage = PlayerManager.instance.current.clinicalStage;
-        stage = 1;
+        stage = 3;
 
         //increase it for next time
         // PlayerManager.instance.current.clinicalStage++;
