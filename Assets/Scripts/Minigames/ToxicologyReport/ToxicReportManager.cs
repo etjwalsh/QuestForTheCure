@@ -35,7 +35,6 @@ public class ToxicReportManager : MonoBehaviour
     public TextMeshProUGUI endText;
     public GameObject exitButton;
 
-
     public static ToxicReportManager instance { get; private set; }
     void Awake()
     {
@@ -48,9 +47,8 @@ public class ToxicReportManager : MonoBehaviour
         instance = this;
 
         //get which rat will be displayed
-        ratNum = Random.Range(0,6);
+        ratNum = Random.Range(0, 6);
         rat.sprite = rats[ratNum];
-        Debug.Log("rat to use: " + rats[ratNum]);
 
         //set screens 2 and 3 to inactive to start
         exitButton.SetActive(false);
@@ -82,7 +80,7 @@ public class ToxicReportManager : MonoBehaviour
         tubeSelected = EventSystem.current.currentSelectedGameObject.GetComponent<ToxicTubes>();
 
         //check if that tube was toxic
-        if(tubeSelected.isToxic)
+        if (tubeSelected.isToxic)
         {
             isToxic = true;
         }
@@ -90,7 +88,6 @@ public class ToxicReportManager : MonoBehaviour
 
     public void GoToScreen(int screenIndex)
     {
-        Debug.Log("going to: " + currentScreen);
         if (screenIndex < 0 || screenIndex >= screens.Length) return;
 
         StartCoroutine(TransitionToScreen(screenIndex));
@@ -111,7 +108,7 @@ public class ToxicReportManager : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = elapsed / transitionDuration;
 
-            // Ease in-out for smoother motion
+            //ease motion
             t = t * t * (3f - 2f * t);
 
             container.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
@@ -125,7 +122,7 @@ public class ToxicReportManager : MonoBehaviour
         screens[targetScreen - 1].gameObject.SetActive(false);
 
         //check if you are on the third screen
-        if(currentScreen == 2)
+        if (currentScreen == 2)
         {
             StartCoroutine(Screen3Changes());
         }
@@ -136,19 +133,18 @@ public class ToxicReportManager : MonoBehaviour
         yield return new WaitForSeconds(transitionDuration);
         curtains.Play("Curtains");
         yield return new WaitForSeconds(2.0f);
-        
+
         //check if they chose a toxic tube
-        if(isToxic || isGoodDose == 2)
+        if (isToxic || isGoodDose == 2)
         {
-            Debug.Log("this is a sad rat " + ratsSad[ratNum]);
             rat.sprite = ratsSad[ratNum];
 
-            if(isGoodDose == 2)
+            if (isGoodDose == 2)
             {
                 //this means dose is too high
                 endText.text = "I think the dose was too high...";
             }
-            else if(isToxic)
+            else if (isToxic)
             {
                 //this means that the drug was toxic
                 endText.text = "I think we chose the wrong test tube...";
@@ -156,34 +152,29 @@ public class ToxicReportManager : MonoBehaviour
         }
         //check if they got everything right
         else if (!isToxic && isGoodDose == 0)
-        { 
-            Debug.Log("this is a happy rat "+ ratsHappy[ratNum]);
+        {
             rat.sprite = ratsHappy[ratNum];
             endText.text = "Wow it worked great!";
         }
         else if (!isToxic && isGoodDose == 1)
         {
-            Debug.Log("this is a normal rat"+ rats[ratNum]);
             rat.sprite = rats[ratNum];
             endText.text = "Maybe we need to up the dosage next time...";
         }
         else
         {
-            Debug.Log("this should never be the case");
         }
 
         //get rid of the syringe
-        Debug.Log("about to set the syringe to false");
         syringe.SetActive(false);
 
         //open the curtains
-        Debug.Log("about to open up the curtains");
         curtains.Play("CurtainsBackwards");
 
         yield return new WaitForSeconds(1.5f);
         exitButton.SetActive(true);
     }
-    
+
     public void OnDoneClicked()
     {
         //change scenes

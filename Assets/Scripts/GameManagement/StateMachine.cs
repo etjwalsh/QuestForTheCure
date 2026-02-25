@@ -12,6 +12,7 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
     [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
     [SerializeField] public GameObject tutorialUI; //reference to the main tutorial UI screen
+    [SerializeField] public GameObject playerUI; //reference to the main player UI screen
 
     //for changing the space after a required space gets landed on
     public Material genericSpaceMat;
@@ -190,6 +191,7 @@ public class GameStateMachine : MonoBehaviour
         lrUI.SetActive(false);
         numPlayersUI.SetActive(false);
         tutorialUI.SetActive(false);
+        playerUI.SetActive(false);
 
         //change game state to main menu
         currentState = GameState.MainMenu;
@@ -228,6 +230,7 @@ public class GameStateMachine : MonoBehaviour
     {
         //set UI correctly
         characterSelectUI.SetActive(false);
+        playerUI.SetActive(true);
 
         //change scenes
         LevelLoader.instance.LoadScene("LoadDiscovery");
@@ -244,6 +247,7 @@ public class GameStateMachine : MonoBehaviour
         //activate the wheel spinner UI
         wheelUI.SetActive(true);
         wheelUI.GetComponent<WheelSpin>().spinButton.interactable = true;
+        playerUI.SetActive(true);
     }
 
     public void PlayerMoving()
@@ -259,6 +263,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void MinigameEnter()
     {
+        playerUI.SetActive(false);
         //get a random minigame based on the stage we are in (choose one or the other)
         currentState = GameState.Minigame;
         //change eventually to enter a minigame
@@ -287,6 +292,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void TriviaEnter()
     {
+        playerUI.SetActive(false);
         //get the current player's role
         currentPlayerRole = PlayerManager.instance.current.currentRole;
 

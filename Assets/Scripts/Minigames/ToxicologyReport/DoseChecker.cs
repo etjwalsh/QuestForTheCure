@@ -13,6 +13,11 @@ public class DoseChecker : MonoBehaviour
     float normalizedTime;
     float fillLevel;
 
+    [Header("Fill Markers")]
+    [SerializeField] private RectTransform minMarker;
+    [SerializeField] private RectTransform maxMarker;
+    [SerializeField] private float bottomY;  //Y position of 0% fill
+    [SerializeField] private float topY;     //Y position of 100% fill
 
     [Header("References")]
     [SerializeField] private Animator animator; //ref to syringe animator
@@ -33,6 +38,9 @@ public class DoseChecker : MonoBehaviour
         minGoodFill = Random.Range(.2f, .6f);
         maxGoodFill = minGoodFill + Random.Range(.2f, .3f);
         Debug.Log("heres the range: " + minGoodFill + " - " + maxGoodFill);
+
+        //set the markers up correctly
+        PlaceMarkers();
     }
 
     public IEnumerator StartGame()
@@ -111,5 +119,11 @@ public class DoseChecker : MonoBehaviour
 
         //move to the next screen
         trm.GoToScreen(++trm.n);
+    }
+
+    private void PlaceMarkers()
+    {
+        minMarker.anchoredPosition = new Vector2(minMarker.anchoredPosition.x, Mathf.Lerp(bottomY, topY, minGoodFill));
+        maxMarker.anchoredPosition = new Vector2(maxMarker.anchoredPosition.x, Mathf.Lerp(bottomY, topY, maxGoodFill));
     }
 }
