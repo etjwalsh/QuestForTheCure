@@ -121,7 +121,6 @@ MonoBehaviour:
   wheel: {fileID: 7155012921813727091}
   numberOfSlices: 10
   spinButton: {fileID: 2651491844057927429}
-  number: {fileID: 8391220232118043841}
   numberRolled: 0
 --- !u!114 &8855969513697464887
 MonoBehaviour:
@@ -303,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 663.14856, y: 486.53412}
+  m_AnchoredPosition: {x: 663.14856, y: 458}
   m_SizeDelta: {x: 20, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1668482637387857082
@@ -412,7 +411,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 670.3485, y: -140.82585}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2024687868091544838
 CanvasRenderer:

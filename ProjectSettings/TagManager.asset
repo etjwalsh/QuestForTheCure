@@ -17,7 +17,6 @@ TagManager:
   - Environment
   - SpacesTree
   - MinigameManager
-  - DiscoveryEnvironment
   layers:
   - Default
   - TransparentFX

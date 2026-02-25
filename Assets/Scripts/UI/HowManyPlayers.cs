@@ -18,7 +18,7 @@ public class HowManyPlayers : MonoBehaviour
     {
         PlayerManager.numPlayers = 1; //set number of players
         cs.numPlayersToSelect = PlayerManager.numPlayers;
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect; //change the current game state to character selection
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Tutorial; //change the current game state to tutorial
     }
 
     //two player selected
@@ -26,7 +26,7 @@ public class HowManyPlayers : MonoBehaviour
     {
         PlayerManager.numPlayers = 2; //set number of players
         cs.numPlayersToSelect = PlayerManager.numPlayers;
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect; //change the current game state to character selection
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Tutorial; //change the current game state to tutorial
     }
 
     //three player selected
@@ -34,7 +34,7 @@ public class HowManyPlayers : MonoBehaviour
     {
         PlayerManager.numPlayers = 3; //set number of players
         cs.numPlayersToSelect = PlayerManager.numPlayers;
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect; //change the current game state to character selection
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Tutorial; //change the current game state to tutorial
     }
 
     //four player selected
@@ -42,7 +42,7 @@ public class HowManyPlayers : MonoBehaviour
     {
         PlayerManager.numPlayers = 4; //set number of players
         cs.numPlayersToSelect = PlayerManager.numPlayers;
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.CharSelect; //change the current game state to character selection
+        GameStateMachine.instance.currentState = GameStateMachine.GameState.Tutorial; //change the current game state to tutorial
     }
 
 }

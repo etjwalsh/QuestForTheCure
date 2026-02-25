@@ -11,6 +11,7 @@ public class GameStateMachine : MonoBehaviour
     [SerializeField] public GameObject characterSelectUI; //reference to the char select screen ui
     [SerializeField] public GameObject lrUI; //reference to the left/right choice UI
     [SerializeField] public GameObject numPlayersUI; //reference to the selection screen for the number of players
+    [SerializeField] public GameObject tutorialUI; //reference to the main tutorial UI screen
 
     //for changing the space after a required space gets landed on
     public Material genericSpaceMat;
@@ -43,7 +44,7 @@ public class GameStateMachine : MonoBehaviour
     }
 
     //enum for state machine
-    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, SceneChange, EndTurn }
+    public enum GameState { KickStart, MainMenu, Settings, NumCharsSelect, Tutorial, CharSelect, GameStart, Spinning, PlayerMoving, LRChoice, MinigameEnter, Minigame, TriviaEnter, Trivia, SceneChange, EndTurn }
     public GameState currentState = GameState.KickStart; //for tracking current state
 
     private void Awake()
@@ -118,6 +119,11 @@ public class GameStateMachine : MonoBehaviour
                     NumCharsSelect();
                     break;
                 }
+            case GameState.Tutorial:
+                {
+                    Tutorial();
+                    break;
+                }
             case GameState.CharSelect:
                 {
                     CharSelect();
@@ -183,6 +189,7 @@ public class GameStateMachine : MonoBehaviour
         wheelUI.SetActive(false);
         lrUI.SetActive(false);
         numPlayersUI.SetActive(false);
+        tutorialUI.SetActive(false);
 
         //change game state to main menu
         currentState = GameState.MainMenu;
@@ -205,9 +212,14 @@ public class GameStateMachine : MonoBehaviour
         menuUI.SetActive(false);
         numPlayersUI.SetActive(true);
     }
-
+    public void Tutorial()
+    {
+        tutorialUI.SetActive(true);
+        numPlayersUI.SetActive(false);
+    }
     public void CharSelect()
     {
+        tutorialUI.SetActive(false);
         numPlayersUI.SetActive(false);
         characterSelectUI.SetActive(true);
     }

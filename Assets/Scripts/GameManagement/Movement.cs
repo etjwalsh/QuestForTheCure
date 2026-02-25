@@ -193,6 +193,7 @@ public class Movement : MonoBehaviour
             //randomize all of the player's roles
             for (int i = 0; i < PlayerManager.instance.players.Count - 1; i++)
             {
+                Debug.Log("about to shuffle roles or whatever");
                 PlayerManager.instance.players[i].GetComponent<Movement>().currentRole = GameStateMachine.instance.AssignRoleToPlayer();
             }
             //reset the roles list
