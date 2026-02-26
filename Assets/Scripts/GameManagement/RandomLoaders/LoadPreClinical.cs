@@ -50,9 +50,12 @@ public class LoadPreClinical : MonoBehaviour
             PlayerManager.instance.playerPieces[i].transform.rotation = playerScript.startingSpot.transform.rotation;
         }
 
+        //refresh the roles list
+        GameStateMachine.instance.roles = GameStateMachine.instance.ResetRolesList(GameStateMachine.instance.roles);
         //shuffle the player's roles
         for (int i = 0; i < PlayerManager.instance.players.Count; i++)
         {
+            //assign the role to the player
             PlayerManager.instance.playerPieces[i].GetComponent<Movement>().currentRole = GameStateMachine.instance.AssignRoleToPlayer();
         }
     }

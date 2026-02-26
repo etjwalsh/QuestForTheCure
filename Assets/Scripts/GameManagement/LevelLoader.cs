@@ -244,6 +244,9 @@ public class LevelLoader : MonoBehaviour
         float spacing = 2.0f;
         float startOffset = -(spacing * (PlayerManager.numPlayers - 1) / 2f);
 
+        //refresh the roles list
+        GameStateMachine.instance.roles = GameStateMachine.instance.ResetRolesList(GameStateMachine.instance.roles);
+
         //for loop to spawn all the players
         for (int i = 0; i < PlayerManager.numPlayers; i++)
         {
