@@ -65,12 +65,11 @@ public class SymptomSearchController : MonoBehaviour
         endUI.blocksRaycasts = false;
         message.gameObject.SetActive(false);
 
+        // stage = 3;
         //set the stage to be what the current player's clinical stage is
-        // stage = PlayerManager.instance.current.clinicalStage;
-        stage = 3;
-
+        stage = PlayerManager.instance.current.clinicalStage;
         //increase it for next time
-        // PlayerManager.instance.current.clinicalStage++;
+        PlayerManager.instance.current.clinicalStage++;
     }
     // Start is called before the first frame update
     void Start()
