@@ -35,6 +35,7 @@ public class LoadClinical : MonoBehaviour
         //set the players to be in the correct position
         for (int i = 0; i < PlayerManager.numPlayers; i++)
         {
+            Debug.Log("setting all of the player's starting space to " + GameObject.Find("SpacesTree/StartingSpace"));
             playerScript = PlayerManager.instance.players[i].characterPiece.GetComponent<Movement>();
 
             //offset along Z axis for spawning players
@@ -42,6 +43,7 @@ public class LoadClinical : MonoBehaviour
 
             //locate the starting spot 
             playerScript.startingSpot = GameObject.Find("SpacesTree/StartingSpace");
+            playerScript.space = playerScript.startingSpot.GetComponent<SpacesTree>();
 
             //set each player's position to be the position of the 
             Debug.Log("player script starting spot is: " + playerScript.startingSpot);

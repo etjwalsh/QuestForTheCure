@@ -97,6 +97,10 @@ public class GameStateMachine : MonoBehaviour
         {
             LevelLoader.instance.LoadScene("LoadPreClinical");
         }
+        if (Input.GetKey(KeyCode.M))
+        {
+            LevelLoader.instance.LoadScene("LoadClinical");
+        }
         //state machine switch statement
         switch (currentState)
         {
@@ -263,6 +267,7 @@ public class GameStateMachine : MonoBehaviour
 
     public void MinigameEnter()
     {
+        Debug.Log("entering minigame");
         playerUI.SetActive(false);
         //get a random minigame based on the stage we are in (choose one or the other)
         currentState = GameState.Minigame;
