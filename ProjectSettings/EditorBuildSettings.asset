@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/SideEffectSearch.unity
     guid: 0f5701e2137c0ee48b306366a7fc6575
   - enabled: 1
+    path: Assets/Scenes/Minigames/TreatmentCheckup.unity
+    guid: 9edea4c1673d6e840a2581e65ed26a03
+  - enabled: 1
     path: Assets/Scenes/Trivia.unity
     guid: babce573eef54c547926cd3b624dc493
   - enabled: 1

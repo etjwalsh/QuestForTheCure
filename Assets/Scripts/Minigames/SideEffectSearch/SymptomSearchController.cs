@@ -315,4 +315,10 @@ public class SymptomSearchController : MonoBehaviour
         ColorUtility.TryParseHtmlString(hex, out Color c);
         return c;
     }
+
+    public void OnDoneClicked()
+    {
+        //change scenes
+        StartCoroutine(PlayerManager.instance.LoadPlayerLocations(LevelLoader.instance.previousScene));
+    }
 }

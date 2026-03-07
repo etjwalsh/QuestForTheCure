@@ -23,7 +23,7 @@ public class WheelSpin : MonoBehaviour
     public void OnButtonClick()
     {
         //turn off the button
-        spinButton.interactable = false;
+        spinButton.gameObject.SetActive(false);
 
         if (!spinning)
         {

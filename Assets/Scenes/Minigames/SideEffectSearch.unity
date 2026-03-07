@@ -1138,14 +1138,14 @@ PrefabInstance:
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 573689639}
+      objectReference: {fileID: 101240589}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPress
+      value: OnDoneClicked
       objectReference: {fileID: 0}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonPress, Assembly-CSharp
+      value: SymptomSearchController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1173,17 +1173,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
   m_PrefabInstance: {fileID: 573689637}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &573689639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1155640385868673866, guid: 0088122658409224aa49919e3608a8d9, type: 3}
-  m_PrefabInstance: {fileID: 573689637}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695372999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac3ee67bfecf334d97d646b48aa8c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &642694308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,74 +2860,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1418177301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1418177304}
-  - component: {fileID: 1418177303}
-  - component: {fileID: 1418177302}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1418177302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418177301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1418177303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418177301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1418177304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418177301}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538965924
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,7 +4326,6 @@ SceneRoots:
   - {fileID: 2037257195}
   - {fileID: 61259041}
   - {fileID: 101240590}
-  - {fileID: 1418177304}
   - {fileID: 925255619}
   - {fileID: 1393402072}
   - {fileID: 1538965928}

@@ -15,12 +15,10 @@ public class PapersManager : MonoBehaviour
     public List<Color> ratColors = new List<Color>();
     public List<Sprite> approvalSprites = new List<Sprite>();
     public List<string> doseLevel = new List<string> { "Too Low...", "Just Right!", "Too High..!" };
-    private bool shouldApprove = true;
     private int currentPageIndex = 1;
 
     [Header("MinigameStats")]
     public int numPages = 5;
-    private int score = 0;
 
     [Header("UI Stats")]
     public Image treatmentImage;
@@ -36,13 +34,18 @@ public class PapersManager : MonoBehaviour
     [Header("End UI")]
     public CanvasGroup endUI;
     private float duration = 2.0f;
-    private int numShouldApprove = 0;
-    private int numShouldDeny = 0;
     public TextMeshProUGUI approvedText;
     public TextMeshProUGUI deniedText;
     public TextMeshProUGUI endMessage;
     public TextMeshProUGUI approvedNumber;
     public TextMeshProUGUI deniedNumber;
+    public GameObject exitButton;
+
+    //vars for statistics tracking
+    private int numShouldApprove = 0;
+    private int numShouldDeny = 0;
+    private int numApproved = 0;
+    private int numDenied = 0;
 
     void Awake()
     {
@@ -58,6 +61,8 @@ public class PapersManager : MonoBehaviour
 
     public void OnApproveClicked()
     {
+        numApproved++;
+
         //disable the buttons
         approve.interactable = false;
         deny.interactable = false;
@@ -71,6 +76,8 @@ public class PapersManager : MonoBehaviour
     }
     public void OnDenyClicked()
     {
+        numDenied++;
+
         //disable the buttons
         approve.interactable = false;
         deny.interactable = false;
@@ -115,9 +122,9 @@ public class PapersManager : MonoBehaviour
         //get random number 1-7 for rat photo based on last random number
         if (whichRat == 1) //normal
         {
+            Debug.Log("this one should be denied");
             //set the rat sprite
             ratImage.sprite = ratsSad[Random.Range(0, ratsSad.Count - 1)];
-            shouldApprove = false;
             numShouldDeny++;
 
             //set the percentage 
@@ -126,12 +133,15 @@ public class PapersManager : MonoBehaviour
 
             //set the dose text
             doseText.text = doseLevel[randDose - 1];
+
+            Debug.Log("numShouldDeny is now: " + numShouldDeny);
         }
         else if (whichRat == 2) //sad
         {
+            Debug.Log("this one should be denied");
+
             //set the rat sprite
             ratImage.sprite = rats[Random.Range(0, rats.Count - 1)];
-            shouldApprove = false;
             numShouldDeny++;
 
             //set the percentage 
@@ -140,9 +150,13 @@ public class PapersManager : MonoBehaviour
 
             //set the dose text
             doseText.text = doseLevel[randDose - 1];
+
+            Debug.Log("numShouldDeny is now: " + numShouldDeny);
         }
         else if (whichRat >= 3) //happy
         {
+            Debug.Log("this one should be approved");
+
             //set the rat sprite
             ratImage.sprite = ratsHappy[Random.Range(0, ratsHappy.Count - 1)];
             numShouldApprove++;
@@ -153,17 +167,13 @@ public class PapersManager : MonoBehaviour
 
             //set the dose text
             doseText.text = doseLevel[1];
+
+            Debug.Log("numShouldApprove is now: " + numShouldApprove);
         }
 
     }
     private IEnumerator CheckAnswer(bool tf)
     {
-        //check if the player's answer is the same as if the current paper should be 
-        if (tf == shouldApprove)
-        {
-            score++;
-        }
-
         //check to make sure that you aren't on the last page
         if (currentPageIndex < numPages)
         {
@@ -191,10 +201,16 @@ public class PapersManager : MonoBehaviour
 
     private IEnumerator EndGame()
     {
-        //stop the game
-        Time.timeScale = 0;
+        //deactivate all of the end results to start
+        approvedText.gameObject.SetActive(false);
+        deniedText.gameObject.SetActive(false);
+        approvedNumber.gameObject.SetActive(false);
+        deniedNumber.gameObject.SetActive(false);
+        endMessage.gameObject.SetActive(false);
 
         scoreUI.text = "That's all\nthe pages!";
+
+        yield return new WaitForSeconds(1.0f);
 
         //vars for fading the end UI in
         float elapsedTime = 0f;
@@ -212,19 +228,85 @@ public class PapersManager : MonoBehaviour
         }
 
         //set all the numbers correctly before showing them
-        approvedNumber.text = score + " / " + numShouldApprove;
-        deniedNumber.text = numPages - score + " / " + numShouldDeny;
+        approvedNumber.text = numApproved + " / " + numShouldApprove;
+        deniedNumber.text = numDenied + " / " + numShouldDeny;
+
+        bool good;
+        bool bad;
+
+        //set the color of approved numbers depending on how well they did
+        if (numApproved == numShouldApprove)
+        {
+            good = true;
+            bad = false;
+            approvedNumber.color = Hex("#45A682");
+        }
+        else if (numApproved <= numShouldApprove && numApproved > 0)
+        {
+            good = false;
+            bad = false;
+            approvedNumber.color = Hex("#FFC526");
+        }
+        else //this will catch when too many were approved 
+        {
+            good = false;
+            bad = true;
+            approvedNumber.color = Hex("#D2082E");
+        }
+
+        //set the color of denied numbers depending on how well they did
+        if (numDenied == numShouldDeny)
+        {
+            good = true;
+            bad = false;
+            deniedNumber.color = Hex("#45A682");
+        }
+        else if (numDenied <= numShouldDeny && numDenied > 0)
+        {
+            good = false;
+            bad = false;
+            deniedNumber.color = Hex("#FFC526");
+        }
+        else //this will catch when too many were denied 
+        {
+            good = false;
+            bad = true;
+            deniedNumber.color = Hex("#D2082E");
+        }
+
+        //change the ending message depending on how they did
+        if (good && !bad)
+        {
+            endMessage.text = "Good ending";
+        }
+        else if (!good && !bad)
+        {
+            endMessage.text = "Medium ending";
+        }
+        else if (!good && bad)
+        {
+            endMessage.text = "Bad ending";
+        }
 
         //show the results one at a time
         approvedText.gameObject.SetActive(true); //approved text
         yield return new WaitForSeconds(0.5f);
         deniedText.gameObject.SetActive(true); //denied text
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         approvedNumber.gameObject.SetActive(true); //approved number
         yield return new WaitForSeconds(0.5f);
         deniedNumber.gameObject.SetActive(true); //denied number
         yield return new WaitForSeconds(0.5f);
         endMessage.gameObject.SetActive(true); //end message
         yield return new WaitForSeconds(0.5f);
+
+        //activate the exit button
+        exitButton.SetActive(true);
+    }
+
+    public void OnDoneClicked()
+    {
+        //change scenes
+        StartCoroutine(PlayerManager.instance.LoadPlayerLocations(LevelLoader.instance.previousScene));
     }
 }

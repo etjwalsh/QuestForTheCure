@@ -250,7 +250,6 @@ public class GameStateMachine : MonoBehaviour
 
         //activate the wheel spinner UI
         wheelUI.SetActive(true);
-        wheelUI.GetComponent<WheelSpin>().spinButton.interactable = true;
         playerUI.SetActive(true);
     }
 
@@ -286,7 +285,7 @@ public class GameStateMachine : MonoBehaviour
         }
         else if (currentStage == "Approval")
         {
-            Debug.LogWarning("Approval minigame needs to go here!");
+            LevelLoader.instance.LoadScene("TreatmentCheckup");
         }
     }
 
@@ -344,6 +343,10 @@ public class GameStateMachine : MonoBehaviour
     public void EndTurn()
     {
         PlayerManager.instance.EndTurn(); //end the player's turn
+
+        //reset the wheel UI
+        wheelUI.GetComponent<WheelSpin>().spinButton.gameObject.SetActive(true);
+
     }
 
     public string AssignRoleToPlayer()

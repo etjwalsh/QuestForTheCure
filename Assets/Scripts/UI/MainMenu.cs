@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject aboutUI;
+
+    void Awake()
+    {
+        //make sure the about section is set to inactive to start
+        aboutUI.SetActive(false);
+    }
+
     //function to start the game
     public void OnStartClicked()
     {
@@ -23,7 +31,14 @@ public class MainMenu : MonoBehaviour
     //function to open the settings
     public void OnSettingsClicked()
     {
-        GameStateMachine.instance.currentState = GameStateMachine.GameState.Settings;
+        Debug.Log("pressed the button to open the settings");
+        Debug.Log("Settings gameobject is: " + aboutUI);
+        aboutUI.SetActive(true);
+    }
+
+    public void OnExitSettingsClicked()
+    {
+        aboutUI.SetActive(false);
     }
 
     private IEnumerator StartGameRoutine()
