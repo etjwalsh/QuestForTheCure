@@ -1146,6 +1146,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
+      propertyPath: m_text
+      value: "<i>Quest for the Cure!</i> was developed by the team at End Lung Cancer
+        Now (ELCN)\u2014an initiative of the IU Simon Comprehensive Cancer Center\u2014in
+        collaboration with game developer Ethan Walsh of Starbit Studio to create
+        a new way to learn about cancer research and the many people who help move
+        it forward. Throughout the game stages\u2014Discovery, Preclinical, Trials,
+        and Approval\u2014players will take on rotating roles to explore the journey
+        of cancer research from multiple key perspectives\u2014including patients,
+        caregivers, physicians, researchers, and community advocates. Players will
+        work as a team to advance through the game by answering trivia questions
+        and completing minigames until they reach the end.\r\n\r\nThis game is the
+        result of a collaborative effort among cancer advocates, community members,
+        and dedicated oncology professionals."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4956708624865762418, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1233,6 +1256,10 @@ PrefabInstance:
     - target: {fileID: 5392241080827715306, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134856057266119116, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

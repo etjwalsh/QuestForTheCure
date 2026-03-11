@@ -261,7 +261,7 @@ public class LevelLoader : MonoBehaviour
 
             //spawn in a new player
             Debug.Log("About to spawn in gameobject:" + PlayerManager.instance.players[i].characterPiece);
-            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.05f, 0), playerScript.startingSpot.transform.rotation);
+            GameObject spawnedPlayer = Instantiate(PlayerManager.instance.players[i].characterPiece, playerScript.startingSpot.transform.position + offset + new Vector3(0, 0.09f, 0), playerScript.startingSpot.transform.rotation);
 
             //add this gameObject to the list of player pieces
             PlayerManager.instance.playerPieces.Add(spawnedPlayer);
