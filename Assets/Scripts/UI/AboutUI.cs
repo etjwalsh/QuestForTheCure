@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AboutUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObject.SetActive(false);
     }
 }
