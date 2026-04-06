@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 
 public class AboutUI : MonoBehaviour
 {
-    public void OnPointerClick(PointerEventData eventData)
+    private void Update()
     {
-        gameObject.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Destroy(gameObject);
+        }
     }
 }
