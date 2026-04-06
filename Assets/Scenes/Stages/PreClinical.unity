@@ -216,6 +216,125 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: 58.9, z: 0}
+--- !u!1001 &922974790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440973404213480498, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414715454232330342, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_Name
+      value: AboutUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913396181456739576, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_text
+      value: 'The preclinical research stage is when scientists test a potential
+        new treatment in the laboratory and in carefully controlled animal studies
+        to better understand how it works and whether it appears safe. This stage
+        helps researchers decide if the treatment is ready to move forward to clinical
+        trials where it can be studied in people.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913396181456739576, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913396181456739576, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913396181456739576, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ae495e4c83ef3440bdf1b29e52dbb36, type: 3}
 --- !u!1 &1550433478
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,3 +480,4 @@ SceneRoots:
   - {fileID: 862616639}
   - {fileID: 1550433480}
   - {fileID: 1828041687}
+  - {fileID: 922974790}
