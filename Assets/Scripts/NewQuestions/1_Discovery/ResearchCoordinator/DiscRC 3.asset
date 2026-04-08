@@ -35,5 +35,5 @@ MonoBehaviour:
   incorrectAnswer3: Making early decisions about which patients will be recruited
     to join the clinical trial
   questionRole: Research Coordinator
-  questionType: MulitpleChoice
+  questionType: MultipleChoice
   questionStage: Discovery

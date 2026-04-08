@@ -17,6 +17,12 @@ public class GameStateMachine : MonoBehaviour
     //for changing the space after a required space gets landed on
     public Material genericSpaceMat;
 
+    //for keeping track of the aboutUI's
+    public bool discoveryVisited = false;
+    public bool preClinicalVisited = false;
+    public bool clinicalVisited = false;
+    public bool approvalVisited = false;
+
     //for the rotating roles
     public List<string> roles = new List<string> { "Patient", "Physician", "Community Advocate", "Research Coordinator", "Safety & Ethics", "Caregiver" };
     // private int maxRoles = 4;
