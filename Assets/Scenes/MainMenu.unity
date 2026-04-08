@@ -187,8 +187,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 94.86155, y: 0, z: -0.39729148, w: -0.2647295}
+  m_margin: {x: 73.86431, y: 0, z: -0.39729148, w: -0.2647295}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -360,7 +360,7 @@ RectTransform:
   m_GameObject: {fileID: 328503714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45000002, y: 0.45000002, z: 0.45000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1358831354}
@@ -368,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: -36.8}
+  m_AnchoredPosition: {x: 100, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1001 &335222113
@@ -445,15 +445,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -485,11 +485,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 357.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -594,8 +594,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.026138306, y: 0, z: 0.05228277, w: 0}
+  m_margin: {x: -16.387589, y: 0, z: 0.05228277, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -788,7 +788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 5}
+  m_AnchoredPosition: {x: 10, y: 10}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &567464089
@@ -899,10 +899,6 @@ PrefabInstance:
     - target: {fileID: 584598096081479175, guid: a7244f334114e6a4d84a3f7b7185eb31, type: 3}
       propertyPath: m_Name
       value: WheelSpinner
-      objectReference: {fileID: 0}
-    - target: {fileID: 584598096081479175, guid: a7244f334114e6a4d84a3f7b7185eb31, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4025478816823576602, guid: a7244f334114e6a4d84a3f7b7185eb31, type: 3}
       propertyPath: m_Pivot.x
@@ -1077,9 +1073,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1141,29 +1137,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_text
-      value: "<i>Quest for the Cure!</i> was developed by the team at End Lung Cancer
-        Now (ELCN)\u2014an initiative of the IU Simon Comprehensive Cancer Center\u2014in
-        collaboration with game developer Ethan Walsh of Starbit Studio to create
-        a new way to learn about cancer research and the many people who help move
-        it forward. Throughout the game stages\u2014Discovery, Preclinical, Trials,
-        and Approval\u2014players will take on rotating roles to explore the journey
-        of cancer research from multiple key perspectives\u2014including patients,
-        caregivers, physicians, researchers, and community advocates. Players will
-        work as a team to advance through the game by answering trivia questions
-        and completing minigames until they reach the end.\r\n\r\nThis game is the
-        result of a collaborative effort among cancer advocates, community members,
-        and dedicated oncology professionals."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2073827203469071314, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 4956708624865762418, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1248,36 +1221,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5392241080827715306, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6134856057266119116, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 687283857}
-    - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnStartClicked
-      objectReference: {fileID: 0}
-    - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8949139953667641596, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2813463327965126054, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1287,17 +1231,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5392241080827715306, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
   m_PrefabInstance: {fileID: 687283854}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &687283857 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1590131853054069009, guid: 2b6a49cb7dcc6d049a7d34c01859ca8d, type: 3}
-  m_PrefabInstance: {fileID: 687283854}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687283855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1fa71c44093c6468e0b064e64f5faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &720908573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1759,7 @@ RectTransform:
   m_GameObject: {fileID: 918758093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45000002, y: 0.45000002, z: 0.45000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1255483599}
@@ -1834,7 +1767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -36.799995}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &928510984
@@ -2055,10 +1988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterSelect
       objectReference: {fileID: 0}
-    - target: {fileID: 6778797166096076020, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8091141117973389001, guid: a317cc2d20cc88742bed41f53f10f341, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2203,7 +2132,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2687,7 +2616,7 @@ RectTransform:
   m_GameObject: {fileID: 1272547565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 196390267}
@@ -3349,38 +3278,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4664397348738879998, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: fadeAnim
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4664397348738879998, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: playerPieces.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4698444298099513385, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 742277921}
-    - target: {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: lrUI
       value: 
       objectReference: {fileID: 1930326245}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: fadeUI
-      value: 
-      objectReference: {fileID: 742277921}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: menuUI
       value: 
@@ -3394,633 +3303,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 629726053}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: transition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: tutorialUI
       value: 
       objectReference: {fileID: 1917361343}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: currentState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: numPlayersUI
       value: 
       objectReference: {fileID: 1534466955}
     - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: genericSpaceMat
-      value: 
-      objectReference: {fileID: -8508464804566273096, guid: b0d0b87a4bac6f44db75d7cea3d932e6, type: 3}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
       propertyPath: characterSelectUI
       value: 
       objectReference: {fileID: 1106209393}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaBackgroundUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: questionsList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.size
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: questionsList.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0c3e739cc75f843458521b0289fd0621, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 09edd606788bb394698c26ed84f19b38, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 317a5afd9c4f58b48a7e0d24e8187c46, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6e64b122c73ae004fa06232dd20364d0, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: a96f18bf908cec247b3fa8f53d2ecbcd, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 483346ef15f242f478f1e1138745676b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3b902289db508364eb3f8b52badf5e13, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: be9e217213846d94dad60e3192d8213a, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[7]
-      value: 
-      objectReference: {fileID: 11400000, guid: 77879ec99efcfe946bf2407765b301fe, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[8]
-      value: 
-      objectReference: {fileID: 11400000, guid: c7c9f1f90408c7842acff2ae156c78e3, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[9]
-      value: 
-      objectReference: {fileID: 11400000, guid: fb7008dbe77bed34e9f1d616382780cf, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[10]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6ce7b08906bfe464ca11d36be1dd895b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[11]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0fbdd0c1132010f4080f23f96a8b796b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[12]
-      value: 
-      objectReference: {fileID: 11400000, guid: 85e2275cf182aea4eb387c8220f7e9ef, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[13]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6f46c9b9bcbbc764fadfaeb429766329, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[14]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2b687d03b4f7cac4bb1cf4ab5e502820, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[15]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3009a91363e2fb240b468f4412becda4, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[16]
-      value: 
-      objectReference: {fileID: 11400000, guid: 219b5d11040e222429cf9e3d44e2741e, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[17]
-      value: 
-      objectReference: {fileID: 11400000, guid: c98bb6230392b2a49adbeabab5c04ba7, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[18]
-      value: 
-      objectReference: {fileID: 11400000, guid: 12d86be333d36a343b59bccd51337431, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[19]
-      value: 
-      objectReference: {fileID: 11400000, guid: 052f1dc05f38b6d419f13f5fd6712bd3, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[20]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5851caa943baea847b7cd7015dbdb060, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[21]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4816287d7a664a74a8e24000dd622932, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[22]
-      value: 
-      objectReference: {fileID: 11400000, guid: cb8ef32f18497fe4dbca334d439d7333, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[23]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7ad3eb0b229d7304ea7eb2f6bccea25b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[24]
-      value: 
-      objectReference: {fileID: 11400000, guid: c66c941d48ba5d440afb70b86b23e669, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[25]
-      value: 
-      objectReference: {fileID: 11400000, guid: 877fcd8520fd2b640839efd642dcc45d, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[26]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0394dfc43fbb8c9498a47d105381a2f0, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[27]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0869753515d519c4588e929016e65527, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[28]
-      value: 
-      objectReference: {fileID: 11400000, guid: 624203a2986493148b3d804d7a88abf7, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[29]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f12a901e72f2274294e7fd643f5087b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[30]
-      value: 
-      objectReference: {fileID: 11400000, guid: cf54e6f6e26ca7249bfd45580240c6bf, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[31]
-      value: 
-      objectReference: {fileID: 11400000, guid: eb36bbf2c8df87346b8fa1f0e74cc138, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[32]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9b339a541d99c9a478467c88c8838435, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[33]
-      value: 
-      objectReference: {fileID: 11400000, guid: 410ac8c5269119b4293ae4f2f12dcec2, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[34]
-      value: 
-      objectReference: {fileID: 11400000, guid: 86555c4d95360484181175f9f60fad31, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[35]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8eaa4e35f27c1ef4c8d5f547dfe69083, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[36]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e38afce3cbba444399c320e559a43ef, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[37]
-      value: 
-      objectReference: {fileID: 11400000, guid: 64a928f166a23284ea9e53e62293dd8c, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[38]
-      value: 
-      objectReference: {fileID: 11400000, guid: d15f4b160710af546be6d22abc9f0ee9, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[39]
-      value: 
-      objectReference: {fileID: 11400000, guid: ba181a709dba73e41b3c07790bb962f1, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[40]
-      value: 
-      objectReference: {fileID: 11400000, guid: eabcb9d7c38648545ba01de00ebd9754, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[41]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1ba1383424487b74f8ecd52bf8723491, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[42]
-      value: 
-      objectReference: {fileID: 11400000, guid: 22a03777c143f3746949083ca37466a6, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[43]
-      value: 
-      objectReference: {fileID: 11400000, guid: 84828376f0798f2418f8fdd2779e6d73, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[44]
-      value: 
-      objectReference: {fileID: 11400000, guid: 111dd3952abce5b4c9272cbb93dbe66e, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[45]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4ca73a193948e5647b8c55528ce81701, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[46]
-      value: 
-      objectReference: {fileID: 11400000, guid: e6bb338d54f7797458c680cadcdc7f11, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[47]
-      value: 
-      objectReference: {fileID: 11400000, guid: 92bbf138546fc8046a7fdcd24975898b, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[48]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6765b45450cc3ff47b3bc8c1f155cd22, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[49]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1df77c3e703190f47b16739f8407d351, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[50]
-      value: 
-      objectReference: {fileID: 11400000, guid: d45c8dba2ec80374baf01fe61d6f99a3, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[51]
-      value: 
-      objectReference: {fileID: 11400000, guid: 85e86db57ac7973418ab0ee53ad0b9fa, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[52]
-      value: 
-      objectReference: {fileID: 11400000, guid: abc8951c61f1d9842832ca67cb51ebe5, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[53]
-      value: 
-      objectReference: {fileID: 11400000, guid: 746715bfc50d55a479f7a26956151dbf, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[54]
-      value: 
-      objectReference: {fileID: 11400000, guid: d0bcf0dc528294b4b906220ea9cc2ab0, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[55]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8e6e2f11fcec6d041b629c61d2bc0f8e, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[56]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3b877000196895f42ac1ab32d82dcff1, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[57]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4ee37f26bbf1ae743baf773f43eb3cf2, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[58]
-      value: 
-      objectReference: {fileID: 11400000, guid: fb6c29a6bd0105040acaec720837e7bc, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[59]
-      value: 
-      objectReference: {fileID: 11400000, guid: 84f561b070f85c04782204b168bab695, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[60]
-      value: 
-      objectReference: {fileID: 11400000, guid: f866697bc5c538042970628d571d9668, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[61]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6a453e54d82db224cb265959756f8a6c, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[62]
-      value: 
-      objectReference: {fileID: 11400000, guid: 10e1fc44d9aceb145bcb1e2b467e2b94, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[63]
-      value: 
-      objectReference: {fileID: 11400000, guid: 11192eaebd457fb48a097b2677d2bb51, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[64]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1d33464a9723f88419d934fa087bc366, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[65]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3f8941501f66b9d4eacc1d24a7d58e06, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[66]
-      value: 
-      objectReference: {fileID: 11400000, guid: 60f667a790fd77947a60aaeb440d7e73, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[67]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2647c5bc60ed4a94fa086f623a077865, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[68]
-      value: 
-      objectReference: {fileID: 11400000, guid: 19f88e0b9ec296543a7cdf7ec6d81b38, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[69]
-      value: 
-      objectReference: {fileID: 11400000, guid: f4fcf470f557e8d429d44df7fd7d9fb0, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[70]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6a00ace52bcc2a44182a103a33248450, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[71]
-      value: 
-      objectReference: {fileID: 11400000, guid: e3e30257e54cd0c42a017dc1bc253ad9, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[72]
-      value: 
-      objectReference: {fileID: 11400000, guid: 64a12f01501cf954b829f9fc2a63a19e, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[73]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9d04cf8715341ce499d6c0bf086124f4, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[74]
-      value: 
-      objectReference: {fileID: 11400000, guid: 145e40092ef0d74499f1ae67dfee2bd8, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[75]
-      value: 
-      objectReference: {fileID: 11400000, guid: fd0f1e327d70aa549b45bf19e3a861a5, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[76]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8d1ac1d580038df48b4224a05202146f, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[77]
-      value: 
-      objectReference: {fileID: 11400000, guid: cfa0b9402693fda41b92a59753cef07a, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[78]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0aca54201556e164883eb1cd9199f2f9, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[79]
-      value: 
-      objectReference: {fileID: 11400000, guid: cf7a09d74ca570e48b5ea89b67ea677d, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[80]
-      value: 
-      objectReference: {fileID: 11400000, guid: caa4873a9c7add244a046569453dd475, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[81]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4e773c64b9ada504c800a172410b402d, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[82]
-      value: 
-      objectReference: {fileID: 11400000, guid: d23e432df26e203489d880d5c69a2a40, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[83]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3a153c8573b2eed4a8c84059ecdbbd2d, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[84]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3d1313b3f9a9aeb4b8f568256dc2d68c, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[85]
-      value: 
-      objectReference: {fileID: 11400000, guid: b624699a29e2baf408e937d5994b6039, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[86]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3e366e49f152a0c42acd76e525ee8676, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[87]
-      value: 
-      objectReference: {fileID: 11400000, guid: c37ca173372d44940a147ae06f9a18e5, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[88]
-      value: 
-      objectReference: {fileID: 11400000, guid: 1897ef0ce1364c0488591b4c9d509f31, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[89]
-      value: 
-      objectReference: {fileID: 11400000, guid: d48bc12eb027eb84fa670ae9b5e3320f, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[90]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f658201d52ee4f46a0ba916d5bdb5bd, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[91]
-      value: 
-      objectReference: {fileID: 11400000, guid: d21050679cdc14547a700baf6bcd1b2d, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[92]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3062cd58ae37ffb43a42ffdff83a6747, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[93]
-      value: 
-      objectReference: {fileID: 11400000, guid: 85221f3a4bdfbc149bb693e4636050ed, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[94]
-      value: 
-      objectReference: {fileID: 11400000, guid: 85f509fd447ba0b44af653ea61765fcb, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[95]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6b4b64ed1b220cd469c545ea8af03ced, type: 2}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[96]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[97]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[98]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[99]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[100]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[101]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[102]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[103]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[104]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[105]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[106]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[107]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[108]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[109]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[110]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[111]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[112]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[113]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[114]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[115]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[116]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[117]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[118]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[119]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[120]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[121]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[122]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[123]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[124]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[125]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[126]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[127]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[128]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[129]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[130]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[131]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[132]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[133]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[134]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[135]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[136]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[137]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[138]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[139]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[140]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[141]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[142]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[143]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365389861144219506, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      propertyPath: triviaQuesitons.Array.data[144]
-      value: 
-      objectReference: {fileID: 11400000, guid: b24ed5d28a6bfba4c81be64c3588473d, type: 2}
-    m_RemovedComponents:
-    - {fileID: 5454573169920843839, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1741557020}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
 --- !u!1 &1643049441
 GameObject:
@@ -4297,7 +3594,7 @@ RectTransform:
   m_GameObject: {fileID: 1683047556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45000002, y: 0.45000002, z: 0.45000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 720908574}
@@ -4305,7 +3602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -36.799995}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1734510936
@@ -4491,26 +3788,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734510936}
   m_CullTransparentMesh: 1
---- !u!1 &1741557015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6023217707697673239, guid: 065d4a282b571a04d803a7b600e16d64, type: 3}
-  m_PrefabInstance: {fileID: 1570249805}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1741557020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741557015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 249e78e15567fbf41aa6925be0b8cbb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: e043e1e8b4c41214d99421cbfff221ab, type: 3}
-  clickCursor: {fileID: 2800000, guid: 7d0584acc17aef64c9b8c554d5d902ac, type: 3}
-  hotspot: {x: 0, y: 0}
 --- !u!1 &1753678225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,8 +3888,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4647,7 +3924,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.97170347, y: 0, z: 0.3069893, w: 0}
+  m_margin: {x: 32.296577, y: 0, z: 0.3069893, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4677,7 +3954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 5}
+  m_AnchoredPosition: {x: -10, y: 10}
   m_SizeDelta: {x: 210, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &1888163084
@@ -4813,9 +4090,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -4888,10 +4165,6 @@ PrefabInstance:
     - target: {fileID: 577499676586257017, guid: 2a4818cfe1e23a049b10205ea8046f3d, type: 3}
       propertyPath: m_Name
       value: LeftRightChoice
-      objectReference: {fileID: 0}
-    - target: {fileID: 577499676586257017, guid: 2a4818cfe1e23a049b10205ea8046f3d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7329288071110329987, guid: 2a4818cfe1e23a049b10205ea8046f3d, type: 3}
       propertyPath: m_Pivot.x
@@ -5052,7 +4325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2032126744
@@ -5102,8 +4375,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5712,10 +4985,6 @@ PrefabInstance:
     - target: {fileID: 2194124980462399583, guid: d92a982aa7c7f3446b9dfc7ba554b3bf, type: 3}
       propertyPath: m_Name
       value: HowManyPlayers
-      objectReference: {fileID: 0}
-    - target: {fileID: 2194124980462399583, guid: d92a982aa7c7f3446b9dfc7ba554b3bf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6224438305776847739, guid: d92a982aa7c7f3446b9dfc7ba554b3bf, type: 3}
       propertyPath: csUI

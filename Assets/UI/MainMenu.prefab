@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 548762042119055397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6773750667136995569}
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95, y: -103}
+  m_AnchoredPosition: {x: -200, y: -350}
   m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5197085956919157570
@@ -434,15 +434,15 @@ RectTransform:
   m_GameObject: {fileID: 1530482659390804643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8670364695528350900}
   m_Father: {fileID: 4956708624865762418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98, y: -105}
+  m_AnchoredPosition: {x: 200, y: -350}
   m_SizeDelta: {x: 128, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3793428786589916191
@@ -629,17 +629,17 @@ RectTransform:
   m_GameObject: {fileID: 2019700879188173630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6405817339057262293}
   m_Father: {fileID: 4956708624865762418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358, y: -194}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -50, y: 50}
   m_SizeDelta: {x: 36, y: 36}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &8215330577550994703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -828,8 +828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 83, y: -17}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8519786674599500291
 CanvasRenderer:
@@ -886,8 +886,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -165.21712, y: 0, z: 0, w: 0}
+  m_margin: {x: -377.28534, y: 0, z: -368.11804, w: -78.69214}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1127,14 +1127,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This game was developed by the team with End Lung Cancer Now, an initiative
-    of the IU Simon Comprehensive Cancer Center, to create a new way of learning
-    about cancer research and the many people who help move it forward. Through storytelling,
-    challenges, and interactive gameplay, this experience invites players to explore
-    the journey of cancer research from multiple perspectives including patients,
-    caregivers, physicians, researchers, and community advocates. This resource is
-    the result of a collaborative effort among cancer advocates, community members,
-    and dedicated oncology professionals.
+  m_text: "<i>Quest for the Cure!</i> was developed by the team at End Lung Cancer
+    Now (ELCN)\u2014an initiative of the IU Simon Comprehensive Cancer Center\u2014in
+    collaboration with game developer Ethan Walsh of Starbit Studio to create a new
+    way to learn about cancer research and the many people who help move it forward.
+    Throughout the game stages\u2014Discovery, Preclinical, Trials, and Approval\u2014players
+    will take on rotating roles to explore the journey of cancer research from multiple
+    key perspectives\u2014including patients, caregivers, physicians, researchers,
+    and community advocates. Players will work as a team to advance through the game
+    by answering trivia questions and completing minigames until they reach the end.\r\n\r\nThis
+    game is the result of a collaborative effort among cancer advocates, community
+    members, and dedicated oncology professionals."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4d2f9e901de9a04ab1551d2108915dc, type: 2}
   m_sharedMaterial: {fileID: -2377018855494194545, guid: a4d2f9e901de9a04ab1551d2108915dc, type: 2}
@@ -1161,8 +1164,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1239,7 +1242,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2646971766779136813
 CanvasRenderer:
@@ -1439,7 +1442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.199997, y: 4.799999}
+  m_AnchoredPosition: {x: -1.2000122, y: 4.799988}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7849401127838203430
@@ -1622,9 +1625,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1699,16 +1702,16 @@ RectTransform:
   m_GameObject: {fileID: 7579080131004538397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8104617224248781169}
   m_Father: {fileID: 2626943747501369350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -33}
-  m_SizeDelta: {x: 715.6, y: 330.7}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2466701570804863406
 CanvasRenderer:
@@ -1793,6 +1796,18 @@ PrefabInstance:
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1826,7 +1841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1839,6 +1854,10 @@ PrefabInstance:
     - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602791606215410206, guid: 0088122658409224aa49919e3608a8d9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7808897072058579807, guid: 0088122658409224aa49919e3608a8d9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

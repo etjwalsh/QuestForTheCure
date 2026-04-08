@@ -42,10 +42,12 @@ public class MoveElements : MonoBehaviour
     {
         //Stop any sliding immediately
         isSliding = false;
-        velocity = Vector3.zero; // Reset velocity to prevent carrying over momentum
+        velocity = Vector3.zero;
 
         //Store the z-coordinate of the object (distance from camera)
-        zCoordinate = Camera.main.WorldToScreenPoint(transform.position).z;
+        zCoordinate = transform.position.z - Camera.main.transform.position.z;
+        Vector3 mouseWorld = GetMouseWorldPos();
+        Debug.Log($"Object Pos: {transform.position}, Mouse World Pos: {mouseWorld}, Offset: {transform.position - mouseWorld}");
 
         //Calculate offset between mouse position and object position
         offset = transform.position - GetMouseWorldPos();
@@ -133,7 +135,10 @@ public class MoveElements : MonoBehaviour
         mousePoint.z = zCoordinate;
 
         // Convert screen position to world position
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePoint);
+
+        worldPos.z = transform.position.z; // Don't let the unproject mess with Z
+        return worldPos;
     }
 
     private Vector3 ClampToCamera(Vector3 position)
@@ -148,12 +153,14 @@ public class MoveElements : MonoBehaviour
         // Calculate camera bounds in world space
         float camHeight = cam.orthographicSize;
         float camWidth = camHeight * cam.aspect;
+        float camX = cam.transform.position.x;
+        float camY = cam.transform.position.y;
 
         // Clamp position within bounds
         position.x = Mathf.Clamp(
             position.x,
-            -camWidth + spriteHalfWidth + boundaryPadding,
-            camWidth - spriteHalfWidth - boundaryPadding
+            camX - camWidth + spriteHalfWidth + boundaryPadding,
+            camX + camWidth - spriteHalfWidth - boundaryPadding
         );
 
         // position.y = Mathf.Clamp(position.y, -camHeight + spriteHalfHeight + boundaryPadding, camHeight - spriteHalfHeight - boundaryPadding);
@@ -181,7 +188,6 @@ public class MoveElements : MonoBehaviour
 
                     //fade element out
                     Destroy(gameObject.GetComponent<SphereCollider>());
-                    gameObject.transform.position = new Vector3(-1.25f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
                     break;
                 }
@@ -190,9 +196,7 @@ public class MoveElements : MonoBehaviour
                     Debug.Log("Hit Diamond Tube");
                     //check to make sure its the right element and manage score
                     CheckElement(PharmaceuticalElement.Carbon, tube);
-
                     Destroy(gameObject.GetComponent<SphereCollider>());
-                    gameObject.transform.position = new Vector3(-9.8f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
                     break;
                 }
@@ -201,9 +205,7 @@ public class MoveElements : MonoBehaviour
                     Debug.Log("Hit Horizontal Tube");
                     //check to make sure its the right element and manage score
                     CheckElement(PharmaceuticalElement.Oxygen, tube);
-
                     Destroy(gameObject.GetComponent<SphereCollider>());
-                    gameObject.transform.position = new Vector3(3.1f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
                     break;
                 }
@@ -212,9 +214,7 @@ public class MoveElements : MonoBehaviour
                     Debug.Log("Hit Vertcical Tube");
                     //check to make sure its the right element and manage score
                     CheckElement(PharmaceuticalElement.Hydrogen, tube);
-
                     Destroy(gameObject.GetComponent<SphereCollider>());
-                    gameObject.transform.position = new Vector3(-5.75f, gameObject.transform.position.y - 0.75f, gameObject.transform.position.z + 2);
                     StartCoroutine(FadeElement(1.5f));
                     break;
                 }
@@ -237,13 +237,17 @@ public class MoveElements : MonoBehaviour
         if (sr == null) yield break;
 
         Color startColor = sr.color;
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = startScale * 0.5f;
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
+            float t = elapsedTime / fadeDuration;
             float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
             sr.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+            transform.localScale = Vector3.Lerp(startScale, endScale, t);
             yield return null;
         }
 

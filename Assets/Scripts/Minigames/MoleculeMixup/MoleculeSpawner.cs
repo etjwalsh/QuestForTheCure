@@ -111,7 +111,10 @@ public class MoleculeSpawner : MonoBehaviour
             int spawnIndex = Random.Range(0, elements.Count);
 
             //spawn that one just above the camera's bounds
-            GameObject newElement = Instantiate(elements[spawnIndex], new Vector3(Random.Range(-9, 5.5f), height - 0.5f, -1), Quaternion.identity);
+            float camX = cam.transform.position.x;
+            Vector3 spawnPos = new Vector3(Random.Range(camX - 9f, camX + 5.5f), height - 0.5f, -1);
+            Debug.Log($"Camera X: {camX}, Spawning at: {spawnPos}");
+            GameObject newElement = Instantiate(elements[spawnIndex], spawnPos, Quaternion.identity);
 
             //lock rotation
             newElement.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
