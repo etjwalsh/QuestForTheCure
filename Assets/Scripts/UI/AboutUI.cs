@@ -52,4 +52,9 @@ public class AboutUI : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void OnEnterClicked()
+    {
+        Destroy(gameObject);
+    }
 }

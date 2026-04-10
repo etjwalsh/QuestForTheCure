@@ -277,15 +277,15 @@ public class PapersManager : MonoBehaviour
         //change the ending message depending on how they did
         if (good && !bad)
         {
-            endMessage.text = "Good ending";
+            endMessage.text = "Wow great job!";
         }
         else if (!good && !bad)
         {
-            endMessage.text = "Medium ending";
+            endMessage.text = "Most of them were right, but we can definitely do better.";
         }
         else if (!good && bad)
         {
-            endMessage.text = "Bad ending";
+            endMessage.text = "We might need to try that again...";
         }
 
         //show the results one at a time
