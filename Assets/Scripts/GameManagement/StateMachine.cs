@@ -99,6 +99,8 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //only works in the editor and not on build
+        #if UNITY_EDITOR
         if (Input.GetKey(KeyCode.B))
         {
             LevelLoader.instance.LoadScene("LoadPreClinical");
@@ -111,6 +113,8 @@ public class GameStateMachine : MonoBehaviour
         {
             LevelLoader.instance.LoadScene("LoadApproval");
         }
+        #endif
+
         //state machine switch statement
         switch (currentState)
         {
@@ -302,6 +306,13 @@ public class GameStateMachine : MonoBehaviour
     public void Minigame()
     {
         //minigame
+        if(currentStage == "Discovery")
+        {
+            for(int i = 0; i < PlayerManager.numPlayers; i++)
+            {
+                PlayerManager.instance.playerPieces[i].SetActive(false);
+            }
+        }
     }
 
     public void TriviaEnter()
@@ -357,6 +368,10 @@ public class GameStateMachine : MonoBehaviour
         //reset the wheel UI
         wheelUI.GetComponent<WheelSpin>().spinButton.gameObject.SetActive(true);
 
+        for(int i = 0; i < PlayerManager.numPlayers; i++)
+        {
+            PlayerManager.instance.playerPieces[i].SetActive(true);
+        }
     }
 
     public string AssignRoleToPlayer()
