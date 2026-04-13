@@ -99,22 +99,6 @@ public class GameStateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //only works in the editor and not on build
-        #if UNITY_EDITOR
-        if (Input.GetKey(KeyCode.B))
-        {
-            LevelLoader.instance.LoadScene("LoadPreClinical");
-        }
-        if (Input.GetKey(KeyCode.N))
-        {
-            LevelLoader.instance.LoadScene("LoadClinical");
-        }
-        if (Input.GetKey(KeyCode.M))
-        {
-            LevelLoader.instance.LoadScene("LoadApproval");
-        }
-        #endif
-
         //state machine switch statement
         switch (currentState)
         {
